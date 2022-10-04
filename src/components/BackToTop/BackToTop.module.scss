@@ -1,0 +1,20 @@
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 42px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #77c720;
+    color: var(--text-white);
+    font-size: 1.6rem;
+    border-radius: 4px;
+    z-index: 9999;
+    cursor: pointer;
+
+    &:hover > a {
+        color: var(--text-white);
+    }
+}

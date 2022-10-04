@@ -1,0 +1,132 @@
+.blog-title {
+    padding: 10px;
+    width: 600px;
+    height: 276px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-main {
+        font-family: var(--font-family-playfair);
+        font-size: 4rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+
+    &-sub {
+        font-weight: 500;
+        text-align: center;
+        color: #7a7a7a;
+    }
+}
+
+.blog {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+}
+
+.blog-container {
+    max-width: 1180px;
+}
+
+.blog-title {
+    width: 570px;
+    align-items: flex-start;
+
+    &-main,
+    &-sub {
+        text-align: start;
+    }
+}
+
+.blog-list {
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+}
+
+.blog-item {
+    margin: 0 5px;
+    padding: 8px 0;
+    width: 25%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "img img"
+        "upload-date tag"
+        "content content"
+        "author author";
+    cursor: pointer;
+
+    &>img {
+        padding: 0 8px;
+        grid-area: img;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+}
+
+.upload-date {
+    grid-area: upload-date;
+}
+
+.tag {
+    grid-area: tag;
+
+    &>span {
+        color: #77c720 !important;
+    }
+}
+
+.upload-date,
+.tag,
+.blog-author {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 24px;
+    color: #636363;
+
+    &>span {
+        margin-left: 4px;
+    }
+}
+
+.blog-content {
+    grid-area: content;
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #dce0e0;
+
+    &-name {
+        margin-bottom: 8px;
+        font-family: var(--font-family-playfair);
+        font-weight: 500;
+        font-size: 1.6rem;
+    }
+
+    &-description,
+    .continue-reading-btn {
+        padding-bottom: 8px;
+        font-size: 1.3rem;
+        line-height: 21px;
+    }
+}
+
+.continue-reading-btn {
+    color: #77c720;
+}
+
+.blog-author {
+    grid-area: author;
+    padding: 8px 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

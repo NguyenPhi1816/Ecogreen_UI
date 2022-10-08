@@ -1,6 +1,9 @@
 export const logo_url =
     'https://demo05.houzez.co/wp-content/uploads/2016/08/logo-houzez-white.png';
 
+export const logo_mobile_url =
+    'https://demo05.houzez.co/wp-content/uploads/2016/06/logo-houzez-color-2.png';
+
 export const PRODUCT_ITEMS = [
     {
         id: 1,

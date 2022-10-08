@@ -1,6 +1,11 @@
+.gallery{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
 .gallery-title {
     padding: 10px;
-    width: 600px;
     height: 276px;
     display: flex;
     flex-direction: column;
@@ -12,50 +17,81 @@
         font-size: 4rem;
         font-weight: 400;
         margin-bottom: 20px;
+        text-align: center;
+
+        @media (max-width: 767px) {
+            font-size: 3rem;
+        }
     }
 
     &-sub {
+        width: calc(100vw - 20px);
+        max-width: 580px;
         font-weight: 500;
         text-align: center;
         color: #7a7a7a;
+
+        @media (max-width: 767px) {
+            font-size: 1.3rem;
+        }
     }
 }
 
 
 .gallery-container {
+    width: 100%;
+    max-width: 960px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.gallery-title {
-    width: 580px;
-}
-
 .gallery-grid {
+    width: 960px;
+    height: 960px;
+    padding: 10px;
     margin-bottom: 50px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 33.33%);
+    grid-template-rows: repeat(3, 33.33%);
     grid-template-areas:
         "item1 item2 item3"
         "item4 item2 item5"
         "item4 item6 item7";
 
+    @media (max-width: 1023px) {
+        width: 820px;
+        height: 820px;
+    }
+
+    @media (max-width: 767px) {
+        width: 100%;
+        height: auto;
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: repeat(7, 1fr);
+        grid-template-areas:
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5"
+            "item6"
+            "item7";
+    }
+
     &-item {
         position: relative;
         margin: 15px;
-        grid-area: item;
-        width: 290px;
-        height: 290px;
+        width: 100%;
+        height: auto;
         border-radius: 4px;
         transition: all 0.5s ease-in-out;
         cursor: pointer;
 
         &>img {
-            width: 290px;
-            height: 290px;
+            width: calc(100% - 30px);
+            height: 100%;
             object-fit: cover;
             border-radius: 4px;
         }
@@ -65,7 +101,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: calc(100% - 30px);
             height: 100%;
             background-color: #000000;
             opacity: 0.3;
@@ -76,7 +112,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: calc(100% - 30px);
             height: 100%;
             padding: 30px;
             color: var(--text-white);
@@ -129,12 +165,22 @@
 
     &-2,
     &-4 {
-        width: 290px;
-        height: calc(2 * 290px + 30px);
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
 
         &>img {
-            width: 290px;
-            height: calc(2 * 290px + 30px);
+            width: 100%;
+            height: 100%;
+        }
+
+        &::after {
+            width: 100%;
+            height: 100%;
+        }
+
+        &-title {
+            width: 100%;
+            height: 100%;
         }
     }
 }

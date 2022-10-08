@@ -8,7 +8,7 @@ import { VIDEOS } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-function Videos() {
+function Videos({ width }) {
     const [currentVideo, setCurrentVideo] = useState(VIDEOS[0].video_url);
     return (
         <section className={cx('videos')}>
@@ -23,23 +23,19 @@ function Videos() {
                     </p>
                 </div>
                 <div className={cx('large-video')}>
-                    <div id="video">
-                        <iframe
-                            width="1140"
-                            height="641"
-                            src={currentVideo}
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
-                    </div>
+                    <iframe
+                        src={currentVideo}
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
                 </div>
                 <div className={cx('videos-slider')}>
                     <Swiper
                         modules={[Navigation, A11y]}
                         spaceBetween={15}
-                        slidesPerView={4}
+                        slidesPerView={width < 768 ? 3 : 4}
                         navigation
                         loop
                     >

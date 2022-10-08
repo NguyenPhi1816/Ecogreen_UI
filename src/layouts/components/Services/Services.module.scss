@@ -6,7 +6,8 @@
 .services-container {
     margin: 0 auto;
     padding: 20px;
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
 }
 
 .services-title {
@@ -20,6 +21,16 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
+    @media (max-width: 1023px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
 }
 
 .service {
@@ -27,7 +38,7 @@
     margin-bottom: 60px;
 }
 
-.service-thumb>img {
+.service-thumb > img {
     width: 40px;
     height: 40px;
 }

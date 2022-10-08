@@ -1,27 +1,6 @@
-.agents-title {
-    padding: 10px;
-    width: 600px;
-    height: 276px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &-main {
-        font-family: var(--font-family-playfair);
-        font-size: 4rem;
-        font-weight: 400;
-        margin-bottom: 20px;
-    }
-
-    &-sub {
-        font-weight: 500;
-        text-align: center;
-        color: #7a7a7a;
-    }
-}
 
 .agents {
+    margin-top: 10px;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -30,30 +9,81 @@
 }
 
 .agents-container {
+    width: 100%;
     max-width: 1180px;
+    padding: 10px;
 }
 
 .agents-title {
-    width: 570px;
-    align-items: flex-start;
+    padding: 10px;
+    height: 276px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    &-main,
+    @media (min-width: 768px) {
+        align-items: flex-start;
+    }
+
+    &-main {
+        font-family: var(--font-family-playfair);
+        font-size: 4rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @media (max-width: 767px) {
+            font-size: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            text-align: start;
+        }
+    }
+
     &-sub {
-        text-align: start;
+        width: calc(100vw - 20px);
+        max-width: 580px;
+        font-weight: 500;
+        text-align: center;
+        color: #7a7a7a;
+
+        @media (max-width: 767px) {
+            font-size: 1.3rem;
+        }
+
+        @media (min-width: 768px) {
+            text-align: start;
+        }
     }
 }
+
 
 .agents-list {
     margin-bottom: 50px;
     padding: 10px;
-    width: 1140px;
+    width: 100%;
+    max-width: 1140px;
     display: flex;
+
+    @media (max-width: 1023px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 5px;
+    }
+
+    @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .agent {
     margin: 1px;
     padding: 35px;
-    width: 33, 33%;
+    width: 33.33%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -61,6 +91,10 @@
     align-items: center;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+    }
 
     &:hover {
         transform: translateY(-10px);

@@ -11,12 +11,12 @@
 .slider {
     position: relative;
     height: 252px;
-    width: 337px;
+    width: 100%;
 
     & .slide {
         & > img {
             height: 252px;
-            width: 337px;
+            width: 100%;
             object-fit: cover;
         }
 

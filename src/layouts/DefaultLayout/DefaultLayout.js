@@ -13,9 +13,14 @@ import BackToTop from '../../components/BackToTop';
 
 function DefaultLayout() {
     const [offsetY, setOffsetY] = useState(0);
+    const [offsetWidth, setOffsetWidth] = useState(window.innerWidth);
 
     function handleScroll() {
         setOffsetY(window.pageYOffset);
+    }
+
+    function handleGetWidth() {
+        setOffsetWidth(window.innerWidth);
     }
 
     useEffect(() => {
@@ -24,16 +29,22 @@ function DefaultLayout() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        window.addEventListener('resize', handleGetWidth);
+
+        return () => window.removeEventListener('resize', handleGetWidth);
+    }, []);
+
     return (
         <>
-            <Home />
+            <Home width={offsetWidth} />
             <Product />
             <LargeSlider />
             <Gallery />
             <Agents />
             <Services />
             <Blog />
-            <Videos />
+            <Videos width={offsetWidth} />
             <Footer />
             {offsetY >= 300 && <BackToTop id={'#home'} />}
         </>

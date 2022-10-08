@@ -1,0 +1,31 @@
+.App{
+    overflow-x: hidden;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 5px solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.swiper-button-next::after {
+    transform: rotate(-45deg);
+}
+
+.swiper-button-prev::after {
+    transform: rotate(135deg);
+}
+
+.hideMenu {
+    opacity: 0;
+    transform: translateX(-256px);
+}
+
+.showMenu {
+    opacity: 1;
+    transform: translateX(0px);
+}

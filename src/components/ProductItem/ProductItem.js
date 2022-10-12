@@ -9,12 +9,14 @@ import { icons } from '../../assets/index';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
 
 let cx = classNames.bind(styles);
 
-function ProductItem({ data }) {
+function ProductItem({ data, handleExpandClick, className }) {
     return (
-        <div className={cx('wrapper')}>
+        <div className={cx('wrapper', className)}>
             <div className={cx('product-item-container')}>
                 <div className={cx('slider')}>
                     <Swiper
@@ -33,6 +35,14 @@ function ProductItem({ data }) {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    <button
+                        className={cx('show-modal')}
+                        onClick={handleExpandClick}
+                    >
+                        <FontAwesomeIcon
+                            icon={faUpRightAndDownLeftFromCenter}
+                        />
+                    </button>
                 </div>
                 <div className={cx('product-details')}>
                     <h3 className={cx('name')}>{data.name}</h3>

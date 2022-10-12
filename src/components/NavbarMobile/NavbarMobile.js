@@ -4,7 +4,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './NavbarMobile.module.scss';
 
-import { logo_mobile_url } from '../../config';
+import { logo_black_url } from '../../config';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +20,7 @@ function NavbarMobile({ styles }) {
     useEffect(() => {
         const handleClickOutside = (e) => {
             if (
+                menuRef.current &&
                 !menuRef.current.contains(e.target) &&
                 !hamburgerRef.current.contains(e.target)
             ) {
@@ -30,7 +31,7 @@ function NavbarMobile({ styles }) {
         return window.removeEventListener('click', (e) =>
             handleClickOutside(e),
         );
-    });
+    }, [menuRef]);
 
     return (
         <nav className={cx('nav')} style={styles}>
@@ -44,7 +45,7 @@ function NavbarMobile({ styles }) {
                 <div></div>
             </div>
             <div className={cx('logo')}>
-                <img src={logo_mobile_url} alt="Logo" />
+                <img src={logo_black_url} alt="Logo" />
             </div>
             <aside
                 className={`${cx('sidebar')} ${

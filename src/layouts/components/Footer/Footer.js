@@ -8,30 +8,34 @@ import { logo_url } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-function Footer() {
+function Footer({ footerForm = true }) {
     const [email, setEmail] = useState('');
     return (
         <section className={cx('footer')}>
-            <div className={cx('footer-form')}>
-                <h2 className={cx('footer-form-title')}>NEWSLETTER SING UP</h2>
-                <form className={cx('footer-form-wrapper')}>
-                    <input
-                        placeholder="Enter your email"
-                        name="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <button
-                        className={cx('submit-btn')}
-                        onClick={(e) => {
-                            e.preventDefault();
-                            console.log(email);
-                        }}
-                    >
-                        Submit
-                    </button>
-                </form>
-            </div>
+            {footerForm && (
+                <div className={cx('footer-form')}>
+                    <h2 className={cx('footer-form-title')}>
+                        NEWSLETTER SING UP
+                    </h2>
+                    <form className={cx('footer-form-wrapper')}>
+                        <input
+                            placeholder="Enter your email"
+                            name="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <button
+                            className={cx('submit-btn')}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                console.log(email);
+                            }}
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            )}
             <div className={cx('footer-container')}>
                 <div className={cx('footer-wrapper')}>
                     <div className={cx('footer-infor')}>

@@ -11,8 +11,13 @@
     color: var(--text-white);
     font-size: 1.6rem;
     border-radius: 4px;
-    z-index: 9999;
+    z-index: 9998;
     cursor: pointer;
+
+    @media (max-width: 767px) {
+        bottom: 85px;
+        right: 10px;
+    }
 
     &:hover > a {
         color: var(--text-white);

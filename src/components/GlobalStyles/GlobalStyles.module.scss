@@ -1,5 +1,5 @@
 /* Font family */
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 * {
@@ -49,7 +49,7 @@ html *::-webkit-scrollbar-track {
 
 body,
 button,
-input {
+input, textarea {
     font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5;
@@ -58,13 +58,17 @@ input {
 }
 
 button,
-input,
+input, textarea
 [tabindex] {
     outline: none;
     border: none;
 }
 
 a {
-    color: var(--text-color);
+    color: var(--text-black);
     text-decoration: none;
+}
+
+textarea {
+    resize: none;
 }

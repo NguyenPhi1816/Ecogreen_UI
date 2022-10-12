@@ -1,0 +1,89 @@
+.form {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+    "name phone"
+    "email select"
+    "message message"
+    "label label"
+    "submit-btn .";
+
+
+    & > label {
+        & > input,
+        & > select,
+        & > textarea {
+            width: 100%;
+            height: 42px;
+            margin-top: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #dce0e0;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+
+        & > span {
+            font-weight: 600;
+        }
+    }
+
+    .name {
+        grid-area: name;
+    }
+
+    .phone {
+        grid-area: phone;
+    }
+
+    .email {
+        grid-area: email;
+    }
+
+    .select {
+        grid-area: select;
+    }
+
+    &>select {
+        color: #a1a7a8;
+    }
+
+    .message {
+        grid-area: message;
+    }
+
+    .message-area {
+        height: 110px;
+        overflow: scroll;
+    }
+
+    .terms-of-use {
+        grid-area: label;
+        display: flex;
+
+        &>input {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+        }
+
+        &>span {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+
+    .submit-btn {
+        grid-area: submit-btn;
+        width: 100%;
+        max-width: 50%;
+        height: 42px;
+        margin-top: 15px;
+        background: #77c720;
+        color: var(--text-white);
+        border-radius: 4px;
+    }
+}

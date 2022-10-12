@@ -5,12 +5,17 @@ import styles from './BackToTop.module.scss';
 
 const cx = classNames.bind(styles);
 
-function BackToTop({ id }) {
+function BackToTop() {
+    const handleScrollToTop = () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
+
     return (
         <div className={cx('back-to-top-btn')}>
-            <a href={id}>
+            <div onClick={handleScrollToTop}>
                 <FontAwesomeIcon icon={faChevronUp} />
-            </a>
+            </div>
         </div>
     );
 }

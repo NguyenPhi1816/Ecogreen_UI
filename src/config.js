@@ -1,10 +1,30 @@
 export const logo_url =
     'https://demo05.houzez.co/wp-content/uploads/2016/08/logo-houzez-white.png';
 
-export const logo_mobile_url =
+export const logo_black_url =
     'https://demo05.houzez.co/wp-content/uploads/2016/06/logo-houzez-color-2.png';
 
 export const PRODUCT_ITEMS = [
+    {
+        id: 0,
+        images: [
+            'https://demo05.houzez.co/wp-content/uploads/2016/02/apartment-2-592x444.jpg',
+            'https://demo05.houzez.co/wp-content/uploads/2016/01/inner-studio-room-1.jpg',
+            'https://demo05.houzez.co/wp-content/uploads/2016/01/inner-living-room-2.jpg',
+            'https://demo05.houzez.co/wp-content/uploads/2016/01/inner-bath-room-1.jpg',
+        ],
+        name: 'Modern day apartment',
+        price: '$3,750/mo',
+        type: 'Apartment',
+        address: '3000 Florida Ave, Miami, FL 33133, USA',
+        status: 'For Rent',
+        bedrooms: 4,
+        bathrooms: 4,
+        parkingLot: 4,
+        garageSize: '200 SqFt',
+        area: 1000,
+        yearBuilt: 2016,
+    },
     {
         id: 1,
         images: [
@@ -15,10 +35,15 @@ export const PRODUCT_ITEMS = [
         ],
         name: 'Modern day apartment',
         price: '$3,750/mo',
+        type: 'Apartment',
+        address: '3000 Florida Ave, Miami, FL 33133, USA',
+        status: 'For Rent',
         bedrooms: 4,
         bathrooms: 4,
         parkingLot: 4,
+        garageSize: '200 SqFt',
         area: 1000,
+        yearBuilt: 2016,
     },
     {
         id: 2,
@@ -30,10 +55,15 @@ export const PRODUCT_ITEMS = [
         ],
         name: 'Modern day apartment',
         price: '$3,750/mo',
+        type: 'Apartment',
+        address: '3000 Florida Ave, Miami, FL 33133, USA',
+        status: 'For Rent',
         bedrooms: 4,
         bathrooms: 4,
         parkingLot: 4,
+        garageSize: '200 SqFt',
         area: 1000,
+        yearBuilt: 2016,
     },
     {
         id: 3,
@@ -45,10 +75,15 @@ export const PRODUCT_ITEMS = [
         ],
         name: 'Modern day apartment',
         price: '$3,750/mo',
+        type: 'Apartment',
+        address: '3000 Florida Ave, Miami, FL 33133, USA',
+        status: 'For Rent',
         bedrooms: 4,
         bathrooms: 4,
         parkingLot: 4,
+        garageSize: '200 SqFt',
         area: 1000,
+        yearBuilt: 2016,
     },
     {
         id: 4,
@@ -60,10 +95,15 @@ export const PRODUCT_ITEMS = [
         ],
         name: 'Modern day apartment',
         price: '$3,750/mo',
+        type: 'Apartment',
+        address: '3000 Florida Ave, Miami, FL 33133, USA',
+        status: 'For Rent',
         bedrooms: 4,
         bathrooms: 4,
         parkingLot: 4,
+        garageSize: '200 SqFt',
         area: 1000,
+        yearBuilt: 2016,
     },
     {
         id: 5,
@@ -75,25 +115,15 @@ export const PRODUCT_ITEMS = [
         ],
         name: 'Modern day apartment',
         price: '$3,750/mo',
+        type: 'Apartment',
+        address: '3000 Florida Ave, Miami, FL 33133, USA',
+        status: 'For Rent',
         bedrooms: 4,
         bathrooms: 4,
         parkingLot: 4,
+        garageSize: '200 SqFt',
         area: 1000,
-    },
-    {
-        id: 6,
-        images: [
-            'https://demo05.houzez.co/wp-content/uploads/2016/02/apartment-2-592x444.jpg',
-            'https://demo05.houzez.co/wp-content/uploads/2016/01/inner-studio-room-1.jpg',
-            'https://demo05.houzez.co/wp-content/uploads/2016/01/inner-living-room-2.jpg',
-            'https://demo05.houzez.co/wp-content/uploads/2016/01/inner-bath-room-1.jpg',
-        ],
-        name: 'Modern day apartment',
-        price: '$3,750/mo',
-        bedrooms: 4,
-        bathrooms: 4,
-        parkingLot: 4,
-        area: 1000,
+        yearBuilt: 2016,
     },
 ];
 
@@ -149,6 +179,8 @@ export const AGENTS = [
         company: 'Founder &amp; CEO , Realty Properties Inc.',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam imperdiet ullamcorper nisl, sed venenatis...',
+        phone: '789 456 3210',
+        mobile: '789 456 3210',
     },
     {
         image_url:
@@ -157,6 +189,8 @@ export const AGENTS = [
         company: 'Founder &amp; CEO , Realty Properties Inc.',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam imperdiet ullamcorper nisl, sed venenatis...',
+        phone: '789 456 3210',
+        mobile: '789 456 3210',
     },
     {
         image_url:
@@ -165,6 +199,8 @@ export const AGENTS = [
         company: 'Founder &amp; CEO , Realty Properties Inc.',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam imperdiet ullamcorper nisl, sed venenatis...',
+        phone: '789 456 3210',
+        mobile: '789 456 3210',
     },
 ];
 

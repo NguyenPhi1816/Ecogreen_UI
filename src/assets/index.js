@@ -3,4 +3,5 @@ export let icons = {
     area: require('./icons/area.png'),
     car: require('./icons/electric-car.png'),
     shower: require('./icons/shower.png'),
+    calendar: require('./icons/calendar.png'),
 };

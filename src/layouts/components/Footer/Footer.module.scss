@@ -6,9 +6,9 @@
 }
 
 .footer-form {
-    padding: 30px;
+    padding: 30px 15px;
     width: 100%;
-    max-width: 1140px;
+    max-width: 1180px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -147,12 +147,13 @@
     justify-content: center;
     align-items: flex-start;
 
-    &>a {
+    & > a {
         width: 272px;
         height: 35px;
         font-size: 1.2rem;
         font-weight: 400;
         transition: all 0.2s ease-in-out;
+        color: var(--text-white);
 
         &:hover {
             color: #77c720;
@@ -186,6 +187,7 @@
 
 .footer-social-network-links {
     & > a {
+        color: var(--text-white);
         margin-left: 15px;
     }
 

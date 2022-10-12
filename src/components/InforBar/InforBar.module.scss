@@ -11,9 +11,14 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width: 1023px) {
+        padding: 0 35px;
+    }
+
     &-container {
         width: 100%;
         max-width: 1180px;
+        padding: 0 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;

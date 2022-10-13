@@ -21,7 +21,18 @@ function ProductsLayout({ offsetY, offsetWidth }) {
                 data={PRODUCT_ITEMS[productId]}
             />
             <Footer footerForm={false} />
-            {offsetY >= 300 && <BackToTop />}
+            {offsetY >= 300 && (
+                <BackToTop
+                    styles={
+                        offsetWidth < 768
+                            ? {
+                                  bottom: '85px',
+                                  right: '10px',
+                              }
+                            : {}
+                    }
+                />
+            )}
         </>
     );
 }

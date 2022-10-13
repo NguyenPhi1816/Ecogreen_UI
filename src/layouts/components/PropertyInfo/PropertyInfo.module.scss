@@ -327,19 +327,22 @@
 
 .product{
     padding: 0;
-    & > div {
-        width: 100%;
-        display: flex;
 
-        &> :first-child {
-            height: 252px;
-            width: 40%;
-        }
-
-        &> :last-child {
-            padding: 0;
-            padding-left: 30px;
-            align-items: flex-start;
+    @media (min-width: 768px) {
+        &>div {
+            width: 100%;
+            display: flex;
+    
+            &> :first-child {
+                height: 252px;
+                width: 40%;
+            }
+    
+            &> :last-child {
+                padding: 0;
+                padding-left: 30px;
+                align-items: flex-start;
+            }
         }
     }
 } 

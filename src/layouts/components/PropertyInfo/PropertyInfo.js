@@ -387,11 +387,7 @@ function PropertyInfo({ offsetWidth, offsetY, data }) {
                                     >
                                         <ProductItem
                                             data={item}
-                                            className={
-                                                offsetWidth >= 768
-                                                    ? cx('product')
-                                                    : ''
-                                            }
+                                            className={cx('product')}
                                             offsetWidth={offsetWidth}
                                             handleExpandClick={(e) => {
                                                 e.preventDefault();

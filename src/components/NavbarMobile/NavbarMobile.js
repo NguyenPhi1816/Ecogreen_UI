@@ -33,6 +33,14 @@ function NavbarMobile({ styles }) {
         );
     }, [menuRef]);
 
+    useEffect(() => {
+        if (showMenu) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+    }, [showMenu]);
+
     return (
         <nav className={cx('nav')} style={styles}>
             <div

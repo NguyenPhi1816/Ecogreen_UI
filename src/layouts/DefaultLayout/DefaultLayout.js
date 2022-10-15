@@ -8,7 +8,6 @@ import Videos from '../components/Videos';
 import Blog from '../components/Blog';
 import Footer from '../components/Footer';
 import BackToTop from '../../components/BackToTop';
-import ImagesModal from '../../components/ImagesModal';
 
 function DefaultLayout({ offsetY, offsetWidth }) {
     return (

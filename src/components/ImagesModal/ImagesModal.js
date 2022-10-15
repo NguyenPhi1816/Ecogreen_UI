@@ -38,7 +38,7 @@ function ImagesModal({ offsetWidth, handleClose, data }) {
         backgroundColor: '#fff',
         padding: '15px',
         width: '45%',
-        height: '100%',
+        minHeight: '100%',
     };
 
     const sliderStyles = {

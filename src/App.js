@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SwiperCore, { Autoplay } from 'swiper';
 import DefaultLayout from './layouts/DefaultLayout';
 import ProductsLayout from './layouts/ProductsLayout';
+import ScrollToTop from './components/ScrollToTop';
 import './App.scss';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
     return (
         <Router>
             <div className="App">
+                <ScrollToTop />
                 <Routes>
                     <Route
                         path="/"

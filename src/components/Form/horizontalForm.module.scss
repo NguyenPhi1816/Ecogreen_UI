@@ -61,14 +61,19 @@
     .terms-of-use {
         grid-area: label;
         display: flex;
+        flex-direction: column;
 
-        &>input {
+        & > div {
+            display: flex;
+        }
+
+        & > div >input {
             width: 20px;
             height: 20px;
             margin-right: 8px;
         }
 
-        &>span {
+        & > div >span {
             display: flex;
             align-items: center;
             font-size: 13px;
@@ -86,4 +91,9 @@
         color: var(--text-white);
         border-radius: 4px;
     }
+}
+
+.invalid-message {
+    margin-bottom: 12px;
+    color: red;
 }

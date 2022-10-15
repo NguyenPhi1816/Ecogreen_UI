@@ -52,9 +52,9 @@ function NavbarMobile({ styles }) {
                 <div></div>
                 <div></div>
             </div>
-            <div className={cx('logo')}>
+            <a href="/" className={cx('logo')}>
                 <img src={logo_black_url} alt="Logo" />
-            </div>
+            </a>
             <aside
                 className={`${cx('sidebar')} ${
                     showMenu ? 'showMenu' : 'hideMenu'

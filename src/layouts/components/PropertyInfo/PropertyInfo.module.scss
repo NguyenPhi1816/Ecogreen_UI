@@ -308,6 +308,10 @@
                 margin-left: 8px;
             }
         }
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
     }
 
     .social-network > a {

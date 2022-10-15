@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
 import classNames from 'classnames/bind';
 import styles from './Form.module.scss';
 import horizontalStyles from './horizontalForm.module.scss';
@@ -8,48 +9,71 @@ function Form({ type, className }) {
         type === 'vertical'
             ? classNames.bind(styles)
             : classNames.bind(horizontalStyles);
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
 
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState(
-        'Hello, I am interested in [Modern apartment on the bay]',
-    );
-    const [customerType, setCustomerType] = useState('');
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(name, phone, email, message, customerType);
+    const onSubmit = (data) => {
+        data.phone = `'${data.phone}`;
+        axios.post(
+            'https://sheet.best/api/sheets/4a162f0b-2e74-44c7-8d17-d5d081ca9b56',
+            data,
+        );
     };
 
     return (
-        <form className={cx('form', className)}>
+        <form
+            className={cx('form', className)}
+            onSubmit={handleSubmit(onSubmit)}
+        >
             <label className={cx('name')}>
                 {type === 'horizontal' && <span>Name</span>}
                 <input
                     type="text"
                     placeholder="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    {...register('name', {
+                        required: true,
+                    })}
                 />
+                {errors.name && (
+                    <p className={cx('invalid-message')}>
+                        This field is required
+                    </p>
+                )}
             </label>
             <label className={cx('phone')}>
                 {type === 'horizontal' && <span>Phone</span>}
                 <input
                     type="text"
                     placeholder="Phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
+                    {...register('phone', {
+                        required: true,
+                    })}
                 />
+                {errors.phone && (
+                    <p className={cx('invalid-message')}>
+                        This field is required
+                    </p>
+                )}
             </label>
             <label className={cx('email')}>
                 {type === 'horizontal' && <span>Email</span>}
                 <input
                     type="text"
                     placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    {...register('email', {
+                        pattern:
+                            /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                        required: true,
+                    })}
                 />
+                {errors.email && (
+                    <p className={cx('invalid-message')}>
+                        Invalid email address
+                    </p>
+                )}
             </label>
             <label className={cx('message')}>
                 {type === 'horizontal' && <span>Message</span>}
@@ -59,16 +83,12 @@ function Form({ type, className }) {
                     className={cx('message-area')}
                     cols="40"
                     rows="4"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    {...register('message')}
                 />
             </label>
             <label className={cx('select')}>
                 {type === 'horizontal' && <span>I'm a</span>}
-                <select
-                    defaultValue={'DEFAULT'}
-                    onChange={(e) => setCustomerType(e.target.value)}
-                >
+                <select defaultValue={'DEFAULT'} {...register('type')}>
                     <option value="DEFAULT" disabled hidden>
                         Select
                     </option>
@@ -79,15 +99,26 @@ function Form({ type, className }) {
                 </select>
             </label>
             <label className={cx('terms-of-use')}>
-                <input type="checkbox" />
-                <span>By submitting this form I agree to Terms of Use</span>
+                <div>
+                    <input
+                        type="checkbox"
+                        {...register('acceptTermsOfUse', {
+                            required: true,
+                        })}
+                    />
+                    <span>By submitting this form I agree to Terms of Use</span>
+                </div>
+                {errors.acceptTermsOfUse && (
+                    <p className={cx('invalid-message')}>
+                        Please accept our Terms of Use
+                    </p>
+                )}
             </label>
-            <button
+            <input
+                type="submit"
                 className={cx('submit-btn')}
-                onClick={(e) => handleSubmit(e)}
-            >
-                Send Message
-            </button>
+                value="Send message"
+            />
         </form>
     );
 }

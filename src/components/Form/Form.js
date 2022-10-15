@@ -1,10 +1,16 @@
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import classNames from 'classnames/bind';
 import styles from './Form.module.scss';
 import horizontalStyles from './horizontalForm.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 function Form({ type, className }) {
+    const [showSpinner, setShowSpinner] = useState(false);
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
     const cx =
         type === 'vertical'
             ? classNames.bind(styles)
@@ -15,18 +21,32 @@ function Form({ type, className }) {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
+    const onSubmit = async (data, e) => {
         data.phone = `'${data.phone}`;
-        axios.post(
-            'https://sheet.best/api/sheets/4a162f0b-2e74-44c7-8d17-d5d081ca9b56',
+        setShowSpinner(true);
+        await axios.post(
+            'https://api.sheetmonkey.io/form/vWyQbvDfWP6WbDYv4BtobT',
             data,
         );
+        setShowSpinner(false);
+        setShowSuccessMessage(true);
+        e.target.reset();
     };
+
+    useEffect(() => {
+        let timerId;
+        if (showSuccessMessage) {
+            timerId = setTimeout(() => {
+                setShowSuccessMessage(false);
+            }, 2000);
+        }
+        return () => clearTimeout(timerId);
+    }, [showSuccessMessage]);
 
     return (
         <form
             className={cx('form', className)}
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit((data, e) => onSubmit(data, e))}
         >
             <label className={cx('name')}>
                 {type === 'horizontal' && <span>Name</span>}
@@ -114,11 +134,20 @@ function Form({ type, className }) {
                     </p>
                 )}
             </label>
-            <input
-                type="submit"
-                className={cx('submit-btn')}
-                value="Send message"
-            />
+            <button className={cx('submit-btn')} type="submit">
+                {showSpinner && (
+                    <FontAwesomeIcon
+                        icon={faCircleNotch}
+                        className={cx('spinner')}
+                    />
+                )}
+                <p>Send Message</p>
+            </button>
+            {showSuccessMessage && (
+                <p className={cx('success-message')}>
+                    Your information was sent successfully!
+                </p>
+            )}
         </form>
     );
 }

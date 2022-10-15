@@ -2,13 +2,14 @@
     display: grid;
     column-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas: 
     "name phone"
     "email select"
     "message message"
     "label label"
-    "submit-btn .";
+    "submit-btn ."
+    "success .";
 
 
     & > label {
@@ -96,4 +97,32 @@
 .invalid-message {
     margin-bottom: 12px;
     color: red;
+}
+
+.submit-btn {
+    margin: 16px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .spinner {
+        margin-right: 10px;
+        color: #fff;
+        animation: rotate infinite 1s linear;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.success-message {
+    grid-area: success;
+    color: #77c720;
 }

@@ -23,6 +23,7 @@
 
 .menu{
     padding-right: 15px;
+    height: 100%;
     color: var(--text-white);
     display: flex;
     justify-content: flex-end;
@@ -42,7 +43,7 @@
 
 .menu-item{
     padding: 0 15px;
-    height: 90px;
+    height: 100%;
     transition: all 0.2s ease-in-out;
 
     & > a {

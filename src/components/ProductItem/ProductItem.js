@@ -28,7 +28,7 @@ function ProductItem({ data, handleExpandClick, className }) {
                         loop
                         autoplay={{ delay: 3000 }}
                     >
-                        {data.images.slice(0, 3).map((image, index) => (
+                        {data.thumbs.map((image, index) => (
                             <SwiperSlide key={index}>
                                 <div className={cx('slide')}>
                                     <BlurImg
@@ -44,7 +44,7 @@ function ProductItem({ data, handleExpandClick, className }) {
                             <div className={cx('slide', 'last-image')}>
                                 <BlurImg
                                     blurhash="i8AUWrax0nt7S5ayxZt7R.D%j[IqWBxXfkxWaxax4ofls+axayfRNHR*jr?dWB-nt7WEjsNLoft60Ooe-lR+oJj[fjj?s,"
-                                    src={data.images[3]}
+                                    src={data.thumbs[3]}
                                     alt="About product"
                                     punch={1}
                                 />

@@ -7,6 +7,12 @@ export const logo_black_url =
 export const PRODUCT_ITEMS = [
     {
         id: 0,
+        thumbs: [
+            require('./assets/images/2bedroomsImagesThumb/1_A7R8105-thumb.jpg'),
+            require('./assets/images/2bedroomsImagesThumb/2_A7R8087-thumb.jpg'),
+            require('./assets/images/2bedroomsImagesThumb/3_A7R8088-thumb.jpg'),
+            require('./assets/images/2bedroomsImagesThumb/5_A7R8102-thumb.jpg'),
+        ],
         images: [
             require('./assets/images/2bedroomsImages/1_A7R8105.jpg'),
             require('./assets/images/2bedroomsImages/2_A7R8087.jpg'),
@@ -37,6 +43,12 @@ export const PRODUCT_ITEMS = [
     },
     {
         id: 1,
+        thumbs: [
+            require('./assets/images/3bedroomsImagesThumb/1_A7R8151-thumb.jpg'),
+            require('./assets/images/3bedroomsImagesThumb/2_A7R8012-thumb.jpg'),
+            require('./assets/images/3bedroomsImagesThumb/3_A7R7972-thumb.jpg'),
+            require('./assets/images/3bedroomsImagesThumb/4_A7R8132-thumb.jpg'),
+        ],
         images: [
             require('./assets/images/3bedroomsImages/1_A7R8151.jpg'),
             require('./assets/images/3bedroomsImages/2_A7R8012.jpg'),

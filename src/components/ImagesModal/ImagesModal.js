@@ -82,7 +82,7 @@ function ImagesModal({ offsetWidth, handleClose, data }) {
                             slidesPerView={1}
                             navigation
                             loop
-                            autoplay={{ delay: 3000 }}
+                            // autoplay={{ delay: 3000 }}
                         >
                             {data.images.map((image, index) => (
                                 <SwiperSlide key={index}>

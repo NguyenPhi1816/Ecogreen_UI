@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './ProductItem.module.scss';
 import { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import BlurImg from '../BlurImage';
 
 import { icons } from '../../assets/index';
 
@@ -27,13 +28,31 @@ function ProductItem({ data, handleExpandClick, className }) {
                         loop
                         autoplay={{ delay: 3000 }}
                     >
-                        {data.images.map((image, index) => (
+                        {data.images.slice(0, 3).map((image, index) => (
                             <SwiperSlide key={index}>
                                 <div className={cx('slide')}>
-                                    <img src={image} alt="About product" />
+                                    <BlurImg
+                                        blurhash="i8AUWrax0nt7S5ayxZt7R.D%j[IqWBxXfkxWaxax4ofls+axayfRNHR*jr?dWB-nt7WEjsNLoft60Ooe-lR+oJj[fjj?s,"
+                                        src={image}
+                                        alt="About product"
+                                        punch={1}
+                                    />
                                 </div>
                             </SwiperSlide>
                         ))}
+                        <SwiperSlide>
+                            <div className={cx('slide', 'last-image')}>
+                                <BlurImg
+                                    blurhash="i8AUWrax0nt7S5ayxZt7R.D%j[IqWBxXfkxWaxax4ofls+axayfRNHR*jr?dWB-nt7WEjsNLoft60Ooe-lR+oJj[fjj?s,"
+                                    src={data.images[3]}
+                                    alt="About product"
+                                    punch={1}
+                                />
+                                <p className={cx('remain-amount')}>{`${
+                                    data.images.length - 4
+                                } more images`}</p>
+                            </div>
+                        </SwiperSlide>
                     </Swiper>
                     <button
                         className={cx('show-modal')}
@@ -46,7 +65,7 @@ function ProductItem({ data, handleExpandClick, className }) {
                 </div>
                 <div className={cx('product-details')}>
                     <h3 className={cx('name')}>{data.name}</h3>
-                    <span className={cx('price')}>{data.price}</span>
+                    <span className={cx('price')}>Sample</span>
                     <div className={cx('details')}>
                         <div className={cx('details-item')}>
                             <img src={icons.bed} alt="bed" />

@@ -11,9 +11,9 @@ import { BLOGS } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-function Blog() {
+function Blog({ id }) {
     return (
-        <section className={cx('blog')}>
+        <section className={cx('blog')} id={id}>
             <div className={cx('blog-container')}>
                 <div className={cx('blog-title')}>
                     <h2 className={cx('blog-title-main')}>

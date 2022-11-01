@@ -5,9 +5,9 @@ import { GRID_IMAGES } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-function Gallery() {
+function Gallery({ id }) {
     return (
-        <section className={cx('gallery')}>
+        <section className={cx('gallery')} id={id}>
             <div className={cx('gallery-container')}>
                 <div className={cx('gallery-title')}>
                     <h2 className={cx('gallery-title-main')}>

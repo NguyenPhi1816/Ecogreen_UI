@@ -12,14 +12,14 @@ import BackToTop from '../../components/BackToTop';
 function DefaultLayout({ offsetY, offsetWidth }) {
     return (
         <>
-            <Home width={offsetWidth} />
-            <Product offsetWidth={offsetWidth} />
-            <LargeSlider />
-            <Gallery />
-            <Agents />
-            <Services />
-            <Blog />
-            <Videos width={offsetWidth} />
+            <Home width={offsetWidth} id="home" />
+            <Product offsetWidth={offsetWidth} id="product" />
+            <LargeSlider id="about" />
+            <Gallery id="gallery" />
+            <Videos width={offsetWidth} id="videos" />
+            <Services id="services" />
+            <Agents id="agents" />
+            <Blog id="blog" />
             <Footer />
             {offsetY >= 300 && <BackToTop />}
         </>

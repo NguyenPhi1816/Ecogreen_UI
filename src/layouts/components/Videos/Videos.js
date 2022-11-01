@@ -8,10 +8,10 @@ import { VIDEOS } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-function Videos({ width }) {
+function Videos({ width, id }) {
     const [currentVideo, setCurrentVideo] = useState(VIDEOS[0].video_url);
     return (
-        <section className={cx('videos')}>
+        <section className={cx('videos')} id={id}>
             <div className={cx('videos-container')}>
                 <div className={cx('videos-title')}>
                     <h2 className={cx('videos-title-main')}>

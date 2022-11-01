@@ -30,6 +30,8 @@ export const PRODUCT_ITEMS = [
             require('./assets/images/2bedroomsImages/16_A7R8104.jpg'),
         ],
         name: '2 bedrooms apartment',
+        whoIsInterested:
+            'The best apartment for a young family with 3 to 4 members',
         price: '$3,750/mo',
         type: 'Apartment',
         address: '3000 Florida Ave, Miami, FL 33133, USA',
@@ -72,6 +74,8 @@ export const PRODUCT_ITEMS = [
             require('./assets/images/3bedroomsImages/22_A7R8028.jpg'),
         ],
         name: '3 bedrooms apartment',
+        whoIsInterested:
+            'The best apartment for a young family with 4 to 5 members',
         price: '$3,750/mo',
         type: 'Apartment',
         address: '3000 Florida Ave, Miami, FL 33133, USA',
@@ -86,9 +90,9 @@ export const PRODUCT_ITEMS = [
 ];
 
 export const LARGE_SLIDER_IMAGES = [
-    'https://demo05.houzez.co/wp-content/uploads/2016/02/houzez-header-1.jpg',
-    'https://demo05.houzez.co/wp-content/uploads/2016/02/houzez-property-slider.jpg',
-    'https://demo05.houzez.co/wp-content/uploads/2016/06/houzez-header-2.jpg',
+    require('./assets/images/generalVision/shophouse.jpg'),
+    require('./assets/images/generalVision/swimmingPool.JPG'),
+    require('./assets/images/generalVision/ultilities.jpg'),
 ];
 
 export const GRID_IMAGES = [

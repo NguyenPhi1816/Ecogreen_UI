@@ -65,7 +65,7 @@ function ProductItem({ data, handleExpandClick, className }) {
                 </div>
                 <div className={cx('product-details')}>
                     <h3 className={cx('name')}>{data.name}</h3>
-                    <span className={cx('price')}>Sample</span>
+                    <span className={cx('price')}>{data.whoIsInterested}</span>
                     <div className={cx('details')}>
                         <div className={cx('details-item')}>
                             <img src={icons.bed} alt="bed" />

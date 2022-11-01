@@ -7,9 +7,9 @@ import Navbar from '../../../components/Navbar';
 
 const cx = classNames.bind(styles);
 
-function Home({ width }) {
+function Home({ width, id }) {
     return (
-        <section className={cx('home')} id="home">
+        <section className={cx('home')} id={id}>
             {/* {width >= 768 && <InforBar />} */}
             {width < 1000 ? (
                 <NavbarMobile styles={width >= 768 ? { top: '35px' } : {}} />

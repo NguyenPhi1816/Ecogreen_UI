@@ -5,9 +5,9 @@ import { AGENTS } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-function Agents() {
+function Agents({ id }) {
     return (
-        <section className={cx('agents')}>
+        <section className={cx('agents')} id={id}>
             <div className={cx('agents-container')}>
                 <div className={cx('agents-title')}>
                     <h2 className={cx('agents-title-main')}>Meet Our Agents</h2>

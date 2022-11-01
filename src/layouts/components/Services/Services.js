@@ -5,9 +5,9 @@ import { SERVICES } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-function Services() {
+function Services({ id }) {
     return (
-        <section className={cx('services')}>
+        <section className={cx('services')} id={id}>
             <div className={cx('services-container')}>
                 <h2 className={cx('services-title')}>Our Services</h2>
                 <div className={cx('services-grid')}>

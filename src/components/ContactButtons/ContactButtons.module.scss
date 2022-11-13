@@ -1,0 +1,32 @@
+.wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 9998;
+}
+
+.item {
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    font-size: 1.6rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+.zalo {
+    background-color: #0063f2;
+}
+
+.gmail {
+    background-color: #ca473b;
+}

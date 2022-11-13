@@ -85,6 +85,7 @@ function Form({ type, className }) {
                     placeholder="Email"
                     {...register('email', {
                         pattern:
+                            // eslint-disable-next-line no-useless-escape
                             /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                         required: true,
                     })}

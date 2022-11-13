@@ -1,13 +1,30 @@
+import { useEffect, useState } from 'react';
 import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import classNames from 'classnames/bind';
 import styles from './LargeSlider.module.scss';
-
-import { LARGE_SLIDER_IMAGES } from '../../../config';
+import { get, child } from 'firebase/database';
+import { dbRef } from '../../../firebase';
 
 const cx = classNames.bind(styles);
 
 function LargeSlider({ id }) {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        get(child(dbRef, `outsideImages`))
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    setData(snapshot.val());
+                } else {
+                    console.log('No data available');
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
+
     return (
         <section className={cx('large-slider')} id={id}>
             <Swiper
@@ -17,7 +34,7 @@ function LargeSlider({ id }) {
                 loop
                 autoplay={{ delay: 5000 }}
             >
-                {LARGE_SLIDER_IMAGES.map((image, index) => (
+                {data.map((image, index) => (
                     <SwiperSlide key={index}>
                         <img
                             src={image}
@@ -56,6 +73,17 @@ function LargeSlider({ id }) {
                             period shimmering view for owners in all directions.
                             Especially the view to the Sai Gon River, Thu Thiem
                             and the district 1.
+                        </p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <h2 className={cx('modal-main-title')}>
+                            Outstanding apartment quality
+                        </h2>
+                        <p className={cx('modal-sub-title')}>
+                            Eco-Green was built by Xuan Mai Corp - a prestigious
+                            unit with 20 years of experience. Every apartment is
+                            equipped with imported materials from leading brands
+                            in the world.
                         </p>
                     </SwiperSlide>
                 </Swiper>

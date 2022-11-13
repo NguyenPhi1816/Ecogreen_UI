@@ -86,11 +86,13 @@
     overflow: hidden;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
-    & > tr {
-        text-align: center;
+    & > thead, & > tbody {
+        & > tr {
+            text-align: center;
 
-        & > th, & > td {
-            padding: 5px 0;
+            & > th, & > td {
+                padding: 5px 0;
+            }
         }
     }
 
@@ -105,5 +107,5 @@
     color: #000;
 }
 .row2, .row4 {
-    background-color: #13723f;
+    background-color: var(--primary-color);
 }

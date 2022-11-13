@@ -8,6 +8,7 @@ import Videos from '../components/Videos';
 import Blog from '../components/Blog';
 import Footer from '../components/Footer';
 import BackToTop from '../../components/BackToTop';
+import ContactButtons from '../../components/ContactButtons';
 
 function DefaultLayout({ offsetY, offsetWidth }) {
     return (
@@ -22,6 +23,7 @@ function DefaultLayout({ offsetY, offsetWidth }) {
             <Blog id="blog" />
             <Footer />
             {offsetY >= 300 && <BackToTop />}
+            {offsetY >= 300 && <ContactButtons />}
         </>
     );
 }

@@ -15,9 +15,9 @@ export function useBlurhash(blurhash, width, height, punch) {
         if (!blurhash || !width || !height) return;
 
         // decode hash
-        console.log(blurhash, width, height, punch);
+        // console.log(blurhash, width, height, punch);
         const pixels = decode(blurhash, width, height, punch);
-        console.log(pixels);
+        // console.log(pixels);
         // temporary canvas to create a blob from decoded ImageData
         const canvas = document.createElement('canvas');
         canvas.width = width;

@@ -89,50 +89,6 @@ export const PRODUCT_ITEMS = [
     },
 ];
 
-export const LARGE_SLIDER_IMAGES = [
-    require('./assets/images/generalVision/shophouse.jpg'),
-    require('./assets/images/generalVision/swimmingPool.JPG'),
-    require('./assets/images/generalVision/ultilities.jpg'),
-];
-
-export const GRID_IMAGES = [
-    {
-        url: 'https://demo05.houzez.co/wp-content/uploads/2016/03/chicago-13.jpg',
-        subTitle: '15 Properties',
-        mainTitle: 'Miami',
-    },
-    {
-        url: 'https://demo05.houzez.co/wp-content/uploads/2016/03/chicago-13.jpg',
-        subTitle: '15 Properties',
-        mainTitle: 'Miami',
-    },
-    {
-        url: 'https://demo05.houzez.co/wp-content/uploads/2016/03/chicago-13.jpg',
-        subTitle: '15 Properties',
-        mainTitle: 'Miami',
-    },
-    {
-        url: 'https://demo05.houzez.co/wp-content/uploads/2016/03/chicago-13.jpg',
-        subTitle: '15 Properties',
-        mainTitle: 'Miami',
-    },
-    {
-        url: 'https://demo05.houzez.co/wp-content/uploads/2016/03/chicago-13.jpg',
-        subTitle: '15 Properties',
-        mainTitle: 'Miami',
-    },
-    {
-        url: 'https://demo05.houzez.co/wp-content/uploads/2016/03/chicago-13.jpg',
-        subTitle: '15 Properties',
-        mainTitle: 'Miami',
-    },
-    {
-        url: 'https://demo05.houzez.co/wp-content/uploads/2016/03/chicago-13.jpg',
-        subTitle: '15 Properties',
-        mainTitle: 'Miami',
-    },
-];
-
 export const AGENTS = [
     {
         image_url:

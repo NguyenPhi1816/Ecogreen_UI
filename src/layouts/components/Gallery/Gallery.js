@@ -4,13 +4,12 @@ import { get, child } from 'firebase/database';
 import classNames from 'classnames/bind';
 import styles from './Gallery.module.scss';
 
-import { GRID_IMAGES } from '../../../config';
-
 const cx = classNames.bind(styles);
 
 function Gallery({ id }) {
     const [data, setData] = useState([]);
     const [currentImages, setCurrentImages] = useState([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
         get(child(dbRef, `gallery`))
@@ -20,9 +19,7 @@ function Gallery({ id }) {
                     setCurrentImages(() => {
                         let images = [];
                         for (let i = 0; i < 7; i++) {
-                            images.push(
-                                snapshot.val()[Math.floor(Math.random() * 33)],
-                            );
+                            images.push(snapshot.val()[i]);
                         }
                         return images;
                     });
@@ -37,18 +34,26 @@ function Gallery({ id }) {
 
     useEffect(() => {
         const timerID = setInterval(() => {
-            let images = [];
-            for (let i = 0; i < 7; i++) {
-                images.push(data[Math.floor(Math.random() * 33)]);
-            }
-            setCurrentImages(images);
-        }, 5000);
+            setCurrentImages((prev) => {
+                let images = prev;
+                let image = data[Math.floor(Math.random() * 33)];
+                while (prev.includes(image)) {
+                    image = data[Math.floor(Math.random() * 33)];
+                }
+                images[currentIndex] = image;
+                return images;
+            });
+            setCurrentIndex((prev) => {
+                return prev + 1 <= 7 ? prev + 1 : 0;
+            });
+        }, 2000);
 
         return () => {
             clearInterval(timerID);
         };
-    }, [data]);
+    }, [currentIndex, data]);
 
+    console.log(currentIndex);
     return (
         <section className={cx('gallery')} id={id}>
             <div className={cx('gallery-container')}>
@@ -89,10 +94,9 @@ function Gallery({ id }) {
                                 </h3>
                             </div>
                             <div
-                                className={cx('overlay')}
-                                // style={{
-                                //     animation: 'blur 1s linear 4s infinite',
-                                // }}
+                                className={cx('overlay', {
+                                    animate: index + 1 === currentIndex,
+                                })}
                             ></div>
                         </div>
                     ))}

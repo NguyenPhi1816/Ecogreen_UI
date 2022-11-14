@@ -13,6 +13,12 @@ const cx = classNames.bind(styles);
 function ContactButtons() {
     return (
         <div className={cx('wrapper')}>
+            <div className={cx('arrow-container')}>
+                <div className={cx('arrow')}>
+                    <div className={cx('curve')}></div>
+                    <div className={cx('point')}></div>
+                </div>
+            </div>
             <a
                 href="mailto:Diaoclvland@gmail.com"
                 className={cx('item', 'gmail')}
@@ -26,7 +32,7 @@ function ContactButtons() {
             </a>
             <a href="tel:0941256257" className={cx('item')}>
                 <FontAwesomeIcon icon={faPhone} className={cx('icon')} />
-                <span>Contact</span>
+                <span>0941256257</span>
             </a>
         </div>
     );

@@ -44,7 +44,7 @@ function Gallery({ id }) {
                 return images;
             });
             setCurrentIndex((prev) => {
-                return prev + 1 <= 7 ? prev + 1 : 0;
+                return prev + 1 < 7 ? prev + 1 : 0;
             });
         }, 2000);
 
@@ -53,7 +53,6 @@ function Gallery({ id }) {
         };
     }, [currentIndex, data]);
 
-    console.log(currentIndex);
     return (
         <section className={cx('gallery')} id={id}>
             <div className={cx('gallery-container')}>
@@ -95,7 +94,11 @@ function Gallery({ id }) {
                             </div>
                             <div
                                 className={cx('overlay', {
-                                    animate: index + 1 === currentIndex,
+                                    animate:
+                                        index ===
+                                        (currentIndex - 1 < 0
+                                            ? 6
+                                            : currentIndex - 1),
                                 })}
                             ></div>
                         </div>

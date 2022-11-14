@@ -1,6 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { get, child } from 'firebase/database';
+import { dbRef } from '../../../firebase';
 import classNames from 'classnames/bind';
 import styles from './Videos.module.scss';
 
@@ -9,7 +11,24 @@ import { VIDEOS } from '../../../config';
 const cx = classNames.bind(styles);
 
 function Videos({ width, id }) {
-    const [currentVideo, setCurrentVideo] = useState(VIDEOS[0].video_url);
+    const [currentVideo, setCurrentVideo] = useState('');
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        get(child(dbRef, `videos`))
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    setData(snapshot.val());
+                    setCurrentVideo(snapshot.val()[0].video_url);
+                } else {
+                    console.log('No data available');
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
+
     return (
         <section className={cx('videos')} id={id}>
             <div className={cx('videos-container')}>
@@ -39,7 +58,7 @@ function Videos({ width, id }) {
                         navigation
                         loop
                     >
-                        {VIDEOS.map((video, index) => (
+                        {data.map((video, index) => (
                             <SwiperSlide key={index}>
                                 <div
                                     className={cx('video-slide')}

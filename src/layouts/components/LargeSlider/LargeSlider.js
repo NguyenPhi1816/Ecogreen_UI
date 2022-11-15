@@ -47,7 +47,7 @@ function LargeSlider({ id }) {
             <div className={cx('modal')}>
                 <Swiper
                     modules={[A11y]}
-                    spaceBetween={0}
+                    spaceBetween={10}
                     slidesPerView={1}
                     loop
                     autoplay={{ delay: 5000 }}

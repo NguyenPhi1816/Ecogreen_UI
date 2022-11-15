@@ -2,10 +2,6 @@
     position: fixed;
     bottom: 20px;
     left: 30px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     z-index: 9998;
 }
 
@@ -116,6 +112,24 @@
         }
 }
 
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    white-space: nowrap;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    transform: translateY(100%);
+    transition: all 0.5s ease-in-out;
+}
+
+.show{
+    visibility: visible;
+    height: auto;
+    transform: translateY(0);
+}
+
 .item {
     padding: 8px 16px;
     margin-bottom: 10px;
@@ -124,6 +138,9 @@
     font-size: 1.6rem;
     border-radius: 2rem;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
 }
 
 .icon {
@@ -136,4 +153,12 @@
 
 .gmail {
     background-color: #ca473b;
+}
+
+.circle {
+    width: 4rem;
+}
+
+.round {
+    width: 100%;
 }

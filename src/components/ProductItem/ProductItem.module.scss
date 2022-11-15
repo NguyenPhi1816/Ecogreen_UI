@@ -124,4 +124,10 @@
         margin-right: 8px;
         width: 16px;
     }
+
+    @media (max-width: 350px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }

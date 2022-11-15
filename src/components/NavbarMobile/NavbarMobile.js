@@ -4,7 +4,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './NavbarMobile.module.scss';
 
-import { logo_black_url } from '../../config';
+import { logo_url } from '../../config';
 
 const cx = classNames.bind(styles);
 
@@ -53,7 +53,7 @@ function NavbarMobile({ styles }) {
                 <div></div>
             </div>
             <a href="/" className={cx('logo')}>
-                <img src={logo_black_url} alt="Logo" />
+                <img src={logo_url} alt="Logo" />
             </a>
             <aside
                 className={`${cx('sidebar')} ${

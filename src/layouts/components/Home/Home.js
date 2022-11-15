@@ -11,11 +11,7 @@ function Home({ width, id }) {
     return (
         <section className={cx('home')} id={id}>
             {/* {width >= 768 && <InforBar />} */}
-            {width < 1000 ? (
-                <NavbarMobile styles={width >= 768 ? { top: '35px' } : {}} />
-            ) : (
-                <Navbar />
-            )}
+            {width < 1000 ? <NavbarMobile /> : <Navbar />}
             <div className={cx('title')}>
                 <h1 className={cx('main-title')}>
                     Discover Your Place To Live

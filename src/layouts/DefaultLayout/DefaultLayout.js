@@ -23,7 +23,7 @@ function DefaultLayout({ offsetY, offsetWidth }) {
             <Blog id="blog" />
             <Footer />
             {offsetY >= 300 && <BackToTop />}
-            {offsetY >= 300 && <ContactButtons />}
+            {offsetY >= 300 && <ContactButtons width={offsetWidth} />}
         </>
     );
 }

@@ -90,6 +90,10 @@
         width: 95%;
     }
 
+    @media (max-width: 767px) {
+        font-size: 1.4rem;
+    }
+
     & > thead, & > tbody {
         & > tr {
             text-align: center;

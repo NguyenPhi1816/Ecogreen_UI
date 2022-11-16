@@ -67,42 +67,38 @@ function Product({ offsetWidth, id }) {
                                     Area (m<sup>2</sup>)
                                 </th>
                                 <th>Bedrooms</th>
-                                <th>Selling Price (VND)</th>
-                                <th>Rental Price (VND)</th>
+                                <th>
+                                    Selling Price <br /> (b VND)
+                                </th>
+                                <th>
+                                    Rental Price <br /> (m VND/month)
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr className={cx('row1')}>
-                                <td>
-                                    52m<sup>2</sup> to 65m<sup>2</sup>
-                                </td>
-                                <td>1 bedroom + 1 to 2 bedrooms</td>
-                                <td>3.2 to 3.6 billion</td>
-                                <td>10 to 12 million/month</td>
+                                <td>52 to 65</td>
+                                <td>1 BR + 1 to 2 BRs</td>
+                                <td>3.2 to 3.6</td>
+                                <td>10 to 12</td>
                             </tr>
                             <tr className={cx('row2')}>
-                                <td>
-                                    66m<sup>2</sup> to 71m<sup>2</sup>
-                                </td>
-                                <td>2 bedrooms to 2 bedrooms + 1</td>
-                                <td>3.8 to 4.1 billion</td>
-                                <td>13 to 14 million/month</td>
+                                <td>66 to 71</td>
+                                <td>2 BRs to 2 BRs + 1</td>
+                                <td>3.8 to 4.1</td>
+                                <td>13 to 14</td>
                             </tr>
                             <tr className={cx('row3')}>
-                                <td>
-                                    75m<sup>2</sup> to 80m<sup>2</sup>
-                                </td>
-                                <td>2 bedrooms + 1 to 3 bedrooms</td>
-                                <td>4.3 to 4.5 billion</td>
-                                <td>15 to 16.5 million/month</td>
+                                <td>75 to 80</td>
+                                <td>2 BRs + 1 to 3 BRs</td>
+                                <td>4.3 to 4.5</td>
+                                <td>15 to 16.5</td>
                             </tr>
                             <tr className={cx('row4')}>
-                                <td>
-                                    86m<sup>2</sup> to 95m<sup>2</sup>
-                                </td>
-                                <td>2 bedrooms + 1 to 3 bedrooms</td>
-                                <td>4.7 to 5.3 billion</td>
-                                <td>17.5 to 19 million/month</td>
+                                <td>86 to 95</td>
+                                <td>2 BRs + 1 to 3 BRs</td>
+                                <td>4.7 to 5.3</td>
+                                <td>17.5 to 19</td>
                             </tr>
                         </tbody>
                     </table>

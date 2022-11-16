@@ -17,4 +17,9 @@
     &:hover > a {
         color: var(--text-white);
     }
+
+    @media (max-width: 767px) {
+        bottom: 20px;
+        right: 15px;
+    }
 }

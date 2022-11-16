@@ -61,6 +61,7 @@
         "item4 item6 item7";
 
     @media (max-width: 1023px) {
+        padding: 10px 40px;
         width: 820px;
         height: 820px;
     }
@@ -68,6 +69,7 @@
     @media (max-width: 767px) {
         width: 100%;
         height: auto;
+        padding: 10px;
         grid-template-columns: repeat(1, 100%);
         grid-template-rows: repeat(7, 1fr);
         grid-template-areas:
@@ -88,6 +90,10 @@
         border-radius: 4px;
         transition: all 0.5s ease-in-out;
         cursor: pointer;
+
+        @media (max-width: 767px) {
+            height: 350px;
+        }
 
         &>img {
             width: calc(100% - 30px);

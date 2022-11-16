@@ -23,7 +23,7 @@ function ContactButtons({ width }) {
 
     return (
         <div className={cx('wrapper')}>
-            {(width >= 768 || !show) && (
+            {width >= 768 && (
                 <div className={cx('arrow-container')}>
                     <div className={cx('arrow')}>
                         <div className={cx('curve')}></div>
@@ -44,7 +44,9 @@ function ContactButtons({ width }) {
                     </button>
                 ) : (
                     <button
-                        className={cx('item', 'round', 'gmail')}
+                        className={cx('item', 'round', 'gmail', {
+                            hide: !show,
+                        })}
                         onClick={handleShow}
                     >
                         <FontAwesomeIcon

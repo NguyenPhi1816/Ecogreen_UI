@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import classNames from 'classnames/bind';
+import classnames from 'classnames/bind';
 import styles from './AgentsModal.module.scss';
 
 import { logo_url } from '../../config';
 import { AGENTS } from '../../config';
 
-const cx = classNames.bind(styles);
+const cx = classnames.bind(styles);
 
 function AgentsModal({ handleClose }) {
     return (

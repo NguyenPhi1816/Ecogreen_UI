@@ -332,6 +332,10 @@
 .product{
     padding: 0;
 
+    & > div > :last-child > span {
+        text-align: start;
+    }
+
     @media (min-width: 768px) {
         &>div {
             width: 100%;

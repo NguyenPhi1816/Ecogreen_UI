@@ -19,8 +19,6 @@ function DefaultLayout({ offsetY, offsetWidth }) {
             <Gallery id="gallery" />
             <Videos width={offsetWidth} id="videos" />
             <Services id="services" />
-            <Agents id="agents" />
-            <Blog id="blog" />
             <Footer />
             {offsetY >= 300 && <BackToTop />}
             {offsetY >= 300 && <ContactButtons width={offsetWidth} />}

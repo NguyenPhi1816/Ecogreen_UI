@@ -4,14 +4,18 @@ import { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import BlurImg from '../BlurImage';
 
-import { icons } from '../../assets/index';
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUpRightAndDownLeftFromCenter } from '@fortawesome/free-solid-svg-icons';
+import {
+    faBath,
+    faBed,
+    faRulerCombined,
+    faSquareParking,
+    faUpRightAndDownLeftFromCenter,
+} from '@fortawesome/free-solid-svg-icons';
 
 let cx = classNames.bind(styles);
 
@@ -26,7 +30,7 @@ function ProductItem({ data, handleExpandClick, className }) {
                         slidesPerView={1}
                         navigation
                         loop
-                        autoplay={{ delay: 3000 }}
+                        // autoplay={{ delay: 3000 }}
                     >
                         {data.thumbs.map((image, index) => (
                             <SwiperSlide key={index}>
@@ -62,25 +66,24 @@ function ProductItem({ data, handleExpandClick, className }) {
                             icon={faUpRightAndDownLeftFromCenter}
                         />
                     </button>
+                    <div className={cx('apartment-type')}>
+                        <p>For rent</p>
+                    </div>
                 </div>
                 <div className={cx('product-details')}>
                     <h3 className={cx('name')}>{data.name}</h3>
                     <span className={cx('price')}>{data.whoIsInterested}</span>
                     <div className={cx('details')}>
                         <div className={cx('details-item')}>
-                            <img src={icons.bed} alt="bed" />
+                            <FontAwesomeIcon icon={faBed} />
                             <span>{data.bedrooms}</span>
                         </div>
                         <div className={cx('details-item')}>
-                            <img src={icons.shower} alt="shower" />
+                            <FontAwesomeIcon icon={faBath} />
                             <span>{data.bathrooms}</span>
                         </div>
                         <div className={cx('details-item')}>
-                            <img src={icons.car} alt="car" />
-                            <span>{data.parkingLot}</span>
-                        </div>
-                        <div className={cx('details-item')}>
-                            <img src={icons.area} alt="area" />
+                            <FontAwesomeIcon icon={faRulerCombined} />
                             <span>
                                 {data.area} m<sup>2</sup>
                             </span>

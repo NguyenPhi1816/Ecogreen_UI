@@ -121,23 +121,6 @@ function ImagesModal({ offsetWidth, handleClose, data }) {
                                     : {}
                             }
                         >
-                            <div className={cx('agent')}>
-                                <div className={cx('avatar')}>
-                                    <img
-                                        src={AGENTS[0].image_url}
-                                        alt="Agent's avatar"
-                                    />
-                                </div>
-                                <div className={cx('contact-info-container')}>
-                                    <div className={cx('agent-name')}>
-                                        <FontAwesomeIcon icon={faUser} />
-                                        <p>{AGENTS[0].name}</p>
-                                    </div>
-                                    <div className={cx('view-list')}>
-                                        <a href="/">View Listings</a>
-                                    </div>
-                                </div>
-                            </div>
                             <Form type={'vertical'} className={cx('form')} />
                         </div>
                     )}

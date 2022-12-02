@@ -1,34 +1,11 @@
 export const logo_url =
     'https://tienphongholding.com/wp-content/uploads/2019/08/logo-home.png';
 
-export const logo_black_url =
-    'https://demo05.houzez.co/wp-content/uploads/2016/06/logo-houzez-color-2.png';
-
 export const PRODUCT_ITEMS = [
     {
         id: 0,
-        thumbs: [
-            require('./assets/images/2bedroomsImagesThumb/1_A7R8105-thumb.jpg'),
-            require('./assets/images/2bedroomsImagesThumb/2_A7R8087-thumb.jpg'),
-            require('./assets/images/2bedroomsImagesThumb/3_A7R8088-thumb.jpg'),
-            require('./assets/images/2bedroomsImagesThumb/5_A7R8102-thumb.jpg'),
-        ],
-        images: [
-            require('./assets/images/2bedroomsImages/1_A7R8105.jpg'),
-            require('./assets/images/2bedroomsImages/2_A7R8087.jpg'),
-            require('./assets/images/2bedroomsImages/3_A7R8088.jpg'),
-            require('./assets/images/2bedroomsImages/5_A7R8102.jpg'),
-            require('./assets/images/2bedroomsImages/6_A7R7909.jpg'),
-            require('./assets/images/2bedroomsImages/7_A7R8054.jpg'),
-            require('./assets/images/2bedroomsImages/8_A7R8056.jpg'),
-            require('./assets/images/2bedroomsImages/9_A7R8074.jpg'),
-            require('./assets/images/2bedroomsImages/11_A7R8076.jpg'),
-            require('./assets/images/2bedroomsImages/12_A7R8097.jpg'),
-            require('./assets/images/2bedroomsImages/13_A7R8100.jpg'),
-            require('./assets/images/2bedroomsImages/14_A7R7897.jpg'),
-            require('./assets/images/2bedroomsImages/15_A7R7963.jpg'),
-            require('./assets/images/2bedroomsImages/16_A7R8104.jpg'),
-        ],
+        thumbs: [],
+        images: [],
         name: '2 bedrooms apartment',
         whoIsInterested:
             'The best apartment for a young family with 3 to 4 members',
@@ -45,34 +22,8 @@ export const PRODUCT_ITEMS = [
     },
     {
         id: 1,
-        thumbs: [
-            require('./assets/images/3bedroomsImagesThumb/1_A7R8151-thumb.jpg'),
-            require('./assets/images/3bedroomsImagesThumb/2_A7R8012-thumb.jpg'),
-            require('./assets/images/3bedroomsImagesThumb/3_A7R7972-thumb.jpg'),
-            require('./assets/images/3bedroomsImagesThumb/4_A7R8132-thumb.jpg'),
-        ],
-        images: [
-            require('./assets/images/3bedroomsImages/1_A7R8151.jpg'),
-            require('./assets/images/3bedroomsImages/2_A7R8012.jpg'),
-            require('./assets/images/3bedroomsImages/3_A7R7972.jpg'),
-            require('./assets/images/3bedroomsImages/4_A7R8132.jpg'),
-            require('./assets/images/3bedroomsImages/6_A7R8007.jpg'),
-            require('./assets/images/3bedroomsImages/7_A7R8005.jpg'),
-            require('./assets/images/3bedroomsImages/8_A7R8107.jpg'),
-            require('./assets/images/3bedroomsImages/9_A7R8113.jpg'),
-            require('./assets/images/3bedroomsImages/10_A7R7998.jpg'),
-            require('./assets/images/3bedroomsImages/11_A7R8000.jpg'),
-            require('./assets/images/3bedroomsImages/12_A7R8138.jpg'),
-            require('./assets/images/3bedroomsImages/13_A7R8120.jpg'),
-            require('./assets/images/3bedroomsImages/14_A7R8020.jpg'),
-            require('./assets/images/3bedroomsImages/16_A7R7976.jpg'),
-            require('./assets/images/3bedroomsImages/17_A7R8018.jpg'),
-            require('./assets/images/3bedroomsImages/18_A7R8149.jpg'),
-            require('./assets/images/3bedroomsImages/19_A7R7995.jpg'),
-            require('./assets/images/3bedroomsImages/20_A7R8027.jpg'),
-            require('./assets/images/3bedroomsImages/21_A7R8031.jpg'),
-            require('./assets/images/3bedroomsImages/22_A7R8028.jpg'),
-        ],
+        thumbs: [],
+        images: [],
         name: '3 bedrooms apartment',
         whoIsInterested:
             'The best apartment for a young family with 4 to 5 members',

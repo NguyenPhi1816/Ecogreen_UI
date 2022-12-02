@@ -4,19 +4,23 @@ import styles from './Property.module.scss';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+    faBath,
+    faBed,
+    faCalendar,
     faChevronRight,
     faLocationDot,
+    faRulerCombined,
+    faSquareParking,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Navbar from '../../../components/Navbar';
 import NavbarMobile from '../../../components/NavbarMobile';
 import InforBar from '../../../components/InforBar';
 import ImagesModal from '../../../components/ImagesModal';
-import { icons } from '../../../assets';
 
 const cx = classNames.bind(styles);
 
-function Property({ offsetWidth, data }) {
+function Property({ offsetWidth, data = {} }) {
     const [marginTop, setMarginTop] = useState('125px');
     const [showImagesSlider, setShowImagesSlider] = useState(false);
 
@@ -66,9 +70,9 @@ function Property({ offsetWidth, data }) {
                             <div className={cx('property-name')}>
                                 {data.name}
                             </div>
-                            <div className={cx('property-price')}>
+                            {/* <div className={cx('property-price')}>
                                 {data.price}
-                            </div>
+                            </div> */}
                         </div>
                         <div>
                             <div className={cx('primary-label')}>FEATURED</div>
@@ -137,10 +141,9 @@ function Property({ offsetWidth, data }) {
                     </div>
                     <div className={cx('property-bedrooms')}>
                         <div>
-                            <img
-                                src={icons.bed}
+                            <FontAwesomeIcon
+                                icon={faBed}
                                 className={cx('property-icon')}
-                                alt="bedrooms"
                             />
                             <h4>{data.bedrooms}</h4>
                         </div>
@@ -148,10 +151,9 @@ function Property({ offsetWidth, data }) {
                     </div>
                     <div className={cx('property-bathrooms')}>
                         <div>
-                            <img
-                                src={icons.shower}
+                            <FontAwesomeIcon
+                                icon={faBath}
                                 className={cx('property-icon')}
-                                alt="bathrooms"
                             />
                             <h4>{data.bathrooms}</h4>
                         </div>
@@ -159,10 +161,9 @@ function Property({ offsetWidth, data }) {
                     </div>
                     <div className={cx('property-garage')}>
                         <div>
-                            <img
-                                src={icons.car}
+                            <FontAwesomeIcon
+                                icon={faSquareParking}
                                 className={cx('property-icon')}
-                                alt="garage"
                             />
                             <h4>{data.parkingLot}</h4>
                         </div>
@@ -170,10 +171,9 @@ function Property({ offsetWidth, data }) {
                     </div>
                     <div className={cx('property-area')}>
                         <div>
-                            <img
-                                src={icons.area}
+                            <FontAwesomeIcon
+                                icon={faRulerCombined}
                                 className={cx('property-icon')}
-                                alt="area"
                             />
                             <h4>{data.area}</h4>
                         </div>
@@ -183,10 +183,9 @@ function Property({ offsetWidth, data }) {
                     </div>
                     <div className={cx('property-year-built')}>
                         <div>
-                            <img
-                                src={icons.calendar}
+                            <FontAwesomeIcon
+                                icon={faCalendar}
                                 className={cx('property-icon')}
-                                alt="year built"
                             />
                             <h4>{data.yearBuilt}</h4>
                         </div>

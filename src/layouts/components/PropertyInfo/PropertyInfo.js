@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './PropertyInfo.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+    faCalendar,
     faCircleCheck,
     faGlobe,
     faMessage,
@@ -15,14 +16,13 @@ import {
 
 import Form from '../../../components/Form';
 import ProductItem from '../../../components/ProductItem';
-import { icons } from '../../../assets';
 import { VIDEOS, AGENTS, PRODUCT_ITEMS } from '../../../config';
 import ImagesModal from '../../../components/ImagesModal';
 import AgentsModal from '../../../components/AgentsModal';
 
 const cx = classNames.bind(styles);
 
-function PropertyInfo({ offsetWidth, offsetY, data }) {
+function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
     const rightSectionRef = useRef();
 
     const styleNormal = {
@@ -140,50 +140,56 @@ function PropertyInfo({ offsetWidth, offsetY, data }) {
                         <div className={cx('title')}>
                             <h3>Details</h3>
                             <div>
-                                <img src={icons.calendar} alt="calender icon" />
+                                <FontAwesomeIcon
+                                    icon={faCalendar}
+                                    style={{
+                                        color: '#636363',
+                                        marginRight: '8px',
+                                    }}
+                                />
                                 <p>Updated on April 4, 2020 at 10:23 pm</p>
                             </div>
                         </div>
                         <div className={cx('details-info')}>
                             <div className={cx('details-info-item')}>
                                 <h4>Property ID:</h4>
-                                <p>{data.id}</p>
+                                <p>{currentItem.id}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Price:</h4>
-                                <p>{data.price}</p>
+                                <p>{currentItem.price}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Property size:</h4>
-                                <p>{data.area}</p>
+                                <p>{currentItem.area}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Bedrooms:</h4>
-                                <p>{data.bedrooms}</p>
+                                <p>{currentItem.bedrooms}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Bathrooms:</h4>
-                                <p>{data.bathrooms}</p>
+                                <p>{currentItem.bathrooms}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Garage:</h4>
-                                <p>{data.parkingLot}</p>
+                                <p>{currentItem.parkingLot}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Garage Size:</h4>
-                                <p>{data.garageSize}</p>
+                                <p>{currentItem.garageSize}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Year Built:</h4>
-                                <p>{data.yearBuilt}</p>
+                                <p>{currentItem.yearBuilt}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Property Type:</h4>
-                                <p>{data.type}</p>
+                                <p>{currentItem.type}</p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Property Status:</h4>
-                                <p>{data.status}</p>
+                                <p>{currentItem.status}</p>
                             </div>
                         </div>
                         <div className={cx('sub-title')}>
@@ -378,9 +384,9 @@ function PropertyInfo({ offsetWidth, offsetY, data }) {
                         <div className={cx('title')}>
                             <h3>Similar Listings</h3>
                         </div>
-                        {PRODUCT_ITEMS.map(
+                        {data.map(
                             (item) =>
-                                data.id !== item.id && (
+                                currentItem.id !== item.id && (
                                     <Link
                                         key={item.id}
                                         to={`/productId=${item.id}`}

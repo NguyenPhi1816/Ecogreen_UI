@@ -39,7 +39,7 @@ function ProductItem({ data, handleExpandClick, className }) {
                         ))}
                         <SwiperSlide>
                             <div className={cx('slide', 'last-image')}>
-                                <img src={data.thumbs[3]} alt="About product" />
+                                <img src={data.thumbs[1]} alt="About product" />
                                 <p className={cx('remain-amount')}>{`${
                                     data.images.length - 4
                                 } more images`}</p>

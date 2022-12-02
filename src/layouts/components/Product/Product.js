@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Product.module.scss';
-import { getDatabase, ref, child, get } from 'firebase/database';
+import { child, get } from 'firebase/database';
 
 import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
@@ -11,8 +11,13 @@ import { dbRef } from '../../../firebase';
 const cx = classNames.bind(styles);
 
 function Product({ offsetWidth, id }) {
+    const DESKTOP_AMOUNT = 3;
+    const MOBILE_AMOUNT = 4;
     const [showImagesSlider, setShowImagesSlider] = useState(false);
     const [data, setData] = useState([]);
+    const [amount, setAmount] = useState(() =>
+        offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT,
+    );
     const [currentItem, setCurrentItem] = useState({});
 
     useEffect(() => {
@@ -29,6 +34,22 @@ function Product({ offsetWidth, id }) {
             });
     }, []);
 
+    const handleLoadMore = () => {
+        if (amount === data.length) {
+            setAmount(() =>
+                offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT,
+            );
+        } else {
+            const addition =
+                offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT;
+            let newAmount = amount + addition;
+            if (newAmount > data.length) {
+                newAmount = data.length;
+            }
+            setAmount(newAmount);
+        }
+    };
+
     return (
         <section className={cx('product')} id={id}>
             <div className={cx('product-container')}>
@@ -42,7 +63,7 @@ function Product({ offsetWidth, id }) {
                 </div>
                 <div className={cx('product-grid')}>
                     <div className={cx('product-items')}>
-                        {data.map((item) => (
+                        {data.slice(0, amount).map((item) => (
                             <Link key={item.id} to={`/productId=${item.id}`}>
                                 <ProductItem
                                     data={item}
@@ -55,6 +76,12 @@ function Product({ offsetWidth, id }) {
                             </Link>
                         ))}
                     </div>
+                    <button
+                        className={cx('load-more')}
+                        onClick={handleLoadMore}
+                    >
+                        {amount === data.length ? 'HIDE' : 'LOAD MORE'}
+                    </button>
                 </div>
                 <div className={cx('price-table')}>
                     <h2 className={cx('product-title-main')}>

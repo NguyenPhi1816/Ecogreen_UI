@@ -122,6 +122,11 @@ function Property({ offsetWidth, data = {} }) {
                                 </div>
                             </>
                         )}
+                        {offsetWidth < 678 && (
+                            <div className={cx('the-rest-mobile')}>
+                                <span>+ {data.images.length - 1} More</span>
+                            </div>
+                        )}
                     </div>
                 </div>
 

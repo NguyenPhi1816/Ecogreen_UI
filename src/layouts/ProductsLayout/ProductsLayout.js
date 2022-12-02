@@ -7,11 +7,10 @@ import Property from '../components/Property';
 import PropertyInfo from '../components/PropertyInfo';
 import Footer from '../components/Footer';
 import BackToTop from '../../components/BackToTop';
-import { PRODUCT_ITEMS } from '../../config';
 import ContactButtons from '../../components/ContactButtons';
 
 function ProductsLayout({ offsetY, offsetWidth }) {
-    const productId = parseInt(useParams().id);
+    const productId = useParams().id;
     const [data, setData] = useState(null);
     const [currentItem, setCurrentItem] = useState(null);
 
@@ -31,7 +30,7 @@ function ProductsLayout({ offsetY, offsetWidth }) {
             .catch((error) => {
                 console.error(error);
             });
-    }, []);
+    }, [productId]);
 
     return (
         <>

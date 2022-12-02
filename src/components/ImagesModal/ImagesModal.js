@@ -6,13 +6,11 @@ import {
     faChevronLeft,
     faChevronRight,
     faTimes,
-    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
 import classNames from 'classnames/bind';
 import styles from './ImagesModal.module.scss';
 import { logo_url } from '../../config';
-import { AGENTS } from '../../config';
 
 import Form from '../Form';
 

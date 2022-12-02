@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import classNames from 'classnames/bind';
+import classnames from 'classnames/bind';
 import styles from './LargeSlider.module.scss';
 import { get, child } from 'firebase/database';
 import { dbRef } from '../../../firebase';
 
-const cx = classNames.bind(styles);
+const cx = classnames.bind(styles);
 
 function LargeSlider({ id }) {
     const [data, setData] = useState([]);
@@ -67,7 +67,7 @@ function LargeSlider({ id }) {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div classNames={cx('modal-item')}>
+                        <div className={cx('modal-item')}>
                             <h2 className={cx('modal-main-title')}>
                                 Amazing view
                             </h2>

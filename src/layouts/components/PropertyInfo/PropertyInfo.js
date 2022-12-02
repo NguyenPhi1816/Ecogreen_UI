@@ -6,24 +6,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCalendar,
     faCircleCheck,
-    faGlobe,
     faMessage,
-    faMobile,
     faPhone,
     faTimes,
-    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Form from '../../../components/Form';
 import ProductItem from '../../../components/ProductItem';
-import { VIDEOS, AGENTS, PRODUCT_ITEMS } from '../../../config';
 import ImagesModal from '../../../components/ImagesModal';
-import AgentsModal from '../../../components/AgentsModal';
+import { VIDEOS } from '../../../config';
 
 const cx = classNames.bind(styles);
 
 function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
     const rightSectionRef = useRef();
+    const [anotherItem, setAnotherItem] = useState({});
 
     const styleNormal = {
         paddingTop: '1px',
@@ -67,7 +64,6 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
     const [formStyles, setFormStyles] = useState(styleNormal);
     const [showForm, setShowForm] = useState(false);
     const [showImagesSlider, setShowImagesSlider] = useState(false);
-    const [showAgentsModal, setShowAgentsModal] = useState(false);
 
     useEffect(() => {
         if (formRef.current && topRef.current) {
@@ -85,14 +81,6 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [offsetY]);
-
-    useEffect(() => {
-        if (showImagesSlider || showAgentsModal) {
-            document.body.classList.add('no-scroll');
-        } else {
-            document.body.classList.remove('no-scroll');
-        }
-    }, [showImagesSlider, showAgentsModal]);
 
     return (
         <section className={cx('property-info')} ref={topRef}>
@@ -315,58 +303,6 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                     </div>
                     <div className={cx('full-form')}>
                         <div className={cx('title')}>
-                            <h3>Contact Information</h3>
-                            <button
-                                className={cx('view-list-btn')}
-                                onClick={() => setShowAgentsModal(true)}
-                            >
-                                <p>View Listings</p>
-                            </button>
-                        </div>
-                        <div className={cx('full-form-container')}>
-                            <div className={cx('contact-info')}>
-                                <div className={cx('avatar')}>
-                                    <img
-                                        src={AGENTS[0].image_url}
-                                        alt="Agent's avatar"
-                                    />
-                                </div>
-                                <div className={cx('contact-info-container')}>
-                                    <div className={cx('agent-name')}>
-                                        <FontAwesomeIcon icon={faUser} />
-                                        <p>{AGENTS[0].name}</p>
-                                    </div>
-                                    <div className={cx('agent-phone')}>
-                                        <a
-                                            href={`tel:${AGENTS[0].phone}`}
-                                            className={cx('phone-number')}
-                                        >
-                                            <FontAwesomeIcon icon={faPhone} />
-                                            <p>{AGENTS[0].phone}</p>
-                                        </a>
-                                        <a
-                                            href={`tel:${AGENTS[0].mobile}`}
-                                            className={cx('mobile-number')}
-                                        >
-                                            <FontAwesomeIcon icon={faMobile} />
-                                            <p>{AGENTS[0].mobile}</p>
-                                        </a>
-                                    </div>
-                                    <div className={cx('social-network')}>
-                                        <a href="/">
-                                            <FontAwesomeIcon icon={faGlobe} />
-                                        </a>
-                                        <a href="/">
-                                            <FontAwesomeIcon icon={faGlobe} />
-                                        </a>
-                                        <a href="/">
-                                            <FontAwesomeIcon icon={faGlobe} />
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={cx('sub-title')}>
                             <h3>Enquire About This Property</h3>
                         </div>
                         <div className={cx('form-container')}>
@@ -397,6 +333,10 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                                             offsetWidth={offsetWidth}
                                             handleExpandClick={(e) => {
                                                 e.preventDefault();
+                                                let selectedItem = data.filter(
+                                                    (i) => i.id === item.id,
+                                                );
+                                                setAnotherItem(selectedItem[0]);
                                                 setShowImagesSlider(true);
                                             }}
                                         />
@@ -412,26 +352,6 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             ref={formRef}
                             style={formStyles}
                         >
-                            <div className={cx('agent')}>
-                                <div className={cx('avatar')}>
-                                    <img
-                                        src={AGENTS[0].image_url}
-                                        alt="Agent's avatar"
-                                    />
-                                </div>
-                                <div className={cx('contact-info-container')}>
-                                    <div className={cx('agent-name')}>
-                                        <FontAwesomeIcon icon={faUser} />
-                                        <p>{AGENTS[0].name}</p>
-                                    </div>
-                                    <button
-                                        className={cx('view-list')}
-                                        onClick={() => setShowAgentsModal(true)}
-                                    >
-                                        <p>View Listings</p>
-                                    </button>
-                                </div>
-                            </div>
                             <Form type="vertical" />
                         </div>
                     </div>
@@ -440,29 +360,13 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                 {offsetWidth < 768 && (
                     <nav className={cx('navbar-bottom')}>
                         <div>
-                            <div className={cx('avatar')}>
-                                <img
-                                    src={AGENTS[0].image_url}
-                                    alt="Agent's avatar"
-                                />
-                            </div>
-                            <div className={cx('contact-info-container')}>
-                                <div className={cx('agent-name')}>
-                                    <p>{AGENTS[0].name}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
                             <button
                                 className={cx('chat')}
                                 onClick={() => setShowForm(true)}
                             >
                                 <FontAwesomeIcon icon={faMessage} />
                             </button>
-                            <a
-                                href={`tel:${AGENTS[0].phone}`}
-                                className={cx('phone')}
-                            >
+                            <a href={`tel:0941256257`} className={cx('phone')}>
                                 <FontAwesomeIcon icon={faPhone} />
                             </a>
                         </div>
@@ -478,26 +382,6 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             >
                                 <FontAwesomeIcon icon={faTimes} />
                             </button>
-                            <div className={cx('agent')}>
-                                <div className={cx('avatar')}>
-                                    <img
-                                        src={AGENTS[0].image_url}
-                                        alt="Agent's avatar"
-                                    />
-                                </div>
-                                <div className={cx('contact-info-container')}>
-                                    <div className={cx('agent-name')}>
-                                        <FontAwesomeIcon icon={faUser} />
-                                        <p>{AGENTS[0].name}</p>
-                                    </div>
-                                    <button
-                                        className={cx('view-list')}
-                                        onClick={() => setShowAgentsModal(true)}
-                                    >
-                                        <p>View Listings</p>
-                                    </button>
-                                </div>
-                            </div>
                             <Form type={'vertical'} />
                         </div>
                     </div>
@@ -509,13 +393,7 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                         handleClose={() => {
                             setShowImagesSlider(false);
                         }}
-                        data={data}
-                    />
-                )}
-
-                {showAgentsModal && (
-                    <AgentsModal
-                        handleClose={() => setShowAgentsModal(false)}
+                        data={anotherItem}
                     />
                 )}
             </div>

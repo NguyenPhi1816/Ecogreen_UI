@@ -2,7 +2,6 @@ import classNames from 'classnames/bind';
 import styles from './ProductItem.module.scss';
 import { Navigation, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import BlurImg from '../BlurImage';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,7 +12,6 @@ import {
     faBath,
     faBed,
     faRulerCombined,
-    faSquareParking,
     faUpRightAndDownLeftFromCenter,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -35,23 +33,13 @@ function ProductItem({ data, handleExpandClick, className }) {
                         {data.thumbs.map((image, index) => (
                             <SwiperSlide key={index}>
                                 <div className={cx('slide')}>
-                                    <BlurImg
-                                        blurhash="i8AUWrax0nt7S5ayxZt7R.D%j[IqWBxXfkxWaxax4ofls+axayfRNHR*jr?dWB-nt7WEjsNLoft60Ooe-lR+oJj[fjj?s,"
-                                        src={image}
-                                        alt="About product"
-                                        punch={1}
-                                    />
+                                    <img src={image} alt="About product" />
                                 </div>
                             </SwiperSlide>
                         ))}
                         <SwiperSlide>
                             <div className={cx('slide', 'last-image')}>
-                                <BlurImg
-                                    blurhash="i8AUWrax0nt7S5ayxZt7R.D%j[IqWBxXfkxWaxax4ofls+axayfRNHR*jr?dWB-nt7WEjsNLoft60Ooe-lR+oJj[fjj?s,"
-                                    src={data.thumbs[3]}
-                                    alt="About product"
-                                    punch={1}
-                                />
+                                <img src={data.thumbs[3]} alt="About product" />
                                 <p className={cx('remain-amount')}>{`${
                                     data.images.length - 4
                                 } more images`}</p>

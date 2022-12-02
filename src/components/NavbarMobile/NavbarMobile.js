@@ -66,22 +66,13 @@ function NavbarMobile({ styles }) {
                         <FontAwesomeIcon icon={faXmark} />
                     </li>
                     <li className={cx('menu-item')}>
-                        <a href="/">HOME</a>
+                        <a href="/#home">HOME</a>
                     </li>
                     <li className={cx('menu-item')}>
-                        <a href="/">ABOUT US</a>
+                        <a href="/#product">APARTMENTS</a>
                     </li>
                     <li className={cx('menu-item')}>
-                        <a href="/">FOR RENT</a>
-                    </li>
-                    <li className={cx('menu-item')}>
-                        <a href="/">FOR SALE</a>
-                    </li>
-                    <li className={cx('menu-item')}>
-                        <a href="/">OUR AGENTS</a>
-                    </li>
-                    <li className={cx('menu-item')}>
-                        <a href="/">BLOG</a>
+                        <a href="/#about">ABOUT PROJECT</a>
                     </li>
                     <li className={cx('menu-item')}>
                         <a href="/">CONTACT</a>

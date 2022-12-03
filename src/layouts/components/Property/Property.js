@@ -53,7 +53,7 @@ function Property({ offsetWidth, data = {} }) {
                 <Navbar styles={{ color: 'black' }} logoColor="black" />
             )}
 
-            <div className={cx('property-container')}>
+            <div className={cx('property-container')} id="apartment-infor">
                 <div
                     className={cx('title-wrapper')}
                     style={{ marginTop: marginTop }}

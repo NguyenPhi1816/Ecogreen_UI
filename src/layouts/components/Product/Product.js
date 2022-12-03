@@ -6,6 +6,7 @@ import { child, get } from 'firebase/database';
 
 import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
+import Form from '../../../components/Form';
 import { dbRef } from '../../../firebase';
 
 const cx = classNames.bind(styles);
@@ -14,6 +15,7 @@ function Product({ offsetWidth, id }) {
     const DESKTOP_AMOUNT = 3;
     const MOBILE_AMOUNT = 4;
     const [showImagesSlider, setShowImagesSlider] = useState(false);
+    const [showForm, setShowForm] = useState(false);
     const [data, setData] = useState([]);
     const [amount, setAmount] = useState(() =>
         offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT,
@@ -34,12 +36,13 @@ function Product({ offsetWidth, id }) {
             });
     }, []);
 
-    const handleLoadMore = () => {
+    const handleLoadMore = (e) => {
         if (amount === data.length) {
             setAmount(() =>
                 offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT,
             );
         } else {
+            e.preventDefault();
             const addition =
                 offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT;
             let newAmount = amount + addition;
@@ -48,6 +51,10 @@ function Product({ offsetWidth, id }) {
             }
             setAmount(newAmount);
         }
+    };
+
+    const handleShowForm = () => {
+        setShowForm(!showForm);
     };
 
     return (
@@ -76,14 +83,15 @@ function Product({ offsetWidth, id }) {
                             </Link>
                         ))}
                     </div>
-                    <button
+                    <a
+                        href={`#${id}`}
                         className={cx('load-more')}
-                        onClick={handleLoadMore}
+                        onClick={(e) => handleLoadMore(e)}
                     >
                         {amount === data.length ? 'HIDE' : 'LOAD MORE'}
-                    </button>
+                    </a>
                 </div>
-                <div className={cx('price-table')}>
+                <div className={cx('price-table')} id="contact">
                     <h2 className={cx('product-title-main')}>
                         Price list for sale and rent
                     </h2>
@@ -130,6 +138,12 @@ function Product({ offsetWidth, id }) {
                         </tbody>
                     </table>
                 </div>
+                <button
+                    className={cx('show-form-btn')}
+                    onClick={handleShowForm}
+                >
+                    Contact us for more
+                </button>
             </div>
             {showImagesSlider && (
                 <ImagesModal
@@ -139,6 +153,17 @@ function Product({ offsetWidth, id }) {
                     }}
                     data={currentItem}
                 />
+            )}
+            {showForm && (
+                <div className={cx('form')}>
+                    <button
+                        onClick={handleShowForm}
+                        className={cx('close-form')}
+                    >
+                        x
+                    </button>
+                    <Form type="vertical" />
+                </div>
             )}
         </section>
     );

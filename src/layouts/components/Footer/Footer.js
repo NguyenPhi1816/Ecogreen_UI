@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import {
     faFacebook,
     faTwitter,

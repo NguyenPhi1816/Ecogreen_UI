@@ -14,7 +14,6 @@ import {
 import Form from '../../../components/Form';
 import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
-import { VIDEOS } from '../../../config';
 
 const cx = classNames.bind(styles);
 
@@ -84,7 +83,7 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
 
     return (
         <section className={cx('property-info')} ref={topRef}>
-            <div className={cx('property-info-container')}>
+            <div className={cx('property-info-container')} id="about-apartment">
                 <div className={cx('left-section')}>
                     <div className={cx('description')}>
                         <div className={cx('title')}>
@@ -277,13 +276,13 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             </div>
                         </div>
                     </div>
-                    <div className={cx('video')}>
+                    <div className={cx('video')} id="apartment-video">
                         <div className={cx('title')}>
                             <h3>Video</h3>
                         </div>
                         <div className={cx('video-container')} ref={videoRef}>
                             <iframe
-                                src={VIDEOS[0].video_url}
+                                src={currentItem.video['video-url']}
                                 width={`${
                                     videoRef.current &&
                                     videoRef.current.offsetWidth
@@ -301,7 +300,7 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             ></iframe>
                         </div>
                     </div>
-                    <div className={cx('full-form')}>
+                    <div className={cx('full-form')} id="apartment-form">
                         <div className={cx('title')}>
                             <h3>Enquire About This Property</h3>
                         </div>
@@ -316,7 +315,10 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             />
                         </div>
                     </div>
-                    <div className={cx('another-property')}>
+                    <div
+                        className={cx('another-property')}
+                        id="another-apartments"
+                    >
                         <div className={cx('title')}>
                             <h3>Similar Listings</h3>
                         </div>

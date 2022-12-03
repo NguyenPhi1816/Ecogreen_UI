@@ -9,7 +9,6 @@ import {
     faPaperPlane,
     faPhone,
     faTimes,
-    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);

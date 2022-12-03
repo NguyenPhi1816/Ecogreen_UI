@@ -24,7 +24,16 @@ function Navbar({ styles = {}, logoColor = 'default' }) {
                         <a href="/#about">ABOUT PROJECT</a>
                     </li>
                     <li className={cx('menu-item')}>
-                        <a href="/">CONTACT</a>
+                        <a href="/#gallery">GALLERY</a>
+                    </li>
+                    <li className={cx('menu-item')}>
+                        <a href="/#videos">VIDEOS</a>
+                    </li>
+                    <li className={cx('menu-item')}>
+                        <a href="/#services">SERVICES</a>
+                    </li>
+                    <li className={cx('menu-item')}>
+                        <a href="/#contact">CONTACT</a>
                     </li>
                 </ul>
             </div>

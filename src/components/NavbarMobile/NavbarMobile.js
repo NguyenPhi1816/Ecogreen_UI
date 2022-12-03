@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
@@ -9,6 +10,7 @@ import { logo_url } from '../../config';
 const cx = classNames.bind(styles);
 
 function NavbarMobile({ styles }) {
+    const productId = useParams().id;
     const menuRef = useRef();
     const hamburgerRef = useRef();
     const [showMenu, setShowMenu] = useState(false);
@@ -65,18 +67,111 @@ function NavbarMobile({ styles }) {
                     <li className={cx('close-btn')} onClick={handleShowMenu}>
                         <FontAwesomeIcon icon={faXmark} />
                     </li>
-                    <li className={cx('menu-item')}>
-                        <a href="/#home">HOME</a>
-                    </li>
-                    <li className={cx('menu-item')}>
-                        <a href="/#product">APARTMENTS</a>
-                    </li>
-                    <li className={cx('menu-item')}>
-                        <a href="/#about">ABOUT PROJECT</a>
-                    </li>
-                    <li className={cx('menu-item')}>
-                        <a href="/">CONTACT</a>
-                    </li>
+                    {productId ? (
+                        <>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a href="/">HOME</a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a
+                                    href={`/productId=${productId}/#apartment-infor`}
+                                >
+                                    APARTMENT
+                                </a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a
+                                    href={`/productId=${productId}/#about-apartment`}
+                                >
+                                    ABOUT APARTMENT
+                                </a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a
+                                    href={`/productId=${productId}/#apartment-video`}
+                                >
+                                    VIDEO
+                                </a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a
+                                    href={`/productId=${productId}/#apartment-form`}
+                                >
+                                    CONTACT
+                                </a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a
+                                    href={`/productId=${productId}/#another-apartments`}
+                                >
+                                    ANOTHER APARTMENTS
+                                </a>
+                            </li>
+                        </>
+                    ) : (
+                        <>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a href="/#home">HOME</a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a href="/#product">APARTMENTS</a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a href="/#about">ABOUT PROJECT</a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a href="/#gallery">GALLERY</a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a href="/#videos">VIDEOS</a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a href="/#services">SERVICES</a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
+                                <a href="/#contact">CONTACT</a>
+                            </li>
+                        </>
+                    )}
                 </ul>
             </aside>
         </nav>

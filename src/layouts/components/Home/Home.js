@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 
-import InforBar from '../../../components/InforBar';
 import NavbarMobile from '../../../components/NavbarMobile';
 import Navbar from '../../../components/Navbar';
 

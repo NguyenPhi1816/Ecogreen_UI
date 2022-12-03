@@ -6,8 +6,19 @@ import styles from './Form.module.scss';
 import horizontalStyles from './horizontalForm.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { useParams } from 'react-router-dom';
 
 function Form({ type, className }) {
+    const productId = useParams().id;
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        defaultValues: {
+            message: productId && `I am interested in ${productId}, ....`,
+        },
+    });
     const [showSpinner, setShowSpinner] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
@@ -15,11 +26,6 @@ function Form({ type, className }) {
         type === 'vertical'
             ? classNames.bind(styles)
             : classNames.bind(horizontalStyles);
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
 
     const onSubmit = async (data, e) => {
         data.phone = `'${data.phone}`;
@@ -108,15 +114,13 @@ function Form({ type, className }) {
                 />
             </label>
             <label className={cx('select')}>
-                {type === 'horizontal' && <span>I'm a</span>}
+                {type === 'horizontal' && <span>I want to</span>}
                 <select defaultValue={'DEFAULT'} {...register('type')}>
                     <option value="DEFAULT" disabled hidden>
                         Select
                     </option>
-                    <option value="buyer">I'm a buyer</option>
-                    <option value="tennant">I'm a tennant</option>
-                    <option value="agent">I'm a agent</option>
-                    <option value="other">Other</option>
+                    <option value="buy">I want to buy</option>
+                    <option value="rent">I want to rent</option>
                 </select>
             </label>
             <label className={cx('terms-of-use')}>
@@ -127,7 +131,10 @@ function Form({ type, className }) {
                             required: true,
                         })}
                     />
-                    <span>By submitting this form I agree to Terms of Use</span>
+                    <span>
+                        By submitting this form I agree to receive email and
+                        call
+                    </span>
                 </div>
                 {errors.acceptTermsOfUse && (
                     <p className={cx('invalid-message')}>

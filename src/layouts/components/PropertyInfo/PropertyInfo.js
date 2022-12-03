@@ -148,64 +148,21 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Property size:</h4>
-                                <p>{currentItem.area}</p>
+                                <p>
+                                    {currentItem.area} m<sup>2</sup>
+                                </p>
                             </div>
                             <div className={cx('details-info-item')}>
                                 <h4>Bedrooms:</h4>
                                 <p>{currentItem.bedrooms}</p>
                             </div>
                             <div className={cx('details-info-item')}>
-                                <h4>Bathrooms:</h4>
-                                <p>{currentItem.bathrooms}</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>Garage:</h4>
-                                <p>{currentItem.parkingLot}</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>Garage Size:</h4>
-                                <p>{currentItem.garageSize}</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>Year Built:</h4>
-                                <p>{currentItem.yearBuilt}</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
                                 <h4>Property Type:</h4>
                                 <p>{currentItem.type}</p>
                             </div>
                             <div className={cx('details-info-item')}>
-                                <h4>Property Status:</h4>
-                                <p>{currentItem.status}</p>
-                            </div>
-                        </div>
-                        <div className={cx('sub-title')}>
-                            <h3>Additional Details</h3>
-                        </div>
-                        <div className={cx('additional-details-info')}>
-                            <div className={cx('details-info-item')}>
-                                <h4>Deposit:</h4>
-                                <p>20%</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>Pool Size:</h4>
-                                <p>300 Sqft</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>Last remodel year:</h4>
-                                <p>1987</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>Amenities:</h4>
-                                <p>Clubhouse</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>Additional Rooms:</h4>
-                                <p>Guest Bath</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>Equipment:</h4>
-                                <p>Grill - Gas</p>
+                                <h4>Bathrooms:</h4>
+                                <p>{currentItem.bathrooms}</p>
                             </div>
                         </div>
                     </div>
@@ -244,15 +201,7 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Outdoor Shower</span>
-                            </div>
-                            <div className={cx('feature')}>
-                                <FontAwesomeIcon icon={faCircleCheck} />
                                 <span>Refrigerator</span>
-                            </div>
-                            <div className={cx('feature')}>
-                                <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Sauna</span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
@@ -273,6 +222,14 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
                                 <span>Window Coverings</span>
+                            </div>
+                            <div className={cx('feature')}>
+                                <FontAwesomeIcon icon={faCircleCheck} />
+                                <span>Coffee Shop</span>
+                            </div>
+                            <div className={cx('feature')}>
+                                <FontAwesomeIcon icon={faCircleCheck} />
+                                <span>Convenience Store</span>
                             </div>
                         </div>
                     </div>

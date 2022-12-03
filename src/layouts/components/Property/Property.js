@@ -6,11 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faBath,
     faBed,
-    faCalendar,
     faChevronRight,
     faLocationDot,
     faRulerCombined,
-    faSquareParking,
 } from '@fortawesome/free-solid-svg-icons';
 
 import Navbar from '../../../components/Navbar';
@@ -70,9 +68,9 @@ function Property({ offsetWidth, data = {} }) {
                             <div className={cx('property-name')}>
                                 {data.name}
                             </div>
-                            {/* <div className={cx('property-price')}>
+                            <div className={cx('property-price')}>
                                 {data.price}
-                            </div> */}
+                            </div>
                         </div>
                         <div>
                             <div className={cx('primary-label')}>FEATURED</div>
@@ -164,16 +162,6 @@ function Property({ offsetWidth, data = {} }) {
                         </div>
                         <p>Bathrooms</p>
                     </div>
-                    <div className={cx('property-garage')}>
-                        <div>
-                            <FontAwesomeIcon
-                                icon={faSquareParking}
-                                className={cx('property-icon')}
-                            />
-                            <h4>{data.parkingLot}</h4>
-                        </div>
-                        <p>Garage</p>
-                    </div>
                     <div className={cx('property-area')}>
                         <div>
                             <FontAwesomeIcon
@@ -185,16 +173,6 @@ function Property({ offsetWidth, data = {} }) {
                         <p>
                             m<sup>2</sup>
                         </p>
-                    </div>
-                    <div className={cx('property-year-built')}>
-                        <div>
-                            <FontAwesomeIcon
-                                icon={faCalendar}
-                                className={cx('property-icon')}
-                            />
-                            <h4>{data.yearBuilt}</h4>
-                        </div>
-                        <p>Year Built</p>
                     </div>
                 </div>
             </div>

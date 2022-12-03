@@ -138,6 +138,9 @@ function Product({ offsetWidth, id }) {
                         </tbody>
                     </table>
                 </div>
+                <div className={cx('note')}>
+                    <p>Price does not include furniture</p>
+                </div>
                 <button
                     className={cx('show-form-btn')}
                     onClick={handleShowForm}

@@ -155,14 +155,16 @@ function Product({ offsetWidth, id }) {
                 />
             )}
             {showForm && (
-                <div className={cx('form')}>
-                    <button
-                        onClick={handleShowForm}
-                        className={cx('close-form')}
-                    >
-                        x
-                    </button>
-                    <Form type="vertical" />
+                <div className={cx('overlay')}>
+                    <div className={cx('form')}>
+                        <button
+                            onClick={handleShowForm}
+                            className={cx('close-form')}
+                        >
+                            x
+                        </button>
+                        <Form type="vertical" />
+                    </div>
                 </div>
             )}
         </section>

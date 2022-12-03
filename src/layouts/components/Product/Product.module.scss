@@ -159,20 +159,34 @@
     }
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9994;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 .form {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
+    width: 90%;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     background-color: #fff;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 4px;
     z-index: 9995;
 }
 
 .close-form {
+    margin-right: 5px;
     padding: 0 10px;
     font-size: 2.4rem;
     font-weight: 700;

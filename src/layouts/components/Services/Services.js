@@ -1,9 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Services.module.scss';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faListCheck } from '@fortawesome/free-solid-svg-icons';
-
 import { SERVICES } from '../../../config';
 
 const cx = classNames.bind(styles);

@@ -97,6 +97,11 @@
 }
 
 .content {
+    & > p > span {
+        color: #636363;
+        margin-right: 4px;
+    }
+
     & > :not(:last-child) {
         margin-bottom: 16px;
     }

@@ -59,12 +59,11 @@ function Gallery({ id }) {
                 <div className={cx('gallery-container')}>
                     <div className={cx('gallery-title')}>
                         <h2 className={cx('gallery-title-main')}>
-                            Explore The Neightborhood​
+                            Modern Furniture For Your Home
                         </h2>
                         <p className={cx('gallery-title-sub')}>
-                            THERE ARE DIFFERENT PROPERTY OPTIONS TO CHOOSE FROM,
-                            EACH SERVING A PURPOSE TO HELP YOU BUILD A FINISHED
-                            SITE.​ ​
+                            Enjoy a convenient life with our furniture supply
+                            and maintenance service.
                         </p>
                     </div>
                     <div className={cx('gallery-grid')}>

@@ -34,11 +34,10 @@ function Videos({ width, id }) {
             <div className={cx('videos-container')}>
                 <div className={cx('videos-title')}>
                     <h2 className={cx('videos-title-main')}>
-                        Updates From Our Blog
+                        Updates From Our Videos
                     </h2>
                     <p className={cx('videos-title-sub')}>
-                        CHOOSE FROM DIFFERENT LISTING TEMPLATES AND LAY THEM OUT
-                        AS LISTS OR GRIDS, FULL-WIDTH OR BOXED ​
+                        Overview of the project through our videos
                     </p>
                 </div>
                 <div className={cx('large-video')}>

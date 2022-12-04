@@ -24,10 +24,14 @@ function Footer({ footerForm = true }) {
                             <img src={logo_url} alt="logo" />
                         </div>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Duis mollis et sem sed sollicitudin. Donec non
-                            odio neque. Aliquam hendrerit sollicitudin purus,
-                            quis rutrum mi accumsan nec.
+                            “Eco Green Saigon” is located at the southern
+                            gateway of Ho Chi Minh City. It is the intersection
+                            of 3 largest urban areas: Center of Ho Chi Minh City
+                            - Phu My Hung International Financial Center - New
+                            administrative center of Thu Thiem city. Eco Green
+                            Saigon is a complex of commerce, services, hotels
+                            and apartments with a system of high-class internal
+                            utilities.
                         </p>
                     </div>
                 </div>

@@ -46,7 +46,9 @@
 }
 
 .sub-title {
+    padding: 0 10%;
     font-size: 20px;
+    text-align: center;
 
     @media (max-width: 767px) {
         font-size: 1.6rem;

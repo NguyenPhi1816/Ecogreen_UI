@@ -83,9 +83,9 @@ function Navbar({ styles = {}, logoColor = 'default' }) {
                             </li>
                         </>
                     )}
-                    {/* <li>
+                    <li>
                         <LanguageButton />
-                    </li> */}
+                    </li>
                 </ul>
             </div>
         </nav>

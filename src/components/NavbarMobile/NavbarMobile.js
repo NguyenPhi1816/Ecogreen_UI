@@ -6,6 +6,7 @@ import classNames from 'classnames/bind';
 import styles from './NavbarMobile.module.scss';
 
 import { logo_url } from '../../config';
+import LanguageButton from '../LanguageButton/LanguageButton';
 
 const cx = classNames.bind(styles);
 
@@ -172,6 +173,9 @@ function NavbarMobile({ styles }) {
                             </li>
                         </>
                     )}
+                    <li onClick={handleShowMenu}>
+                        <LanguageButton customClass={cx('lang-btn')} />
+                    </li>
                 </ul>
             </aside>
         </nav>

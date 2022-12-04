@@ -55,7 +55,7 @@ function Gallery({ id }) {
 
     return (
         <section className={cx('gallery')} id={id}>
-            {data && (
+            {data && currentImages && (
                 <div className={cx('gallery-container')}>
                     <div className={cx('gallery-title')}>
                         <h2 className={cx('gallery-title-main')}>

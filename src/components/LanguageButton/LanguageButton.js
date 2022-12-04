@@ -5,7 +5,7 @@ import { LanguageContext } from '../../App';
 
 const cx = classNames.bind(styles);
 
-const LanguageButton = () => {
+const LanguageButton = ({ customClass }) => {
     const { language, setLanguage } = useContext(LanguageContext);
 
     const handleChangeLanguage = () => {
@@ -14,7 +14,10 @@ const LanguageButton = () => {
 
     return (
         <div className={cx('language-btn-wrapper')}>
-            <div className={cx('language-btn')} onClick={handleChangeLanguage}>
+            <div
+                className={cx('language-btn', customClass)}
+                onClick={handleChangeLanguage}
+            >
                 <span
                     className={cx({
                         vi: language === 'vi',

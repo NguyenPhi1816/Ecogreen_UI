@@ -13,7 +13,6 @@ import {
 
 import Navbar from '../../../components/Navbar';
 import NavbarMobile from '../../../components/NavbarMobile';
-import InforBar from '../../../components/InforBar';
 import ImagesModal from '../../../components/ImagesModal';
 
 const cx = classNames.bind(styles);
@@ -42,7 +41,6 @@ function Property({ offsetWidth, data = {} }) {
 
     return (
         <section className={cx('property')} id="property">
-            {offsetWidth >= 768 && <InforBar />}
             {offsetWidth < 1000 ? (
                 <NavbarMobile
                     styles={offsetWidth >= 768 ? { top: '35px' } : {}}

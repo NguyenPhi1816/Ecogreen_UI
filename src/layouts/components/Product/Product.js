@@ -60,37 +60,6 @@ function Product({ offsetWidth, id }) {
     return (
         <section className={cx('product')} id={id}>
             <div className={cx('product-container')}>
-                <div className={cx('product-title')}>
-                    <h2 className={cx('product-title-main')}>
-                        Our Finest Apartments
-                    </h2>
-                    <p className={cx('product-title-sub')}>
-                        Amazing "Green views" with best price only for you​
-                    </p>
-                </div>
-                <div className={cx('product-grid')}>
-                    <div className={cx('product-items')}>
-                        {data.slice(0, amount).map((item) => (
-                            <Link key={item.id} to={`/productId=${item.id}`}>
-                                <ProductItem
-                                    data={item}
-                                    handleExpandClick={(e) => {
-                                        e.preventDefault();
-                                        setCurrentItem(item);
-                                        setShowImagesSlider(true);
-                                    }}
-                                />
-                            </Link>
-                        ))}
-                    </div>
-                    <a
-                        href={`#${id}`}
-                        className={cx('load-more')}
-                        onClick={(e) => handleLoadMore(e)}
-                    >
-                        {amount === data.length ? 'HIDE' : 'LOAD MORE'}
-                    </a>
-                </div>
                 <div className={cx('price-table')} id="contact">
                     <h2 className={cx('product-title-main')}>
                         Price list for sale and rent
@@ -147,6 +116,37 @@ function Product({ offsetWidth, id }) {
                 >
                     Contact us for more
                 </button>
+                <div className={cx('product-title')}>
+                    <h2 className={cx('product-title-main')}>
+                        Our Finest Apartments
+                    </h2>
+                    <p className={cx('product-title-sub')}>
+                        Amazing "Green views" with best price only for you​
+                    </p>
+                </div>
+                <div className={cx('product-grid')}>
+                    <div className={cx('product-items')}>
+                        {data.slice(0, amount).map((item) => (
+                            <Link key={item.id} to={`/productId=${item.id}`}>
+                                <ProductItem
+                                    data={item}
+                                    handleExpandClick={(e) => {
+                                        e.preventDefault();
+                                        setCurrentItem(item);
+                                        setShowImagesSlider(true);
+                                    }}
+                                />
+                            </Link>
+                        ))}
+                    </div>
+                    <a
+                        href={`#${id}`}
+                        className={cx('load-more')}
+                        onClick={(e) => handleLoadMore(e)}
+                    >
+                        {amount === data.length ? 'HIDE' : 'LOAD MORE'}
+                    </a>
+                </div>
             </div>
             {showImagesSlider && (
                 <ImagesModal

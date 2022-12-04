@@ -3,6 +3,7 @@ import styles from './Navbar.module.scss';
 
 import { logo_url } from '../../config';
 import { useParams } from 'react-router-dom';
+import LanguageButton from '../LanguageButton/LanguageButton';
 
 let cx = classNames.bind(styles);
 
@@ -82,6 +83,9 @@ function Navbar({ styles = {}, logoColor = 'default' }) {
                             </li>
                         </>
                     )}
+                    {/* <li>
+                        <LanguageButton />
+                    </li> */}
                 </ul>
             </div>
         </nav>

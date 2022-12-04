@@ -1,0 +1,37 @@
+.language-btn-wrapper {
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.language-btn {
+    background-color: #fff;
+    width: 40px;
+    height: 20px;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+
+    &>span {
+        width: 20px;
+        height: 20px;
+        background-color: #ebbd4b;
+        color: black;
+        font-weight: 600;
+        border-radius: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+
+    .en {
+        transform: translateX(0) !important;
+    }
+
+    .vi {
+        transform: translateX(100%) !important;
+    }
+}

@@ -12,7 +12,7 @@ import { dbRef } from '../../../firebase';
 const cx = classNames.bind(styles);
 
 function Product({ offsetWidth, id }) {
-    const DESKTOP_AMOUNT = 3;
+    const DESKTOP_AMOUNT = 6;
     const MOBILE_AMOUNT = 4;
     const [showImagesSlider, setShowImagesSlider] = useState(false);
     const [showForm, setShowForm] = useState(false);
@@ -108,7 +108,7 @@ function Product({ offsetWidth, id }) {
                     </table>
                 </div>
                 <div className={cx('note')}>
-                    <p>Price does not include furniture</p>
+                    <p>Price may not include furniture</p>
                 </div>
                 <button
                     className={cx('show-form-btn')}

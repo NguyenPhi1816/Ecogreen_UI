@@ -56,7 +56,7 @@
 }
 
 .product-items {
-    width: 90%;
+    width: 100%;
     max-width: 1140px;
     display: grid;
     grid-template-columns: repeat(3, 33.33%);
@@ -90,7 +90,7 @@
 
 .table {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     border-spacing: 0;
     color: #fff;
     border-radius: 4px;
@@ -118,16 +118,17 @@
 }
 
 .header {
-    background-color: #1b4229;
+    background-color: #61c906;
 }
 
 .row1,
 .row3 {
     color: #000;
-    background-color: #f6f698;
+    background-color: #e2eefe;
 }
 .row2, .row4 {
-    background-color: var(--primary-color);
+    color: #000;
+    background-color: #bcee66;
 }
 
 .note {
@@ -141,7 +142,7 @@
     font-size: 2rem;
     font-weight: 400;
     color: #fff;
-    background-color: #ca473b;
+    background-image: linear-gradient(#ff6901, #ee0977);
     border-radius: 3rem;
     cursor: pointer;
     animation: zoom-in 1s ease-in-out infinite;

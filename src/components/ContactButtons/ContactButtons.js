@@ -33,7 +33,7 @@ function ContactButtons({ width }) {
             {width < 768 &&
                 (show ? (
                     <button
-                        className={cx('item', 'circle')}
+                        className={cx('item', 'circle', 'contact-us')}
                         onClick={handleShow}
                     >
                         <FontAwesomeIcon
@@ -43,7 +43,7 @@ function ContactButtons({ width }) {
                     </button>
                 ) : (
                     <button
-                        className={cx('item', 'round', 'gmail', {
+                        className={cx('item', 'round', 'contact-us', {
                             hide: !show,
                         })}
                         onClick={handleShow}

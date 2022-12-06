@@ -9,8 +9,6 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
-
-import { logo_url } from '../../../config';
 import {
     faEnvelope,
     faGlobe,
@@ -18,10 +16,13 @@ import {
     faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 import Form from '../../../components/Form';
+import { useContext } from 'react';
+import { LanguageContext } from '../../../App';
 
 const cx = classNames.bind(styles);
 
 function Footer({ footerForm = true }) {
+    const { language } = useContext(LanguageContext);
     return (
         <section className={cx('footer')}>
             <div className={cx('footer-container')}>
@@ -117,14 +118,16 @@ function Footer({ footerForm = true }) {
                         <div className={cx('contact-form')}>
                             <div className={cx('contact')}>
                                 <h3 className={cx('contact-title')}>
-                                    Eco Green's Business Department
+                                    {language === 'en'
+                                        ? "Eco Green's Business Department"
+                                        : 'Phòng kinh doanh Eco Green'}
                                 </h3>
                                 <div className={cx('contact-item')}>
                                     <FontAwesomeIcon icon={faHouse} />
                                     <p>
-                                        Addess: 107 Nguyen Van Linh Street, Tan
-                                        Thuan Tay ward, District 7, Ho Chi Minh
-                                        city
+                                        {language === 'en'
+                                            ? 'Address: 107 Nguyen Van Linh Street, Tan Thuan Tay ward, District 7, Ho Chi Minh city'
+                                            : 'Địa chỉ: 107 Nguyễn Văn Linh, phường Tân Thuận Tây, Quận 7, TP.HCM'}
                                     </p>
                                 </div>
                                 <div className={cx('contact-item')}>
@@ -142,7 +145,9 @@ function Footer({ footerForm = true }) {
                             </div>
                             <div className={cx('form')}>
                                 <h3 className={cx('form-title')}>
-                                    I want more information
+                                    {language === 'en'
+                                        ? 'I want more information'
+                                        : 'Đăng ký nhận thông tin'}
                                 </h3>
                                 <Form />
                             </div>

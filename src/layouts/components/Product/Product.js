@@ -8,12 +8,15 @@ import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
 import Form from '../../../components/Form';
 import { dbRef } from '../../../firebase';
+import { useContext } from 'react';
+import { LanguageContext } from '../../../App';
 
 const cx = classNames.bind(styles);
 
 function Product({ offsetWidth, id }) {
     const DESKTOP_AMOUNT = 6;
     const MOBILE_AMOUNT = 4;
+    const { language } = useContext(LanguageContext);
     const [showImagesSlider, setShowImagesSlider] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [data, setData] = useState([]);
@@ -23,7 +26,7 @@ function Product({ offsetWidth, id }) {
     const [currentItem, setCurrentItem] = useState({});
 
     useEffect(() => {
-        get(child(dbRef, `products`))
+        get(child(dbRef, language === 'en' ? 'products' : 'products_vi'))
             .then((snapshot) => {
                 if (snapshot.exists()) {
                     setData(snapshot.val());
@@ -34,7 +37,7 @@ function Product({ offsetWidth, id }) {
             .catch((error) => {
                 console.error(error);
             });
-    }, []);
+    }, [language]);
 
     const handleLoadMore = (e) => {
         if (amount === data.length) {
@@ -62,66 +65,105 @@ function Product({ offsetWidth, id }) {
             <div className={cx('product-container')}>
                 <div className={cx('price-table')} id="contact">
                     <h2 className={cx('product-title-main')}>
-                        Price list for sale and rent
+                        {language === 'en'
+                            ? 'Price list for sale and rent'
+                            : 'Bảng giá bán và cho thuê'}
                     </h2>
                     <table className={cx('table')}>
                         <thead>
                             <tr className={cx('header')}>
                                 <th>
-                                    Area (m<sup>2</sup>)
-                                </th>
-                                <th>Bedrooms</th>
-                                <th>
-                                    Selling Price <br /> (b VND)
+                                    {language === 'en' ? 'Area' : 'Diện tích'}
+                                    (m<sup>2</sup>)
                                 </th>
                                 <th>
-                                    Rental Price <br /> (m VND/month)
+                                    {language === 'en'
+                                        ? 'Bedrooms'
+                                        : 'Phòng ngủ'}
+                                </th>
+                                <th>
+                                    {language === 'en'
+                                        ? 'Selling Price'
+                                        : 'Giá bán'}
+                                    <br />
+                                    {language === 'en' ? '(b VND)' : '(tỉ VND)'}
+                                </th>
+                                <th>
+                                    {language === 'en'
+                                        ? 'Rental Price'
+                                        : 'Giá thuê'}
+                                    <br />
+                                    {language === 'en'
+                                        ? '(m VND/month)'
+                                        : '(triệu VND/tháng)'}
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr className={cx('row1')}>
-                                <td>52 to 65</td>
-                                <td>1 BR + 1 to 2 BRs</td>
-                                <td>3.2 to 3.6</td>
-                                <td>10 to 12</td>
+                                <td>52 - 65</td>
+                                <td>
+                                    1 {language === 'en' ? 'BR' : 'PN'} + 1 - 2
+                                    {language === 'en' ? 'BRs' : 'PN'}
+                                </td>
+                                <td>3.2 - 3.6</td>
+                                <td>10 - 12</td>
                             </tr>
                             <tr className={cx('row2')}>
-                                <td>66 to 71</td>
-                                <td>2 BRs to 2 BRs + 1</td>
-                                <td>3.8 to 4.1</td>
-                                <td>13 to 14</td>
+                                <td>66 - 71</td>
+                                <td>
+                                    2 {language === 'en' ? 'BRs' : 'PN'} - 2{' '}
+                                    {language === 'en' ? 'BRs' : 'PN'}+ 1
+                                </td>
+                                <td>3.8 - 4.1</td>
+                                <td>13 - 14</td>
                             </tr>
                             <tr className={cx('row3')}>
-                                <td>75 to 80</td>
-                                <td>2 BRs + 1 to 3 BRs</td>
-                                <td>4.3 to 4.5</td>
-                                <td>15 to 16.5</td>
+                                <td>75 - 80</td>
+                                <td>
+                                    2 {language === 'en' ? 'BRs' : 'PN'} + 1 - 3
+                                    {language === 'en' ? 'BRs' : 'PN'}
+                                </td>
+                                <td>4.3 - 4.5</td>
+                                <td>15 - 16.5</td>
                             </tr>
                             <tr className={cx('row4')}>
-                                <td>86 to 95</td>
-                                <td>2 BRs + 1 to 3 BRs</td>
-                                <td>4.7 to 5.3</td>
-                                <td>17.5 to 19</td>
+                                <td>86 - 95</td>
+                                <td>
+                                    2 {language === 'en' ? 'BRs' : 'PN'} + 1 - 3
+                                    {language === 'en' ? 'BRs' : 'PN'}
+                                </td>
+                                <td>4.7 - 5.3</td>
+                                <td>17.5 - 19</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div className={cx('note')}>
-                    <p>Price may not include furniture</p>
+                    <p>
+                        {language === 'en'
+                            ? 'Price may not include furniture'
+                            : 'Giá có thể không bao gồm nội thất'}
+                    </p>
                 </div>
                 <button
                     className={cx('show-form-btn')}
                     onClick={handleShowForm}
                 >
-                    Contact us for more
+                    {language === 'en'
+                        ? 'Contact us for more'
+                        : 'Liên hệ với chúng tôi'}
                 </button>
                 <div className={cx('product-title')}>
                     <h2 className={cx('product-title-main')}>
-                        Our Finest Apartments
+                        {language === 'en'
+                            ? 'Our Finest Apartments'
+                            : 'Những căn hộ tốt nhất của chúng tôi'}
                     </h2>
                     <p className={cx('product-title-sub')}>
-                        Amazing "Green views" with best price only for you​
+                        {language === 'en'
+                            ? 'Amazing "Green views" with best price only for you​'
+                            : 'Một không gian xanh tuyệt vời với giá tốt nhất dành cho bạn'}
                     </p>
                 </div>
                 <div className={cx('product-grid')}>
@@ -144,7 +186,13 @@ function Product({ offsetWidth, id }) {
                         className={cx('load-more')}
                         onClick={(e) => handleLoadMore(e)}
                     >
-                        {amount === data.length ? 'HIDE' : 'LOAD MORE'}
+                        {amount === data.length
+                            ? language === 'en'
+                                ? 'HIDE'
+                                : 'ẨN BỚT'
+                            : language === 'en'
+                            ? 'LOAD MORE'
+                            : 'TẢI THÊM'}
                     </a>
                 </div>
             </div>

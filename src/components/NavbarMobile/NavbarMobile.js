@@ -7,10 +7,13 @@ import styles from './NavbarMobile.module.scss';
 
 import { logo_url } from '../../config';
 import LanguageButton from '../LanguageButton/LanguageButton';
+import { useContext } from 'react';
+import { LanguageContext } from '../../App';
 
 const cx = classNames.bind(styles);
 
 function NavbarMobile({ styles }) {
+    const { language } = useContext(LanguageContext);
     const productId = useParams().id;
     const menuRef = useRef();
     const hamburgerRef = useRef();
@@ -74,7 +77,9 @@ function NavbarMobile({ styles }) {
                                 className={cx('menu-item')}
                                 onClick={handleShowMenu}
                             >
-                                <a href="/">HOME</a>
+                                <a href="/">
+                                    {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
+                                </a>
                             </li>
                             <li
                                 className={cx('menu-item')}
@@ -83,7 +88,7 @@ function NavbarMobile({ styles }) {
                                 <a
                                     href={`/productId=${productId}/#apartment-infor`}
                                 >
-                                    APARTMENT
+                                    {language === 'en' ? 'APARTMENT' : 'CĂN HỘ'}
                                 </a>
                             </li>
                             <li
@@ -93,7 +98,9 @@ function NavbarMobile({ styles }) {
                                 <a
                                     href={`/productId=${productId}/#about-apartment`}
                                 >
-                                    ABOUT APARTMENT
+                                    {language === 'en'
+                                        ? 'ABOUT APARTMENT'
+                                        : 'THÔNG TIN CĂN HỘ'}
                                 </a>
                             </li>
                             <li
@@ -113,7 +120,7 @@ function NavbarMobile({ styles }) {
                                 <a
                                     href={`/productId=${productId}/#apartment-form`}
                                 >
-                                    CONTACT
+                                    {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
                                 </a>
                             </li>
                             <li
@@ -123,7 +130,9 @@ function NavbarMobile({ styles }) {
                                 <a
                                     href={`/productId=${productId}/#another-apartments`}
                                 >
-                                    ANOTHER APARTMENTS
+                                    {language === 'en'
+                                        ? 'ANOTHER APARTMENTS'
+                                        : 'CĂN HỘ KHÁC'}
                                 </a>
                             </li>
                         </>
@@ -133,25 +142,37 @@ function NavbarMobile({ styles }) {
                                 className={cx('menu-item')}
                                 onClick={handleShowMenu}
                             >
-                                <a href="/#home">HOME</a>
+                                <a href="/#home">
+                                    {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
+                                </a>
                             </li>
                             <li
                                 className={cx('menu-item')}
                                 onClick={handleShowMenu}
                             >
-                                <a href="/#product">APARTMENTS</a>
+                                <a href="/#product">
+                                    {language === 'en'
+                                        ? 'APARTMENTS'
+                                        : 'CĂN HỘ'}
+                                </a>
                             </li>
                             <li
                                 className={cx('menu-item')}
                                 onClick={handleShowMenu}
                             >
-                                <a href="/#about">ABOUT PROJECT</a>
+                                <a href="/#about">
+                                    {language === 'en'
+                                        ? 'ABOUT PROJECT'
+                                        : 'THÔNG TIN DỰ ÁN'}
+                                </a>
                             </li>
                             <li
                                 className={cx('menu-item')}
                                 onClick={handleShowMenu}
                             >
-                                <a href="/#gallery">GALLERY</a>
+                                <a href="/#gallery">
+                                    {language === 'en' ? 'GALLERY' : 'HÌNH ẢNH'}
+                                </a>
                             </li>
                             <li
                                 className={cx('menu-item')}
@@ -163,13 +184,17 @@ function NavbarMobile({ styles }) {
                                 className={cx('menu-item')}
                                 onClick={handleShowMenu}
                             >
-                                <a href="/#services">SERVICES</a>
+                                <a href="/#services">
+                                    {language === 'en' ? 'SERVICES' : 'DỊCH VỤ'}
+                                </a>
                             </li>
                             <li
                                 className={cx('menu-item')}
                                 onClick={handleShowMenu}
                             >
-                                <a href="/#contact">CONTACT</a>
+                                <a href="/#contact">
+                                    {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
+                                </a>
                             </li>
                         </>
                     )}

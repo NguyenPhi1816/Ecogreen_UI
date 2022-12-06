@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { dbRef } from '../../../firebase';
 import { get, child } from 'firebase/database';
 import classNames from 'classnames/bind';
 import styles from './Gallery.module.scss';
+import { LanguageContext } from '../../../App';
 
 const cx = classNames.bind(styles);
 
 function Gallery({ id }) {
+    const { language } = useContext(LanguageContext);
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        get(child(dbRef, `gallery`))
+        get(child(dbRef, language === 'en' ? 'gallery' : 'gallery_vi'))
             .then((snapshot) => {
                 if (snapshot.exists()) {
                     let images = Object.values(snapshot.val());
@@ -22,7 +24,7 @@ function Gallery({ id }) {
             .catch((error) => {
                 console.error(error);
             });
-    }, []);
+    }, [language]);
 
     return (
         <section className={cx('gallery')} id={id}>
@@ -30,11 +32,14 @@ function Gallery({ id }) {
                 <div className={cx('gallery-container')}>
                     <div className={cx('gallery-title')}>
                         <h2 className={cx('gallery-title-main')}>
-                            Modern Furniture For Your Home
+                            {language === 'en'
+                                ? 'Modern Furniture For Your Home'
+                                : 'Nội thất hiện đại cho mái ấm của bạn'}
                         </h2>
                         <p className={cx('gallery-title-sub')}>
-                            Enjoy a convenient life with our furniture supply
-                            and maintenance service.
+                            {language === 'en'
+                                ? 'Enjoy a convenient life with our furniture supply and maintenance service.'
+                                : 'Tận hưởng cuộc sống tiện nghi với dịch vụ cung cấp và bảo trì nội thất của chúng tôi.'}
                         </p>
                     </div>
                     <div className={cx('gallery-grid')}>

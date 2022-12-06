@@ -6,11 +6,13 @@ import { dbRef } from '../../../firebase';
 import classNames from 'classnames/bind';
 import styles from './Videos.module.scss';
 
-import { VIDEOS } from '../../../config';
+import { useContext } from 'react';
+import { LanguageContext } from '../../../App';
 
 const cx = classNames.bind(styles);
 
 function Videos({ width, id }) {
+    const { language } = useContext(LanguageContext);
     const [currentVideo, setCurrentVideo] = useState('');
     const [data, setData] = useState([]);
 
@@ -34,10 +36,14 @@ function Videos({ width, id }) {
             <div className={cx('videos-container')}>
                 <div className={cx('videos-title')}>
                     <h2 className={cx('videos-title-main')}>
-                        Updates From Our Videos
+                        {language === 'en'
+                            ? 'Updates From Our Videos'
+                            : 'Cập nhật từ video của chúng tôi'}
                     </h2>
                     <p className={cx('videos-title-sub')}>
-                        Overview of the project through our videos
+                        {language === 'en'
+                            ? 'Overview of the project through our videos'
+                            : 'Tổng quan về dự án qua video của chúng tôi'}
                     </p>
                 </div>
                 <div className={cx('large-video')}>

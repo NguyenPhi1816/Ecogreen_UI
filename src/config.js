@@ -28,3 +28,24 @@ export const SERVICES = [
             'Not only selling and renting apartments, customers are also very satisfied with our interior layout, we can make every corner of your apartment to be perfect.',
     },
 ];
+
+export const SERVICES_VI = [
+    {
+        thumb_url: <FontAwesomeIcon icon={faListCheck} />,
+        mainTitle: 'Quản lý tài sản',
+        subTitle:
+            'Dưới sự ủy quyền của chủ nhà, chúng tôi có trách nhiệm giải quyết mọi yêu cầu, vướng mắc của bạn gặp phải trong thời gian hợp đồng.',
+    },
+    {
+        thumb_url: <FontAwesomeIcon icon={faCouch} />,
+        mainTitle: 'Bảo trì nội thất',
+        subTitle:
+            'Đội ngũ bảo trì đồ nội thất của chúng tôi là những người lành nghề nhất mà bạn có thể tìm thấy. Sự tin tưởng của bạn là xứng đáng!',
+    },
+    {
+        thumb_url: <FontAwesomeIcon icon={faPenRuler} />,
+        mainTitle: 'Thiết kế và phân phối nội thất',
+        subTitle:
+            'Không chỉ bán và cho thuê căn hộ, khách hàng còn rất hài lòng với cách bố trí nội thất của chúng tôi, chúng tôi có thể biến mọi ngóc ngách trong căn hộ của bạn trở nên hoàn hảo.',
+    },
+];

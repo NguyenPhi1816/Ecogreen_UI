@@ -4,10 +4,13 @@ import styles from './Navbar.module.scss';
 import { logo_url } from '../../config';
 import { useParams } from 'react-router-dom';
 import LanguageButton from '../LanguageButton/LanguageButton';
+import { useContext } from 'react';
+import { LanguageContext } from '../../App';
 
 let cx = classNames.bind(styles);
 
 function Navbar({ styles = {}, logoColor = 'default' }) {
+    const { language } = useContext(LanguageContext);
     const productId = useParams().id;
     return (
         <nav className={cx('wrapper')}>
@@ -20,20 +23,24 @@ function Navbar({ styles = {}, logoColor = 'default' }) {
                     {productId ? (
                         <>
                             <li className={cx('menu-item')}>
-                                <a href="/">HOME</a>
+                                <a href="/">
+                                    {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
+                                </a>
                             </li>
                             <li className={cx('menu-item')}>
                                 <a
                                     href={`/productId=${productId}/#apartment-infor`}
                                 >
-                                    APARTMENT
+                                    {language === 'en' ? 'APARTMENT' : 'CĂN HỘ'}
                                 </a>
                             </li>
                             <li className={cx('menu-item')}>
                                 <a
                                     href={`/productId=${productId}/#about-apartment`}
                                 >
-                                    ABOUT APARTMENT
+                                    {language === 'en'
+                                        ? 'ABOUT APARTMENT'
+                                        : 'THÔNG TIN CĂN HỘ'}
                                 </a>
                             </li>
                             <li className={cx('menu-item')}>
@@ -47,39 +54,57 @@ function Navbar({ styles = {}, logoColor = 'default' }) {
                                 <a
                                     href={`/productId=${productId}/#apartment-form`}
                                 >
-                                    CONTACT
+                                    {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
                                 </a>
                             </li>
                             <li className={cx('menu-item')}>
                                 <a
                                     href={`/productId=${productId}/#another-apartments`}
                                 >
-                                    ANOTHER APARTMENTS
+                                    {language === 'en'
+                                        ? 'ANOTHER APARTMENTS'
+                                        : 'CĂN HỘ KHÁC'}
                                 </a>
                             </li>
                         </>
                     ) : (
                         <>
                             <li className={cx('menu-item')}>
-                                <a href="/#home">HOME</a>
+                                <a href="/#home">
+                                    {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
+                                </a>
                             </li>
                             <li className={cx('menu-item')}>
-                                <a href="/#product">APARTMENTS</a>
+                                <a href="/#product">
+                                    {language === 'en'
+                                        ? 'APARTMENTS'
+                                        : 'CĂN HỘ'}
+                                </a>
                             </li>
                             <li className={cx('menu-item')}>
-                                <a href="/#about">ABOUT PROJECT</a>
+                                <a href="/#about">
+                                    {language === 'en'
+                                        ? 'ABOUT PROJECT'
+                                        : 'THÔNG TIN DỰ ÁN'}
+                                </a>
                             </li>
                             <li className={cx('menu-item')}>
-                                <a href="/#gallery">GALLERY</a>
+                                <a href="/#gallery">
+                                    {language === 'en' ? 'GALLERY' : 'HÌNH ẢNH'}
+                                </a>
                             </li>
                             <li className={cx('menu-item')}>
                                 <a href="/#videos">VIDEOS</a>
                             </li>
                             <li className={cx('menu-item')}>
-                                <a href="/#services">SERVICES</a>
+                                <a href="/#services">
+                                    {language === 'en' ? 'SERVICES' : 'DỊCH VỤ'}
+                                </a>
                             </li>
                             <li className={cx('menu-item')}>
-                                <a href="/#contact">CONTACT</a>
+                                <a href="/#contact">
+                                    {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
+                                </a>
                             </li>
                         </>
                     )}

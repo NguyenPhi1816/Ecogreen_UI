@@ -5,10 +5,13 @@ import classnames from 'classnames/bind';
 import styles from './LargeSlider.module.scss';
 import { get, child } from 'firebase/database';
 import { dbRef } from '../../../firebase';
+import { useContext } from 'react';
+import { LanguageContext } from '../../../App';
 
 const cx = classnames.bind(styles);
 
 function LargeSlider({ id }) {
+    const { language } = useContext(LanguageContext);
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -55,49 +58,46 @@ function LargeSlider({ id }) {
                     <SwiperSlide>
                         <div>
                             <h2 className={cx('modal-main-title')}>
-                                Most Green Environment
+                                {language === 'en'
+                                    ? 'Most Green Environment'
+                                    : 'Môi trường xanh lý tưởng'}
                             </h2>
                             <p className={cx('modal-sub-title')}>
-                                Construction density at Eco Green Saigon is only
-                                30%, with an 3.6ha internal park. It is bordered
-                                to the Saigon River, Tan My Lake and Huong Tram
-                                Park. All make one "Peaceful Green Oasis" in the
-                                city center.
+                                {language === 'en'
+                                    ? 'Construction density at Eco Green Saigon is only 30%, with an 3.6ha internal park. It is bordered to the Saigon River, Tan My Lake and Huong Tram Park. All make one "Peaceful Green Oasis" in the city center.'
+                                    : 'Mật độ xây dựng tại Eco Green Sài Gòn chỉ 30%, có công viên nội khu rộng 3,6ha. Giáp sông Sài Gòn, hồ Tân Mỹ và công viên Hương Tràm. Tất cả tạo nên một “Ốc đảo xanh yên bình” giữa lòng thành phố.'}
                             </p>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className={cx('modal-item')}>
                             <h2 className={cx('modal-main-title')}>
-                                Amazing view
+                                {language === 'en'
+                                    ? 'Amazing view'
+                                    : 'Tầm nhìn tuyệt vời'}
                             </h2>
                             <p className={cx('modal-sub-title')}>
-                                All bedrooms and living rooms are equipped with
-                                a 3-layer Solar Control glass system with high
-                                UV protection from floor to ceiling. Create a
-                                time period shimmering view for owners in all
-                                directions. Especially the view to the Sai Gon
-                                River, Thu Thiem and the district 1.
+                                {language === 'en'
+                                    ? 'All bedrooms and living rooms are equipped with a 3-layer Solar Control glass system with high UV protection from floor to ceiling. Create a time period shimmering view for owners in all directions. Especially the view to the Sai Gon River, Thu Thiem and the district 1.'
+                                    : 'Tất cả các phòng ngủ và phòng khách đều được trang bị hệ thống kính Solar Control 3 lớp chống tia UV cao từ sàn đến trần. Tạo khoảng view lung linh cho chủ nhân về mọi hướng. Đặc biệt view ra sông Sài Gòn, Thủ Thiêm và quận 1.'}
                             </p>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div>
                             <h2 className={cx('modal-main-title')}>
-                                Outstanding apartment quality
+                                {language === 'en'
+                                    ? 'Outstanding apartment quality'
+                                    : 'Chất lượng căn hộ vượt trội'}
                             </h2>
                             <p className={cx('modal-sub-title')}>
-                                Eco-Green was built by Xuan Mai Corp - a
-                                prestigious unit with 20 years of experience.
-                                Every apartment is equipped with imported
-                                materials from leading brands in the world.
+                                {language === 'en'
+                                    ? 'Eco-Green was built by Xuan Mai Corp - a prestigious unit with 20 years of experience. Every apartment is equipped with imported materials from leading brands in the world.'
+                                    : 'Eco-Green được xây dựng bởi Xuân Mai Corp - đơn vị uy tín với 20 năm kinh nghiệm. Mỗi căn hộ đều được trang bị vật liệu nhập khẩu từ các thương hiệu hàng đầu thế giới.'}
                             </p>
                         </div>
                     </SwiperSlide>
                 </Swiper>
-                {/* <a href="#product" className={cx('discover')}>
-                    <span>Discover</span>
-                </a> */}
             </div>
         </section>
     );

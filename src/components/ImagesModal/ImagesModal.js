@@ -116,6 +116,8 @@ function ImagesModal({
                                                 showFullImage
                                                     ? {
                                                           width: 'auto',
+                                                          maxWidth: '90%',
+                                                          objectFit: 'contain',
                                                       }
                                                     : {}
                                             }

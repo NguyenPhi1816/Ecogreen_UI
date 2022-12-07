@@ -28,6 +28,13 @@ function Footer({ footerForm = true }) {
             <div className={cx('footer-container')}>
                 <div className={cx('footer-wrapper')}>
                     <div className={cx('footer-infor')}>
+                        <div className={cx('partner')}>
+                            <h2>
+                                {language === 'en'
+                                    ? 'Partner & Investor'
+                                    : 'Đơn vị đồng hành và đầu tư'}
+                            </h2>
+                        </div>
                         <div className={cx('logos')}>
                             <img
                                 src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/xuan-mai-corp-logo.png?alt=media&token=99953b65-fac8-40e9-97fe-1251cd31a810"

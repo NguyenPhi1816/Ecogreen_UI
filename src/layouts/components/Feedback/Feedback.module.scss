@@ -55,6 +55,7 @@
     & > img {
         height: 100%;
         margin-right: 15px;
+        cursor: pointer;
 
         @media (max-width: 767px) {
             margin-right: 0;

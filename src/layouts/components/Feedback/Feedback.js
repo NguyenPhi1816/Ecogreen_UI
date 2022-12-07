@@ -50,7 +50,9 @@ const Feedback = ({ offsetWidth, id }) => {
                             alt="feedback"
                             key={index}
                             className={cx(`img-${index}`)}
-                            onClick={handleShowModal}
+                            onClick={
+                                offsetWidth >= 768 ? handleShowModal : () => {}
+                            }
                         />
                     ))}
             </div>

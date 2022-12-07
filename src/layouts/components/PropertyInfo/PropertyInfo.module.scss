@@ -440,3 +440,19 @@
         padding-top: 50px;
     }
 }
+
+.load-more-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.load-more {
+    padding: 8px 16px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+}

@@ -16,7 +16,7 @@ function DefaultLayout({ offsetY, offsetWidth }) {
             <Product offsetWidth={offsetWidth} id="product" />
             <LargeSlider id="about" />
             <Gallery id="gallery" />
-            <Feedback id="feedback" />
+            <Feedback offsetWidth={offsetWidth} id="feedback" />
             <Videos width={offsetWidth} id="videos" />
             <Services id="services" />
             <Footer />

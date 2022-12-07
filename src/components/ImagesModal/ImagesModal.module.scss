@@ -151,7 +151,7 @@
             }
 
             .form {
-                padding: 15px 15px 15px 0 !important;
+                padding: 15px !important;
 
                 @media (max-width: 850px) {
                     padding: 6px 15px 0 0 !important;
@@ -170,19 +170,6 @@
                         margin-bottom: 0;
                     }
                 }
-
-                // @media (max-width: 767px) {
-                //     padding: 15px !important;
-
-                //     &>label>input,
-                //     &>label>button {
-                //         height: 42px;
-                //     }
-
-                //     &>label>textarea {
-                //         height: 110px;
-                //     }
-                // }
             }
         }
     }

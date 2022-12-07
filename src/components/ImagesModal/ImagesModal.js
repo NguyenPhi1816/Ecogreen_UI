@@ -16,7 +16,12 @@ import Form from '../Form';
 
 const cx = classNames.bind(styles);
 
-function ImagesModal({ offsetWidth, handleClose, data }) {
+function ImagesModal({
+    offsetWidth,
+    handleClose,
+    data = [],
+    showFullImage = false,
+}) {
     const [showForm, setShowForm] = useState(
         offsetWidth >= 1024 ? true : false,
     );
@@ -63,7 +68,16 @@ function ImagesModal({ offsetWidth, handleClose, data }) {
                         <FontAwesomeIcon icon={faTimes} />
                     </button>
                 </div>
-                <div className={cx('modal-body')}>
+                <div
+                    className={cx('modal-body')}
+                    style={
+                        showFullImage
+                            ? {
+                                  backgroundColor: '#EDEDED',
+                              }
+                            : {}
+                    }
+                >
                     <div
                         className={cx('slider')}
                         style={
@@ -84,8 +98,28 @@ function ImagesModal({ offsetWidth, handleClose, data }) {
                         >
                             {data.images.map((image, index) => (
                                 <SwiperSlide key={index}>
-                                    <div className={cx('slide')}>
-                                        <img src={image} alt="About product" />
+                                    <div
+                                        className={cx('slide')}
+                                        style={
+                                            showFullImage
+                                                ? {
+                                                      display: 'flex',
+                                                      justifyContent: 'center',
+                                                  }
+                                                : {}
+                                        }
+                                    >
+                                        <img
+                                            src={image}
+                                            alt="About product"
+                                            style={
+                                                showFullImage
+                                                    ? {
+                                                          width: 'auto',
+                                                      }
+                                                    : {}
+                                            }
+                                        />
                                     </div>
                                 </SwiperSlide>
                             ))}

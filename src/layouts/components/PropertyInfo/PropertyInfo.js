@@ -19,9 +19,14 @@ import { LanguageContext } from '../../../App';
 const cx = classNames.bind(styles);
 
 function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
+    const DESKTOP_AMOUNT = 6;
+    const MOBILE_AMOUNT = 4;
     const { language } = useContext(LanguageContext);
     const rightSectionRef = useRef();
     const [anotherItem, setAnotherItem] = useState({});
+    const [amount, setAmount] = useState(() =>
+        offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT,
+    );
 
     const styleNormal = {
         paddingTop: '1px',
@@ -82,6 +87,23 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [offsetY]);
+
+    const handleLoadMore = (e) => {
+        if (amount === data.length) {
+            setAmount(() =>
+                offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT,
+            );
+        } else {
+            e.preventDefault();
+            const addition =
+                offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT;
+            let newAmount = amount + addition;
+            if (newAmount > data.length) {
+                newAmount = data.length;
+            }
+            setAmount(newAmount);
+        }
+    };
 
     return (
         <section className={cx('property-info')} ref={topRef}>
@@ -379,9 +401,9 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                                     : 'Danh sách căn hộ tương tự'}
                             </h3>
                         </div>
-                        {data.map(
+                        {data.slice(0, amount).map(
                             (item) =>
-                                currentItem.id !== item.id && (
+                                item.id !== currentItem.id && (
                                     <Link
                                         key={item.id}
                                         to={`/productId=${item.id}`}
@@ -402,6 +424,21 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                                     </Link>
                                 ),
                         )}
+                        <div className={cx('load-more-container')}>
+                            <a
+                                href={'#another-apartments'}
+                                className={cx('load-more')}
+                                onClick={(e) => handleLoadMore(e)}
+                            >
+                                {amount === data.length
+                                    ? language === 'en'
+                                        ? 'HIDE'
+                                        : 'ẨN BỚT'
+                                    : language === 'en'
+                                    ? 'LOAD MORE'
+                                    : 'TẢI THÊM'}
+                            </a>
+                        </div>
                     </div>
                 </div>
                 {offsetWidth >= 1024 && (

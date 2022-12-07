@@ -94,6 +94,13 @@ function Navbar({ styles = {}, logoColor = 'default' }) {
                                 </a>
                             </li>
                             <li className={cx('menu-item')}>
+                                <a href="/#feedback">
+                                    {language === 'en'
+                                        ? 'FEEDBACK'
+                                        : 'PHẢN HỒI'}
+                                </a>
+                            </li>
+                            <li className={cx('menu-item')}>
                                 <a href="/#videos">VIDEOS</a>
                             </li>
                             <li className={cx('menu-item')}>

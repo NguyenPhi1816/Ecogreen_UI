@@ -178,6 +178,16 @@ function NavbarMobile({ styles }) {
                                 className={cx('menu-item')}
                                 onClick={handleShowMenu}
                             >
+                                <a href="/#feedback">
+                                    {language === 'en'
+                                        ? 'FEEDBACK'
+                                        : 'PHẢN HỒI'}
+                                </a>
+                            </li>
+                            <li
+                                className={cx('menu-item')}
+                                onClick={handleShowMenu}
+                            >
                                 <a href="/#videos">VIDEOS</a>
                             </li>
                             <li

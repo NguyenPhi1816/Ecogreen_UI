@@ -27,8 +27,8 @@ const LanguageButton = ({ customClass }) => {
                     <img
                         src={
                             language === 'en'
-                                ? 'https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/united-states.png?alt=media&token=a6f7e6a3-2c1e-40c4-88a0-c35ad1a7783b'
-                                : 'https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/vietnam.png?alt=media&token=50da4eea-5881-4701-8f95-c36c974cdd62'
+                                ? 'https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/united-states%20(1).png?alt=media&token=b6419243-2aad-4625-887b-788790f830ea'
+                                : 'https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/vietnam%20(1).png?alt=media&token=69263a8b-02a2-4ed8-8ee2-18ab47552de9'
                         }
                         alt="flag"
                     />

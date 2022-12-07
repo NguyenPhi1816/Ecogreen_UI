@@ -4,12 +4,14 @@ import styles from './Feedback.module.scss';
 import { LanguageContext } from '../../../App';
 import { child, get } from 'firebase/database';
 import { dbRef } from '../../../firebase';
+import ImagesModal from '../../../components/ImagesModal';
 
 const cx = classNames.bind(styles);
 
-const Feedback = ({ id }) => {
+const Feedback = ({ offsetWidth, id }) => {
     const { language } = useContext(LanguageContext);
     const [data, setData] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         get(child(dbRef, 'feedback'))
@@ -25,6 +27,10 @@ const Feedback = ({ id }) => {
                 console.error(error);
             });
     }, []);
+
+    const handleShowModal = () => {
+        setShowModal(!showModal);
+    };
 
     return (
         <section className={cx('feedback')} id={id}>
@@ -44,6 +50,7 @@ const Feedback = ({ id }) => {
                             alt="feedback"
                             key={index}
                             className={cx(`img-${index}`)}
+                            onClick={handleShowModal}
                         />
                     ))}
             </div>
@@ -53,6 +60,15 @@ const Feedback = ({ id }) => {
                     alt="leaf"
                 />
             </div>
+
+            {showModal && (
+                <ImagesModal
+                    offsetWidth={offsetWidth}
+                    handleClose={handleShowModal}
+                    data={{ images: data }}
+                    showFullImage={true}
+                />
+            )}
         </section>
     );
 };

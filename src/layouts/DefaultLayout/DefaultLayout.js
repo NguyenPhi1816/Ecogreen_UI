@@ -7,6 +7,7 @@ import Videos from '../components/Videos';
 import Footer from '../components/Footer';
 import BackToTop from '../../components/BackToTop';
 import ContactButtons from '../../components/ContactButtons';
+import Feedback from '../components/Feedback/Feedback';
 
 function DefaultLayout({ offsetY, offsetWidth }) {
     return (
@@ -15,6 +16,7 @@ function DefaultLayout({ offsetY, offsetWidth }) {
             <Product offsetWidth={offsetWidth} id="product" />
             <LargeSlider id="about" />
             <Gallery id="gallery" />
+            <Feedback id="feedback" />
             <Videos width={offsetWidth} id="videos" />
             <Services id="services" />
             <Footer />

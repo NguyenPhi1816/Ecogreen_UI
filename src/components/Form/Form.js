@@ -7,8 +7,11 @@ import horizontalStyles from './horizontalForm.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { LanguageContext } from '../../App';
 
 function Form({ type, className }) {
+    const { language } = useContext(LanguageContext);
     const productId = useParams().id;
     const {
         register,
@@ -55,32 +58,40 @@ function Form({ type, className }) {
             onSubmit={handleSubmit((data, e) => onSubmit(data, e))}
         >
             <label className={cx('name')}>
-                {type === 'horizontal' && <span>Name</span>}
+                {type === 'horizontal' && (
+                    <span>{language === 'en' ? 'Name' : 'Họ và tên'}</span>
+                )}
                 <input
                     type="text"
-                    placeholder="Name"
+                    placeholder={language === 'en' ? 'Name' : 'Họ và tên'}
                     {...register('name', {
                         required: true,
                     })}
                 />
                 {errors.name && (
                     <p className={cx('invalid-message')}>
-                        This field is required
+                        {language === 'en'
+                            ? 'This field is required'
+                            : 'Thông tin này là bắt buộc'}
                     </p>
                 )}
             </label>
             <label className={cx('phone')}>
-                {type === 'horizontal' && <span>Phone</span>}
+                {type === 'horizontal' && (
+                    <span>{language === 'en' ? 'Phone' : 'Số điện thoại'}</span>
+                )}
                 <input
                     type="text"
-                    placeholder="Phone"
+                    placeholder={language === 'en' ? 'Phone' : 'Số điện thoại'}
                     {...register('phone', {
                         required: true,
                     })}
                 />
                 {errors.phone && (
                     <p className={cx('invalid-message')}>
-                        This field is required
+                        {language === 'en'
+                            ? 'This field is required'
+                            : 'Thông tin này là bắt buộc'}
                     </p>
                 )}
             </label>
@@ -98,15 +109,23 @@ function Form({ type, className }) {
                 />
                 {errors.email && (
                     <p className={cx('invalid-message')}>
-                        Invalid email address
+                        {language === 'en'
+                            ? 'Invalid email address'
+                            : 'Email không hợp lệ'}
                     </p>
                 )}
             </label>
             <label className={cx('message')}>
-                {type === 'horizontal' && <span>Message</span>}
+                {type === 'horizontal' && (
+                    <span>
+                        {language === 'en' ? 'Message' : 'Để lại lời nhắn'}
+                    </span>
+                )}
                 <textarea
                     type="text"
-                    placeholder="Message"
+                    placeholder={
+                        language === 'en' ? 'Message' : 'Để lại lời nhắn'
+                    }
                     className={cx('message-area')}
                     cols="40"
                     rows="4"
@@ -114,13 +133,19 @@ function Form({ type, className }) {
                 />
             </label>
             <label className={cx('select')}>
-                {type === 'horizontal' && <span>I want to</span>}
+                {type === 'horizontal' && (
+                    <span>{language === 'en' ? 'I want to' : 'Tôi muốn'}</span>
+                )}
                 <select defaultValue={'DEFAULT'} {...register('type')}>
                     <option value="DEFAULT" disabled hidden>
                         Select
                     </option>
-                    <option value="buy">I want to buy</option>
-                    <option value="rent">I want to rent</option>
+                    <option value="buy">
+                        {language === 'en' ? 'I want to buy' : 'Tôi muốn mua'}
+                    </option>
+                    <option value="rent">
+                        {language === 'en' ? 'I want to rent' : 'Tôi muốn thuê'}
+                    </option>
                 </select>
             </label>
             <label className={cx('terms-of-use')}>
@@ -132,13 +157,16 @@ function Form({ type, className }) {
                         })}
                     />
                     <span>
-                        By submitting this form I agree to receive email and
-                        call
+                        {language === 'en'
+                            ? 'By submitting this form I agree to receive email and call'
+                            : 'Tôi muốn nhận thông tin về căn hộ qua email và cuộc gọi'}
                     </span>
                 </div>
                 {errors.acceptTermsOfUse && (
                     <p className={cx('invalid-message')}>
-                        Please accept our Terms of Use
+                        {language === 'en'
+                            ? 'Please accept our Terms of Use'
+                            : 'Vui lòng chấp nhận điều khoản sử dụng'}
                     </p>
                 )}
             </label>

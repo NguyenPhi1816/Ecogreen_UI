@@ -11,11 +11,10 @@ function Home({ width, id }) {
     const { language } = useContext(LanguageContext);
     return (
         <section className={cx('home')} id={id}>
-            {/* {width >= 768 && <InforBar />} */}
             {width < 1000 ? <NavbarMobile /> : <Navbar />}
             <div className={cx('title')}>
                 <h1 className={cx('main-title')}>
-                    {language == 'en'
+                    {language === 'en'
                         ? 'Discover Your Place To Live'
                         : 'Khám Phá Nơi Sống Của Bạn'}
                 </h1>

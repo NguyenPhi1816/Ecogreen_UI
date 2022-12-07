@@ -16,15 +16,19 @@
     &>span {
         width: 20px;
         height: 20px;
-        background-color: #ebbd4b;
-        color: black;
-        font-weight: 600;
         border-radius: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
         transition: all 0.2s ease-in-out;
         cursor: pointer;
+
+        & > img {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            transition: all 0.2s ease-in-out;
+        }
     }
 
     .en {

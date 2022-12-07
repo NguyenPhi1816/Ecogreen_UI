@@ -14,10 +14,14 @@ import {
     faRulerCombined,
     faUpRightAndDownLeftFromCenter,
 } from '@fortawesome/free-solid-svg-icons';
+import { useContext } from 'react';
+import { LanguageContext } from '../../App';
 
 let cx = classNames.bind(styles);
 
 function ProductItem({ data, handleExpandClick, className }) {
+    const { language } = useContext(LanguageContext);
+
     return (
         <div className={cx('wrapper', className)}>
             <div className={cx('product-item-container')}>
@@ -55,7 +59,7 @@ function ProductItem({ data, handleExpandClick, className }) {
                         />
                     </button>
                     <div className={cx('apartment-type')}>
-                        <p>For rent</p>
+                        <p>{language === 'en' ? 'For rent' : 'Cho Thuê'}</p>
                     </div>
                 </div>
                 <div className={cx('product-details')}>

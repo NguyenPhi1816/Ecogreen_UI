@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { child, get } from 'firebase/database';
 
@@ -8,14 +8,16 @@ import PropertyInfo from '../components/PropertyInfo';
 import Footer from '../components/Footer';
 import BackToTop from '../../components/BackToTop';
 import ContactButtons from '../../components/ContactButtons';
+import { LanguageContext } from '../../App';
 
 function ProductsLayout({ offsetY, offsetWidth }) {
     const productId = useParams().id;
+    const { language } = useContext(LanguageContext);
     const [data, setData] = useState(null);
     const [currentItem, setCurrentItem] = useState(null);
 
     useEffect(() => {
-        get(child(dbRef, `products`))
+        get(child(dbRef, language === 'en' ? 'products' : 'products_vi'))
             .then((snapshot) => {
                 if (snapshot.exists()) {
                     setData(snapshot.val());
@@ -30,7 +32,7 @@ function ProductsLayout({ offsetY, offsetWidth }) {
             .catch((error) => {
                 console.error(error);
             });
-    }, [productId]);
+    }, [productId, language]);
 
     return (
         <>

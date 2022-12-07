@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './ContactButtons.module.scss';
 
@@ -10,10 +10,12 @@ import {
     faPhone,
     faTimes,
 } from '@fortawesome/free-solid-svg-icons';
+import { LanguageContext } from '../../App';
 
 const cx = classNames.bind(styles);
 
 function ContactButtons({ width }) {
+    const { language } = useContext(LanguageContext);
     const [show, setShow] = useState(false);
 
     const handleShow = () => {
@@ -52,7 +54,9 @@ function ContactButtons({ width }) {
                             icon={faMessage}
                             className={cx('icon')}
                         />
-                        <span>Contact Us</span>
+                        <span>
+                            {language === 'en' ? 'Contact Us' : 'Liên hệ'}
+                        </span>
                     </button>
                 ))}
             <div

@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 import styles from './PropertyInfo.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCalendar,
     faCircleCheck,
     faMessage,
     faPhone,
@@ -14,10 +13,13 @@ import {
 import Form from '../../../components/Form';
 import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
+import { useContext } from 'react';
+import { LanguageContext } from '../../../App';
 
 const cx = classNames.bind(styles);
 
 function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
+    const { language } = useContext(LanguageContext);
     const rightSectionRef = useRef();
     const [anotherItem, setAnotherItem] = useState({});
 
@@ -87,96 +89,161 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                 <div className={cx('left-section')}>
                     <div className={cx('description')}>
                         <div className={cx('title')}>
-                            <h3>Description</h3>
+                            <h3>
+                                {language === 'en' ? 'Description' : 'Mô tả'}
+                            </h3>
                         </div>
                         <div className={cx('content')}>
-                            <p>
-                                “Eco Green Saigon” is located at the southern
-                                gateway of Ho Chi Minh City. It is the
-                                intersection of 3 largest urban areas: Center of
-                                Ho Chi Minh City - Phu My Hung International
-                                Financial Center - New administrative center of
-                                Thu Thiem city.
-                            </p>
-                            <p>
-                                Eco Green Saigon is a complex of commerce,
-                                services, hotels and apartments with a system of
-                                high-class internal utilities.
-                            </p>
-                            <p>
-                                Bustling commercial center and Grand Hyatt hotel
-                                with 69 floors (600 rooms) and 30,000 square
-                                meters. Along with a large-scale wedding
-                                conference center of 2,300m2 and an automatic
-                                generator system to supply electricity to all
-                                apartments when a local power failure occurs.
-                                Eco Green apartment project District 7 is a
-                                5-star complex with a huge scale of 14.36
-                                hectares including 7 apartment blocks, 1 office
-                                building - Park Hyatt luxury hotel - the tallest
-                                tower in District 7 with height 68 Floors.
-                            </p>
+                            {language === 'en' ? (
+                                <>
+                                    <p>
+                                        “Eco Green Saigon” is located at the
+                                        southern gateway of Ho Chi Minh City. It
+                                        is the intersection of 3 largest urban
+                                        areas: Center of Ho Chi Minh City - Phu
+                                        My Hung International Financial Center -
+                                        New administrative center of Thu Thiem
+                                        city.
+                                    </p>
+                                    <p>
+                                        Eco Green Saigon is a complex of
+                                        commerce, services, hotels and
+                                        apartments with a system of high-class
+                                        internal utilities.
+                                    </p>
+                                    <p>
+                                        Bustling commercial center and Grand
+                                        Hyatt hotel with 69 floors (600 rooms)
+                                        and 30,000 square meters. Along with a
+                                        large-scale wedding conference center of
+                                        2,300m2 and an automatic generator
+                                        system to supply electricity to all
+                                        apartments when a local power failure
+                                        occurs. Eco Green apartment project
+                                        District 7 is a 5-star complex with a
+                                        huge scale of 14.36 hectares including 7
+                                        apartment blocks, 1 office building -
+                                        Park Hyatt luxury hotel - the tallest
+                                        tower in District 7 with height 68
+                                        Floors.
+                                    </p>
+                                </>
+                            ) : (
+                                <>
+                                    <p>
+                                        “Eco Green Sài Gòn” tọa lạc ngay cửa ngõ
+                                        phía Nam Thành Phố. Là nơi giao thoa của
+                                        3 khu đô thị lớn bậc nhất: Trung tâm Tp
+                                        Hồ Chí Minh - Trung tâm tài chính quốc
+                                        tế Phú Mỹ Hưng - Trung tâm hành chính
+                                        mới của thành phố Thủ Thiêm.
+                                    </p>
+                                    <p>
+                                        Eco Green Saigon là tổ hợp thương mại,
+                                        dịch vụ, khách sạn và nhà ở cao cấp cùng
+                                        với hệ thống tiện ích nội khu đẳng cấp,
+                                        trang thiết bị nội thất cao cấp đem đến
+                                        một môi trường sống xanh an lành.
+                                    </p>
+                                    <p>
+                                        Trung tâm thương mại sầm uất và khách
+                                        sạn 6 sao Grand Hyatt cao 69 tầng (600
+                                        phòng) rộng 30.000m2. Cùng với trung tâm
+                                        hội nghị tiệc cưới với quy mô lớn rộng
+                                        2.300m2 và hệ thông máy phát điện âm tự
+                                        động cung cấp điện cho toàn bộ các căn
+                                        hộ khi xảy ra mất điện cục bộ. Dự án căn
+                                        hộ Eco Green Quận 7 là Khu Phức Hợp đẳng
+                                        cấp 5 sao quy mô cực lớn 14,36 hecta bao
+                                        gồm 7 Block căn hộ, 1 tòa Văn phòng –
+                                        Khách sạn cao cấp Park Hyatt - Tòa tháp
+                                        cao nhất Quận 7 với chiều cao 68 Tầng.
+                                    </p>
+                                </>
+                            )}
                         </div>
                     </div>
                     <div className={cx('details')}>
                         <div className={cx('title')}>
-                            <h3>Details</h3>
-                            <div>
-                                <FontAwesomeIcon
-                                    icon={faCalendar}
-                                    style={{
-                                        color: '#636363',
-                                        marginRight: '8px',
-                                    }}
-                                />
-                                <p>Updated on April 4, 2020 at 10:23 pm</p>
-                            </div>
+                            <h3>
+                                {language === 'en' ? 'Details' : 'Chi tiết'}
+                            </h3>
                         </div>
                         <div className={cx('details-info')}>
                             <div className={cx('details-info-item')}>
-                                <h4>Property ID:</h4>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Property ID:'
+                                        : 'Mã căn hộ'}
+                                </h4>
                                 <p>{currentItem.id}</p>
                             </div>
                             <div className={cx('details-info-item')}>
-                                <h4>Price:</h4>
+                                <h4>{language === 'en' ? 'Price:' : 'Giá'}</h4>
                                 <p>{currentItem.price}</p>
                             </div>
                             <div className={cx('details-info-item')}>
-                                <h4>Property size:</h4>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Property size:'
+                                        : 'Diện tích'}
+                                </h4>
                                 <p>
                                     {currentItem.area} m<sup>2</sup>
                                 </p>
                             </div>
                             <div className={cx('details-info-item')}>
-                                <h4>Bedrooms:</h4>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Bedrooms:'
+                                        : 'Phòng ngủ'}
+                                </h4>
                                 <p>{currentItem.bedrooms}</p>
                             </div>
                             <div className={cx('details-info-item')}>
-                                <h4>Property Type:</h4>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Property Type:'
+                                        : 'Loại căn hộ'}
+                                </h4>
                                 <p>{currentItem.type}</p>
                             </div>
                             <div className={cx('details-info-item')}>
-                                <h4>Bathrooms:</h4>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Bathrooms:'
+                                        : 'Phòng tắm'}
+                                </h4>
                                 <p>{currentItem.bathrooms}</p>
                             </div>
                         </div>
                     </div>
                     <div className={cx('features')}>
                         <div className={cx('title')}>
-                            <h3>Features</h3>
+                            <h3>
+                                {language === 'en' ? 'Features' : 'Tính năng'}
+                            </h3>
                         </div>
                         <div className={cx('features-container')}>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Air Conditioning</span>
+                                <span>
+                                    {language === 'en'
+                                        ? 'Air Conditioning'
+                                        : 'Điều hòa'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Barbeque</span>
+                                <span>
+                                    {language === 'en' ? 'Barbeque' : 'BBQ'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Dryer</span>
+                                <span>
+                                    {language === 'en' ? 'Dryer' : 'Máy sấy'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
@@ -184,31 +251,49 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Laundry</span>
+                                <span>
+                                    {language === 'en' ? 'Laundry' : 'Giặt ủi'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Lawn</span>
+                                <span>
+                                    {language === 'en' ? 'Lawn' : 'Bãi cỏ'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Microware</span>
+                                <span>
+                                    {language === 'en'
+                                        ? 'Microware'
+                                        : 'Lò vi sóng'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Refrigerator</span>
+                                <span>
+                                    {language === 'en'
+                                        ? 'Refrigerator'
+                                        : 'Tủ lạnh'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Swimming pool</span>
+                                <span>
+                                    {language === 'en'
+                                        ? 'Swimming pool'
+                                        : 'Hồ bơi'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>TV Cable</span>
+                                <span>TV</span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Washer</span>
+                                <span>
+                                    {language === 'en' ? 'Washer' : 'Máy giặt'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
@@ -216,15 +301,27 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Window Coverings</span>
+                                <span>
+                                    {language === 'en'
+                                        ? 'Window Coverings'
+                                        : 'Màn che cửa sổ'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Coffee Shop</span>
+                                <span>
+                                    {language === 'en'
+                                        ? 'Coffee Shop'
+                                        : 'Cửa hàng cà phê'}
+                                </span>
                             </div>
                             <div className={cx('feature')}>
                                 <FontAwesomeIcon icon={faCircleCheck} />
-                                <span>Convenience Store</span>
+                                <span>
+                                    {language === 'en'
+                                        ? 'Convenience Store'
+                                        : 'Cửa hàng tiện lợi'}
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -254,7 +351,11 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                     </div>
                     <div className={cx('full-form')} id="apartment-form">
                         <div className={cx('title')}>
-                            <h3>Enquire About This Property</h3>
+                            <h3>
+                                {language === 'en'
+                                    ? 'Enquire About This Property'
+                                    : 'Thông tin thêm về căn hộ này'}
+                            </h3>
                         </div>
                         <div className={cx('form-container')}>
                             <Form
@@ -272,7 +373,11 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                         id="another-apartments"
                     >
                         <div className={cx('title')}>
-                            <h3>Similar Listings</h3>
+                            <h3>
+                                {language === 'en'
+                                    ? 'Similar Listings'
+                                    : 'Danh sách căn hộ tương tự'}
+                            </h3>
                         </div>
                         {data.map(
                             (item) =>
@@ -336,7 +441,7 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             >
                                 <FontAwesomeIcon icon={faTimes} />
                             </button>
-                            <Form type={'vertical'} />
+                            <Form type={'vertical'} className={cx('form')} />
                         </div>
                     </div>
                 )}

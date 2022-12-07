@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Property.module.scss';
 import { Link } from 'react-router-dom';
@@ -14,10 +14,12 @@ import {
 import Navbar from '../../../components/Navbar';
 import NavbarMobile from '../../../components/NavbarMobile';
 import ImagesModal from '../../../components/ImagesModal';
+import { LanguageContext } from '../../../App';
 
 const cx = classNames.bind(styles);
 
 function Property({ offsetWidth, data = {} }) {
+    const { language } = useContext(LanguageContext);
     const [marginTop, setMarginTop] = useState('125px');
     const [showImagesSlider, setShowImagesSlider] = useState(false);
 
@@ -71,9 +73,8 @@ function Property({ offsetWidth, data = {} }) {
                             </div>
                         </div>
                         <div>
-                            <div className={cx('primary-label')}>FEATURED</div>
-                            <div className={cx('secondary-label')}>
-                                FOR RENT
+                            <div className={cx('primary-label')}>
+                                {language === 'en' ? 'FOR RENT' : 'CHO THUÊ'}
                             </div>
                         </div>
                     </div>
@@ -129,16 +130,26 @@ function Property({ offsetWidth, data = {} }) {
                 <div className={cx('property-summary')}>
                     {offsetWidth < 768 && (
                         <>
-                            <div className={cx('title')}>Overview</div>
+                            <div className={cx('title')}>
+                                {language === 'en' ? 'Overview' : 'Tổng quan'}
+                            </div>
                             <div className={cx('property-id')}>
-                                <h4>Property ID:</h4>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Property ID:'
+                                        : 'Mã căn hộ'}
+                                </h4>
                                 <p>{data.id}</p>
                             </div>
                         </>
                     )}
                     <div className={cx('property-type')}>
                         <h4>{data.type}</h4>
-                        <p>Property Type</p>
+                        <p>
+                            {language === 'en'
+                                ? 'Property Type'
+                                : 'Loại căn hộ'}
+                        </p>
                     </div>
                     <div className={cx('property-bedrooms')}>
                         <div>
@@ -148,7 +159,7 @@ function Property({ offsetWidth, data = {} }) {
                             />
                             <h4>{data.bedrooms}</h4>
                         </div>
-                        <p>Bedrooms</p>
+                        <p>{language === 'en' ? 'Bedrooms' : 'Phòng ngủ'}</p>
                     </div>
                     <div className={cx('property-bathrooms')}>
                         <div>
@@ -158,7 +169,7 @@ function Property({ offsetWidth, data = {} }) {
                             />
                             <h4>{data.bathrooms}</h4>
                         </div>
-                        <p>Bathrooms</p>
+                        <p>{language === 'en' ? 'Bathrooms' : 'Phòng tắm'}</p>
                     </div>
                     <div className={cx('property-area')}>
                         <div>

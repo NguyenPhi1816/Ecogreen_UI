@@ -20,6 +20,7 @@ function Product({ offsetWidth, id }) {
     const [showImagesSlider, setShowImagesSlider] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [data, setData] = useState([]);
+    const [priceTable, setPriceTable] = useState([]);
     const [amount, setAmount] = useState(() =>
         offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT,
     );
@@ -38,6 +39,20 @@ function Product({ offsetWidth, id }) {
                 console.error(error);
             });
     }, [language]);
+
+    useEffect(() => {
+        get(child(dbRef, 'price-table'))
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    setPriceTable(snapshot.val());
+                } else {
+                    console.log('No data available');
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
 
     const handleLoadMore = (e) => {
         if (amount === data.length) {
@@ -100,42 +115,21 @@ function Product({ offsetWidth, id }) {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className={cx('row1')}>
-                                <td>52 - 65</td>
-                                <td>
-                                    1 {language === 'en' ? 'BR' : 'PN'} + 1 - 2
-                                    {language === 'en' ? 'BRs' : 'PN'}
-                                </td>
-                                <td>3.3 - 3.7</td>
-                                <td>10 - 12</td>
-                            </tr>
-                            <tr className={cx('row2')}>
-                                <td>66 - 71</td>
-                                <td>
-                                    2 {language === 'en' ? 'BRs' : 'PN'} - 2{' '}
-                                    {language === 'en' ? 'BRs' : 'PN'}+ 1
-                                </td>
-                                <td>3.9 - 4.1</td>
-                                <td>13 - 14</td>
-                            </tr>
-                            <tr className={cx('row3')}>
-                                <td>75 - 80</td>
-                                <td>
-                                    2 {language === 'en' ? 'BRs' : 'PN'} + 1 - 3
-                                    {language === 'en' ? 'BRs' : 'PN'}
-                                </td>
-                                <td>4.3 - 4.5</td>
-                                <td>15 - 16.5</td>
-                            </tr>
-                            <tr className={cx('row4')}>
-                                <td>86 - 95</td>
-                                <td>
-                                    2 {language === 'en' ? 'BRs' : 'PN'} + 1 - 3
-                                    {language === 'en' ? 'BRs' : 'PN'}
-                                </td>
-                                <td>4.9 - 5.5</td>
-                                <td>17.5 - 19</td>
-                            </tr>
+                            {priceTable.map((item, index) => (
+                                <tr
+                                    className={cx(`row${index + 1}`)}
+                                    key={index}
+                                >
+                                    <td>{item.area}</td>
+                                    <td>
+                                        {language === 'en'
+                                            ? item['bedrooms-en']
+                                            : item.bedrooms}
+                                    </td>
+                                    <td>{item.salePrice}</td>
+                                    <td>{item.retalPrice}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>

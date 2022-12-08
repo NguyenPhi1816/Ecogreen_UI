@@ -120,45 +120,6 @@
     background-color: #fff;
     border-radius: 4px;
     overflow: hidden;
-
-    .agent {
-        display: flex;
-        padding: 30px 30px 0;
-    }
-
-    .avatar > img {
-        width: 70px;
-        height: 70px;
-        object-fit: cover;
-        border-radius: 4px;
-    }
-
-    .contact-info-container {
-        padding: 0 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .agent-name {
-        display: flex;
-
-        &>svg {
-            color: #636363;
-        }
-
-        &>p {
-            margin-left: 8px;
-        }
-    }
-    
-    .view-list {
-        background-color: #fff;
-
-        &>p {
-            color: #77c720;
-        }
-    }
 }
 
 .details-info {

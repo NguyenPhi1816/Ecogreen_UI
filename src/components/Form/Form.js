@@ -58,7 +58,7 @@ function Form({ type, className }) {
     }, [showSuccessMessage]);
 
     return (
-        <div>
+        <div className={cx('wrapper', className)}>
             <div className={cx('contact-info')}>
                 <div className={cx('avatar')}>
                     <img
@@ -90,7 +90,7 @@ function Form({ type, className }) {
                 </div>
             </div>
             <form
-                className={cx('form', className)}
+                className={cx('form')}
                 onSubmit={handleSubmit((data, e) => onSubmit(data, e))}
             >
                 <label className={cx('name')}>

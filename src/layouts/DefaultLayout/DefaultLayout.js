@@ -21,7 +21,7 @@ function DefaultLayout({ offsetY, offsetWidth }) {
             <Services id="services" />
             <Footer />
             {offsetY >= 300 && <BackToTop />}
-            {offsetY >= 300 && <ContactButtons width={offsetWidth} />}
+            <ContactButtons width={offsetWidth} />
         </>
     );
 }

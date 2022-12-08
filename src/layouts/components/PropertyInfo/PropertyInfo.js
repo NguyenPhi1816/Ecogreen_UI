@@ -15,6 +15,7 @@ import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
 import { useContext } from 'react';
 import { LanguageContext } from '../../../App';
+import Property from '../Property/Property';
 
 const cx = classNames.bind(styles);
 
@@ -44,7 +45,7 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
         paddingBottom: '1px',
         position: 'fixed',
         transform: 'translateY(20px)',
-        top: '0px',
+        top: '60px',
         left: '66,0625vw',
         width: `${
             !!rightSectionRef.current
@@ -107,8 +108,66 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
 
     return (
         <section className={cx('property-info')} ref={topRef}>
+            <div className={cx('blank')}></div>
             <div className={cx('property-info-container')} id="about-apartment">
                 <div className={cx('left-section')}>
+                    <Property offsetWidth={offsetWidth} data={currentItem} />
+
+                    <div className={cx('details')}>
+                        <div className={cx('title')}>
+                            <h3>
+                                {language === 'en' ? 'Details' : 'Chi tiết'}
+                            </h3>
+                        </div>
+                        <div className={cx('details-info')}>
+                            <div className={cx('details-info-item')}>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Property ID:'
+                                        : 'Mã căn hộ'}
+                                </h4>
+                                <p>{currentItem.id}</p>
+                            </div>
+                            <div className={cx('details-info-item')}>
+                                <h4>{language === 'en' ? 'Price:' : 'Giá'}</h4>
+                                <p>{currentItem.price}</p>
+                            </div>
+                            <div className={cx('details-info-item')}>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Property size:'
+                                        : 'Diện tích'}
+                                </h4>
+                                <p>
+                                    {currentItem.area} m<sup>2</sup>
+                                </p>
+                            </div>
+                            <div className={cx('details-info-item')}>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Bedrooms:'
+                                        : 'Phòng ngủ'}
+                                </h4>
+                                <p>{currentItem.bedrooms}</p>
+                            </div>
+                            <div className={cx('details-info-item')}>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Property Type:'
+                                        : 'Loại căn hộ'}
+                                </h4>
+                                <p>{currentItem.type}</p>
+                            </div>
+                            <div className={cx('details-info-item')}>
+                                <h4>
+                                    {language === 'en'
+                                        ? 'Bathrooms:'
+                                        : 'Phòng tắm'}
+                                </h4>
+                                <p>{currentItem.bathrooms}</p>
+                            </div>
+                        </div>
+                    </div>
                     <div className={cx('description')}>
                         <div className={cx('title')}>
                             <h3>
@@ -183,61 +242,6 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                                     </p>
                                 </>
                             )}
-                        </div>
-                    </div>
-                    <div className={cx('details')}>
-                        <div className={cx('title')}>
-                            <h3>
-                                {language === 'en' ? 'Details' : 'Chi tiết'}
-                            </h3>
-                        </div>
-                        <div className={cx('details-info')}>
-                            <div className={cx('details-info-item')}>
-                                <h4>
-                                    {language === 'en'
-                                        ? 'Property ID:'
-                                        : 'Mã căn hộ'}
-                                </h4>
-                                <p>{currentItem.id}</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>{language === 'en' ? 'Price:' : 'Giá'}</h4>
-                                <p>{currentItem.price}</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>
-                                    {language === 'en'
-                                        ? 'Property size:'
-                                        : 'Diện tích'}
-                                </h4>
-                                <p>
-                                    {currentItem.area} m<sup>2</sup>
-                                </p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>
-                                    {language === 'en'
-                                        ? 'Bedrooms:'
-                                        : 'Phòng ngủ'}
-                                </h4>
-                                <p>{currentItem.bedrooms}</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>
-                                    {language === 'en'
-                                        ? 'Property Type:'
-                                        : 'Loại căn hộ'}
-                                </h4>
-                                <p>{currentItem.type}</p>
-                            </div>
-                            <div className={cx('details-info-item')}>
-                                <h4>
-                                    {language === 'en'
-                                        ? 'Bathrooms:'
-                                        : 'Phòng tắm'}
-                                </h4>
-                                <p>{currentItem.bathrooms}</p>
-                            </div>
                         </div>
                     </div>
                     <div className={cx('features')}>

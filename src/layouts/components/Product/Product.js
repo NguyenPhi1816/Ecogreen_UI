@@ -106,7 +106,7 @@ function Product({ offsetWidth, id }) {
                                     1 {language === 'en' ? 'BR' : 'PN'} + 1 - 2
                                     {language === 'en' ? 'BRs' : 'PN'}
                                 </td>
-                                <td>3.2 - 3.6</td>
+                                <td>3.3 - 3.7</td>
                                 <td>10 - 12</td>
                             </tr>
                             <tr className={cx('row2')}>
@@ -115,7 +115,7 @@ function Product({ offsetWidth, id }) {
                                     2 {language === 'en' ? 'BRs' : 'PN'} - 2{' '}
                                     {language === 'en' ? 'BRs' : 'PN'}+ 1
                                 </td>
-                                <td>3.8 - 4.1</td>
+                                <td>3.9 - 4.1</td>
                                 <td>13 - 14</td>
                             </tr>
                             <tr className={cx('row3')}>
@@ -133,7 +133,7 @@ function Product({ offsetWidth, id }) {
                                     2 {language === 'en' ? 'BRs' : 'PN'} + 1 - 3
                                     {language === 'en' ? 'BRs' : 'PN'}
                                 </td>
-                                <td>4.7 - 5.3</td>
+                                <td>4.9 - 5.5</td>
                                 <td>17.5 - 19</td>
                             </tr>
                         </tbody>

@@ -126,3 +126,43 @@
     grid-area: success;
     color: #77c720;
 }
+
+.contact-info {
+    padding: 30px 0;
+    display: flex;
+}
+
+.agent {
+    display: flex;
+    padding: 30px 30px 0;
+}
+
+.avatar>img {
+    width: 90px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.contact-info-container {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agent-name,
+.phone-number,
+.mobile-number {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+
+    &>svg {
+        color: #636363;
+    }
+
+    &>p {
+        margin-left: 8px;
+    }
+}

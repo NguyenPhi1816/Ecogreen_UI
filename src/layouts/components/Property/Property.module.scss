@@ -1,7 +1,9 @@
 .property {
     position: relative;
-    width: 100vw;
+    width: 100%;
     padding-bottom: 30px;
+    background-color: #fff;
+    border-radius: 4px;
 
     @media (max-width: 767px) {
         padding: 0;
@@ -23,8 +25,7 @@
 }
 
 .title-wrapper {
-    margin: 125px 0 0;
-    padding: 30px 15px;
+    padding: 15px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -64,10 +65,6 @@
         & > div {
             width: 100%;
             display: flex;
-        }
-
-        & > :not(:last-child) {
-            justify-content: space-between;
         }
 
         & > :last-child {
@@ -142,7 +139,10 @@
 
 .property-images {
     width: 100%;
+    max-width: 1180px;
+    max-height: 50%;
     padding: 0 15px;
+    margin: 0 auto;
 
     @media (max-width: 767px) {
         padding: 0;
@@ -152,14 +152,10 @@
 .property-images-grid {
     position: relative;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 
-    "img1 img1 img2"
-    "img1 img1 img3";
-    row-gap: 8px;
-    column-gap: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     @media (max-width: 1023px) {
         row-gap: 10px;
@@ -171,26 +167,65 @@
     }
 }
 
-.img1 {
-    grid-area: img1;
+.wrapper {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media (max-width: 767px) {
+        flex-direction: column;
+    }
 }
 
-.img2 {
-    grid-area: img2;
-}
-
-.img3 {
+.property-image {
     position: relative;
-    grid-area: img3;
+    margin: 20px 0 20px;
+    width: 100%;
+    height: 60vh;
+    cursor: pointer;
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
+    & > img {
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.75) 100%);
+        object-fit: cover;
+    }
+
+    @media (max-width: 1025px) {
+        height: 45vh;
+    }
+}
+
+.more-image {
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    z-index: 10;
+}
+
+.slider {
+    width: 100%;
+    height: 100px;
+
+    @media (max-width: 767px) {
+        width: 95%;
+    }
+
+    & > div {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.slide {
+    & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
@@ -214,18 +249,6 @@
     font-size: 1.6rem;
     border-radius: 4px;
     z-index: 10;
-}
-
-.property-image {
-    height: 100%;
-    width: 100%;
-    cursor: pointer;
-
-    & > img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
 }
 
 .property-summary {
@@ -337,3 +360,36 @@
     margin-right: 8px;
 }
 
+.labels {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.secondary-label {
+    background-color: rgb(237, 237, 237);
+}
+
+.property-image {
+    & > div {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 767px) {
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

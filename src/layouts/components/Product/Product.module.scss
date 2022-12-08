@@ -92,6 +92,7 @@
 .table {
     margin: 0 auto;
     width: 100%;
+    max-width: 95%;
     border-spacing: 0;
     color: #fff;
     border-radius: 4px;
@@ -108,9 +109,11 @@
 
     & > thead, & > tbody {
         & > tr {
+            height: 58px;
             text-align: center;
 
             & > th, & > td {
+                width: 25%;
                 padding: 5px 0;
             }
         }

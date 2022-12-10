@@ -1,3 +1,7 @@
+.wrapper {
+    overflow: hidden;
+}
+
 .form {
     display: grid;
     column-gap: 30px;
@@ -165,4 +169,8 @@
     &>p {
         margin-left: 8px;
     }
+}
+
+.hide {
+    display: none;
 }

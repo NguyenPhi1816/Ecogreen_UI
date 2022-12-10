@@ -156,7 +156,7 @@ function Footer({ footerForm = true }) {
                                         ? 'I want more information'
                                         : 'Đăng ký nhận thông tin'}
                                 </h3>
-                                <Form />
+                                <Form showAgent={false} />
                             </div>
                         </div>
                     </div>

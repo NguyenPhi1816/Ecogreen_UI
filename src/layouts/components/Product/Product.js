@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Product.module.scss';
 import { child, get } from 'firebase/database';
@@ -163,16 +162,15 @@ function Product({ offsetWidth, id }) {
                 <div className={cx('product-grid')}>
                     <div className={cx('product-items')}>
                         {data.slice(0, amount).map((item) => (
-                            <Link key={item.id} to={`/productId=${item.id}`}>
-                                <ProductItem
-                                    data={item}
-                                    handleExpandClick={(e) => {
-                                        e.preventDefault();
-                                        setCurrentItem(item);
-                                        setShowImagesSlider(true);
-                                    }}
-                                />
-                            </Link>
+                            <ProductItem
+                                key={item.id}
+                                data={item}
+                                handleExpandClick={(e) => {
+                                    e.preventDefault();
+                                    setCurrentItem(item);
+                                    setShowImagesSlider(true);
+                                }}
+                            />
                         ))}
                     </div>
                     <a
@@ -208,7 +206,7 @@ function Product({ offsetWidth, id }) {
                         >
                             x
                         </button>
-                        <Form type="vertical" />
+                        <Form type="vertical" className={cx('form-custom')} />
                     </div>
                 </div>
             )}

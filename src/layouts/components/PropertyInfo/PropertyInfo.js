@@ -408,24 +408,20 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                         {data.slice(0, amount).map(
                             (item) =>
                                 item.id !== currentItem.id && (
-                                    <Link
+                                    <ProductItem
                                         key={item.id}
-                                        to={`/productId=${item.id}`}
-                                    >
-                                        <ProductItem
-                                            data={item}
-                                            className={cx('product')}
-                                            offsetWidth={offsetWidth}
-                                            handleExpandClick={(e) => {
-                                                e.preventDefault();
-                                                let selectedItem = data.filter(
-                                                    (i) => i.id === item.id,
-                                                );
-                                                setAnotherItem(selectedItem[0]);
-                                                setShowImagesSlider(true);
-                                            }}
-                                        />
-                                    </Link>
+                                        data={item}
+                                        className={cx('product')}
+                                        offsetWidth={offsetWidth}
+                                        handleExpandClick={(e) => {
+                                            e.preventDefault();
+                                            let selectedItem = data.filter(
+                                                (i) => i.id === item.id,
+                                            );
+                                            setAnotherItem(selectedItem[0]);
+                                            setShowImagesSlider(true);
+                                        }}
+                                    />
                                 ),
                         )}
                         <div className={cx('load-more-container')}>

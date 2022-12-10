@@ -15,7 +15,7 @@ import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { LanguageContext } from '../../App';
 
-function Form({ type, className }) {
+function Form({ type, className, showAgent = true }) {
     const { language } = useContext(LanguageContext);
     const productId = useParams().id;
     const {
@@ -59,7 +59,7 @@ function Form({ type, className }) {
 
     return (
         <div className={cx('wrapper', className)}>
-            <div className={cx('contact-info')}>
+            <div className={cx('contact-info', { hide: !showAgent })}>
                 <div className={cx('avatar')}>
                     <img
                         src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
@@ -77,14 +77,14 @@ function Form({ type, className }) {
                             className={cx('phone-number')}
                         >
                             <FontAwesomeIcon icon={faPhone} />
-                            <p>0941256257</p>
+                            <p>0975770502</p>
                         </a>
                         <a
                             href={`tel:0941256257`}
                             className={cx('mobile-number')}
                         >
                             <FontAwesomeIcon icon={faEnvelope} />
-                            <p>abc@gmail.com</p>
+                            <p>duongnd.moigioibds@gmail.com</p>
                         </a>
                     </div>
                 </div>

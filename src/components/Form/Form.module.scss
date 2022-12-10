@@ -1,5 +1,6 @@
 .wrapper {
     padding: 30px;
+    overflow: hidden;
 }
 
 .form {
@@ -116,5 +117,11 @@
 
     &>p {
         margin-left: 8px;
+        width: 130px;
+        overflow: scroll;
     }
+}
+
+.hide{
+    display: none;
 }

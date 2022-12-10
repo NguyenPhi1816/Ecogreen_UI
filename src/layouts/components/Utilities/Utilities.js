@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
-import styles from './Feedback.module.scss';
+import styles from './Utilities.module.scss';
 import { LanguageContext } from '../../../App';
 import { child, get } from 'firebase/database';
 import { dbRef } from '../../../firebase';
@@ -8,17 +8,18 @@ import ImagesModal from '../../../components/ImagesModal';
 
 const cx = classNames.bind(styles);
 
-const Feedback = ({ offsetWidth, id }) => {
+const Utilities = ({ offsetWidth, id }) => {
     const { language } = useContext(LanguageContext);
-    const [data, setData] = useState([]);
     const [showModal, setShowModal] = useState(false);
+    const [thumbs, setThumbs] = useState([]);
+    const [images, setImages] = useState([]);
 
     useEffect(() => {
-        get(child(dbRef, 'feedback'))
+        get(child(dbRef, 'utilities'))
             .then((snapshot) => {
                 if (snapshot.exists()) {
-                    let images = Object.values(snapshot.val());
-                    setData(images);
+                    setThumbs(snapshot.val().thumbs);
+                    setImages(snapshot.val().all);
                 } else {
                     console.log('No data available');
                 }
@@ -37,25 +38,25 @@ const Feedback = ({ offsetWidth, id }) => {
             <div className={cx('title')}>
                 <h2>
                     {language === 'en'
-                        ? 'Feed Back About Eco Green SaiGon'
-                        : 'Khách Hàng Nói Gì Về Eco Green Sài Gòn'}
+                        ? 'Utilities Only For Eco Green Residents'
+                        : 'Tiện ích chỉ dành cho cư dân Eco Green'}
                 </h2>
                 <div className={cx('underline')}></div>
             </div>
             <div className={cx('image-container')}>
-                {data &&
-                    data.map((item, index) => (
-                        <img
-                            src={item}
-                            alt="feedback"
-                            key={index}
-                            className={cx(`img-${index}`)}
-                            onClick={
-                                offsetWidth >= 768 ? handleShowModal : () => {}
-                            }
-                        />
-                    ))}
+                {thumbs.map((item, index) => (
+                    <img
+                        src={item}
+                        alt="feedback"
+                        key={index}
+                        className={cx(`img-${index}`)}
+                        onClick={handleShowModal}
+                    />
+                ))}
             </div>
+            <button className={cx('more-btn')} onClick={handleShowModal}>
+                {language === 'en' ? 'MORE' : 'THÊM'}
+            </button>
             <div className={cx('leaf')}>
                 <img
                     src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/Lovepik_com-400205005-cartoon-leaves.png?alt=media&token=127f9914-789b-4471-8002-e400b7d17d6a"
@@ -63,16 +64,15 @@ const Feedback = ({ offsetWidth, id }) => {
                 />
             </div>
 
-            {showModal && (
+            {showModal && images && (
                 <ImagesModal
                     offsetWidth={offsetWidth}
                     handleClose={handleShowModal}
-                    data={{ images: data }}
-                    showFullImage={true}
+                    data={{ images: images }}
                 />
             )}
         </section>
     );
 };
 
-export default Feedback;
+export default Utilities;

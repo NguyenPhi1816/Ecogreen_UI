@@ -1,14 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './PropertyInfo.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleCheck,
-    faMessage,
-    faPhone,
-    faTimes,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import Form from '../../../components/Form';
 import ProductItem from '../../../components/ProductItem';
@@ -16,6 +10,7 @@ import ImagesModal from '../../../components/ImagesModal';
 import { useContext } from 'react';
 import { LanguageContext } from '../../../App';
 import Property from '../Property/Property';
+import NavbarBottom from '../../../components/NavbarBottom';
 
 const cx = classNames.bind(styles);
 
@@ -454,19 +449,10 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                 )}
 
                 {offsetWidth < 768 && (
-                    <nav className={cx('navbar-bottom')}>
-                        <div>
-                            <button
-                                className={cx('chat')}
-                                onClick={() => setShowForm(true)}
-                            >
-                                <FontAwesomeIcon icon={faMessage} />
-                            </button>
-                            <a href={`tel:0941256257`} className={cx('phone')}>
-                                <FontAwesomeIcon icon={faPhone} />
-                            </a>
-                        </div>
-                    </nav>
+                    <NavbarBottom
+                        offsetWidth={offsetWidth}
+                        setShowForm={setShowForm}
+                    />
                 )}
 
                 {showForm && (

@@ -26,6 +26,14 @@ html {
     font-family: var(--font-family);
     font-weight: 400;
     scroll-behavior: smooth;
+
+    // disabled copy
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 body {

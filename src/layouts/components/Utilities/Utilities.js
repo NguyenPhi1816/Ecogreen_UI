@@ -44,15 +44,17 @@ const Utilities = ({ offsetWidth, id }) => {
                 <div className={cx('underline')}></div>
             </div>
             <div className={cx('image-container')}>
-                {thumbs.map((item, index) => (
-                    <img
-                        src={item}
-                        alt="feedback"
-                        key={index}
-                        className={cx(`img-${index}`)}
-                        onClick={handleShowModal}
-                    />
-                ))}
+                {thumbs
+                    .slice(0, offsetWidth >= 1025 ? 5 : 3)
+                    .map((item, index) => (
+                        <img
+                            src={item}
+                            alt="feedback"
+                            key={index}
+                            className={cx(`img-${index}`)}
+                            onClick={handleShowModal}
+                        />
+                    ))}
             </div>
             <button className={cx('more-btn')} onClick={handleShowModal}>
                 {language === 'en' ? 'MORE' : 'THÊM'}

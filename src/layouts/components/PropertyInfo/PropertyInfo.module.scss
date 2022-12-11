@@ -322,56 +322,6 @@
     }
 } 
 
-.navbar-bottom {
-    width: 100%;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background: #fff;
-    border-top: 1px solid #dce0e0;
-    z-index: 9998;
-
-    & > div {
-        display: flex;
-        align-items: center;
-    }
-
-    .avatar > img {
-        width: 50px;
-        height: 50px;
-        object-fit: cover;
-    }
-
-    .agent-name {
-        margin-left: 8px;
-    }
-
-    .chat, .phone {
-        width: 50px;
-        height: 50px;
-        border-radius: 4px;
-        margin-left: 4px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-    }
-
-    .chat {
-        background: #77c720;
-        color: var(--text-white);
-    }
-
-    .phone {
-        border: 1px solid #77c720;
-        color: #77c720;
-    }
-}
-
 .modal-form {
     position: fixed;
     top: 0;

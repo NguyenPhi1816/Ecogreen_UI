@@ -8,8 +8,19 @@ import Footer from '../components/Footer';
 import BackToTop from '../../components/BackToTop';
 import ContactButtons from '../../components/ContactButtons';
 import Utilities from '../components/Utilities';
+import NavbarBottom from '../../components/NavbarBottom';
+import { useState } from 'react';
+import classNames from 'classnames/bind';
+import styles from './DefaultLayout.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import Form from '../../components/Form';
+
+const cx = classNames.bind(styles);
 
 function DefaultLayout({ offsetY, offsetWidth }) {
+    const [showForm, setShowForm] = useState(false);
+
     return (
         <>
             <Home width={offsetWidth} id="home" />
@@ -20,8 +31,39 @@ function DefaultLayout({ offsetY, offsetWidth }) {
             <Videos width={offsetWidth} id="videos" />
             <Services id="services" />
             <Footer />
-            {offsetY >= 300 && <BackToTop />}
-            <ContactButtons width={offsetWidth} />
+            {offsetY >= 300 && (
+                <BackToTop
+                    styles={
+                        offsetWidth < 768
+                            ? {
+                                  bottom: '85px',
+                                  right: '10px',
+                              }
+                            : {}
+                    }
+                />
+            )}
+            {offsetWidth > 768 && <ContactButtons width={offsetWidth} />}
+            {offsetWidth <= 768 && offsetY >= 100 && (
+                <NavbarBottom
+                    offsetWidth={offsetWidth}
+                    setShowForm={setShowForm}
+                />
+            )}
+
+            {showForm && (
+                <div className={cx('modal-form')}>
+                    <div className={cx('modal')}>
+                        <button
+                            className={cx('close-btn')}
+                            onClick={() => setShowForm(false)}
+                        >
+                            <FontAwesomeIcon icon={faTimes} />
+                        </button>
+                        <Form type={'vertical'} className={cx('form')} />
+                    </div>
+                </div>
+            )}
         </>
     );
 }

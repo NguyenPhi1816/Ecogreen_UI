@@ -59,7 +59,9 @@ function ProductsLayout({ offsetY, offsetWidth }) {
                             }
                         />
                     )}
-                    {offsetY >= 300 && <ContactButtons width={offsetWidth} />}
+                    {offsetWidth > 768 && (
+                        <ContactButtons width={offsetWidth} />
+                    )}
                 </>
             )}
         </>

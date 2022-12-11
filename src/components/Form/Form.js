@@ -84,7 +84,7 @@ function Form({ type, className, showAgent = true }) {
                             className={cx('mobile-number')}
                         >
                             <FontAwesomeIcon icon={faEnvelope} />
-                            <p>duongnd.moigioibds@gmail.com</p>
+                            <p>rentalservicesg@gmail.com</p>
                         </a>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ function Home({ width, id }) {
                 <span className={cx('sub-title')}>
                     {language === 'en'
                         ? 'ENJOY YOUR GREEN LIFE WITH OUR ECOSYSTEM'
-                        : 'TẬN HƯỞNG CUỘC SỐNG XANH CỦA BẠN VỚI HỆ SINH THÁI XANH CỦA CHÚNG TÔI'}
+                        : 'TẬN HƯỞNG HỆ SINH THÁI XANH CỦA ECO GREEN'}
                 </span>
             </div>
         </section>

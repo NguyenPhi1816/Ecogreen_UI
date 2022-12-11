@@ -1,5 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './ProductItem.module.scss';
+import { Navigation, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -24,10 +26,30 @@ function ProductItem({ data, handleExpandClick, className }) {
     return (
         <div className={cx('wrapper', className)}>
             <div className={cx('product-item-container')}>
-                <div className={cx('header')}>
-                    <div className={cx('image-container')}>
-                        <img src={data.thumbs[0]} alt="thumb" />
-                    </div>
+                <div className={cx('slider')}>
+                    <Swiper
+                        modules={[Navigation, A11y]}
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        loop
+                        autoplay={{ delay: 3000 }}
+                    >
+                        {data.thumbs.map((image, index) => (
+                            <SwiperSlide key={index}>
+                                <div className={cx('slide')}>
+                                    <img src={image} alt="About product" />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                        <SwiperSlide>
+                            <div className={cx('slide', 'last-image')}>
+                                <img src={data.thumbs[1]} alt="About product" />
+                                <p className={cx('remain-amount')}>{`${
+                                    data.images.length - 3
+                                } more images`}</p>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
                     <button
                         className={cx('show-modal')}
                         onClick={handleExpandClick}

@@ -14,7 +14,6 @@ function LargeSlider({ id }) {
     const { language } = useContext(LanguageContext);
     const [data, setData] = useState([]);
     const imagesRef = useRef(null);
-    const inforRef = useRef(null);
 
     useEffect(() => {
         get(child(dbRef, `outsideImages`))

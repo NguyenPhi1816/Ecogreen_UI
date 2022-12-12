@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import classnames from 'classnames/bind';
@@ -13,6 +13,8 @@ const cx = classnames.bind(styles);
 function LargeSlider({ id }) {
     const { language } = useContext(LanguageContext);
     const [data, setData] = useState([]);
+    const imagesRef = useRef(null);
+    const inforRef = useRef(null);
 
     useEffect(() => {
         get(child(dbRef, `outsideImages`))
@@ -35,7 +37,9 @@ function LargeSlider({ id }) {
                 spaceBetween={0}
                 slidesPerView={1}
                 loop
-                autoplay={{ delay: 5000 }}
+                allowTouchMove={false}
+                draggable={false}
+                ref={imagesRef}
             >
                 {data.map((image, index) => (
                     <SwiperSlide key={index}>
@@ -54,6 +58,12 @@ function LargeSlider({ id }) {
                     slidesPerView={1}
                     loop
                     autoplay={{ delay: 5000 }}
+                    onSlideNextTransitionStart={() => {
+                        imagesRef.current.swiper.slideNext();
+                    }}
+                    onSlidePrevTransitionStart={() => {
+                        imagesRef.current.swiper.slidePrev();
+                    }}
                 >
                     <SwiperSlide>
                         <div>

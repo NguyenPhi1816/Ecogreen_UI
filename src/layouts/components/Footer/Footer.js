@@ -143,7 +143,7 @@ function Footer({ footerForm = true }) {
                                 </div>
                                 <div className={cx('contact-item')}>
                                     <FontAwesomeIcon icon={faEnvelope} />
-                                    <p>Email: diaoclv@gmail.com</p>
+                                    <p>Email: rentalservicesg@gmail.com</p>
                                 </div>
                                 <div className={cx('contact-item')}>
                                     <FontAwesomeIcon icon={faGlobe} />

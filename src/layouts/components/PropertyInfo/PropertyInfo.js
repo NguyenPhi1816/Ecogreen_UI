@@ -11,6 +11,7 @@ import { useContext } from 'react';
 import { LanguageContext } from '../../../App';
 import Property from '../Property/Property';
 import NavbarBottom from '../../../components/NavbarBottom';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -403,20 +404,25 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                         {data.slice(0, amount).map(
                             (item) =>
                                 item.id !== currentItem.id && (
-                                    <ProductItem
+                                    <Link
                                         key={item.id}
-                                        data={item}
-                                        className={cx('product')}
-                                        offsetWidth={offsetWidth}
-                                        handleExpandClick={(e) => {
-                                            e.preventDefault();
-                                            let selectedItem = data.filter(
-                                                (i) => i.id === item.id,
-                                            );
-                                            setAnotherItem(selectedItem[0]);
-                                            setShowImagesSlider(true);
-                                        }}
-                                    />
+                                        to={`/productId=${item.id}`}
+                                    >
+                                        <ProductItem
+                                            key={item.id}
+                                            data={item}
+                                            className={cx('product')}
+                                            offsetWidth={offsetWidth}
+                                            handleExpandClick={(e) => {
+                                                e.preventDefault();
+                                                let selectedItem = data.filter(
+                                                    (i) => i.id === item.id,
+                                                );
+                                                setAnotherItem(selectedItem[0]);
+                                                setShowImagesSlider(true);
+                                            }}
+                                        />
+                                    </Link>
                                 ),
                         )}
                         <div className={cx('load-more-container')}>

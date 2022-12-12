@@ -9,6 +9,7 @@ import Form from '../../../components/Form';
 import { dbRef } from '../../../firebase';
 import { useContext } from 'react';
 import { LanguageContext } from '../../../App';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -162,15 +163,16 @@ function Product({ offsetWidth, id }) {
                 <div className={cx('product-grid')}>
                     <div className={cx('product-items')}>
                         {data.slice(0, amount).map((item) => (
-                            <ProductItem
-                                key={item.id}
-                                data={item}
-                                handleExpandClick={(e) => {
-                                    e.preventDefault();
-                                    setCurrentItem(item);
-                                    setShowImagesSlider(true);
-                                }}
-                            />
+                            <Link key={item.id} to={`/productId=${item.id}`}>
+                                <ProductItem
+                                    data={item}
+                                    handleExpandClick={(e) => {
+                                        e.preventDefault();
+                                        setCurrentItem(item);
+                                        setShowImagesSlider(true);
+                                    }}
+                                />
+                            </Link>
                         ))}
                     </div>
                     <a

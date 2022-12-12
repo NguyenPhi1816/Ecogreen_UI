@@ -14,6 +14,8 @@ import {
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { LanguageContext } from '../../App';
+import { child, get } from 'firebase/database';
+import { dbRef } from '../../firebase';
 
 function Form({ type, className, showAgent = true }) {
     const { language } = useContext(LanguageContext);
@@ -29,6 +31,7 @@ function Form({ type, className, showAgent = true }) {
     });
     const [showSpinner, setShowSpinner] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [agent, setAgent] = useState({});
 
     const cx =
         type === 'vertical'
@@ -57,34 +60,45 @@ function Form({ type, className, showAgent = true }) {
         return () => clearTimeout(timerId);
     }, [showSuccessMessage]);
 
+    useEffect(() => {
+        get(child(dbRef, 'agent'))
+            .then((snapshot) => {
+                if (snapshot.exists()) {
+                    setAgent(snapshot.val());
+                } else {
+                    console.log('No data available');
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
+
     return (
         <div className={cx('wrapper', className)}>
             <div className={cx('contact-info', { hide: !showAgent })}>
                 <div className={cx('avatar')}>
-                    <img
-                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"
-                        alt="Agent's avatar"
-                    />
+                    <img src={agent.avatar} alt="Agent's avatar" />
                 </div>
                 <div className={cx('contact-info-container')}>
                     <div className={cx('agent-name')}>
                         <FontAwesomeIcon icon={faUser} />
-                        <p>Nguyen Dai Duong</p>
+                        <p>{agent.name}</p>
                     </div>
                     <div className={cx('agent-phone')}>
                         <a
-                            href={`tel:0941256257`}
+                            href={`tel:${agent.phone}`}
                             className={cx('phone-number')}
                         >
                             <FontAwesomeIcon icon={faPhone} />
-                            <p>0975770502</p>
+                            <p>{agent.phone}</p>
                         </a>
                         <a
-                            href={`tel:0941256257`}
+                            href={`mailto:${agent.gmail}`}
                             className={cx('mobile-number')}
                         >
                             <FontAwesomeIcon icon={faEnvelope} />
-                            <p>rentalservicesg@gmail.com</p>
+                            <p>{agent.gmail}</p>
                         </a>
                     </div>
                 </div>

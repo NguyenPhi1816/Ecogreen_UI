@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Product.module.scss';
-import { child, get } from 'firebase/database';
 
 import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
 import Form from '../../../components/Form';
-import { dbRef } from '../../../firebase';
 import { useContext } from 'react';
 import { LanguageContext } from '../../../App';
 import { Link } from 'react-router-dom';
+import { products, products_vi, priceTable } from '../../../config';
 
 const cx = classNames.bind(styles);
 
@@ -20,39 +19,14 @@ function Product({ offsetWidth, id }) {
     const [showImagesSlider, setShowImagesSlider] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [data, setData] = useState([]);
-    const [priceTable, setPriceTable] = useState([]);
     const [amount, setAmount] = useState(() =>
         offsetWidth >= 1024 ? DESKTOP_AMOUNT : MOBILE_AMOUNT,
     );
     const [currentItem, setCurrentItem] = useState({});
 
     useEffect(() => {
-        get(child(dbRef, language === 'en' ? 'products' : 'products_vi'))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    setData(snapshot.val());
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+        setData(() => (language === 'en' ? products : products_vi));
     }, [language]);
-
-    useEffect(() => {
-        get(child(dbRef, 'price-table'))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    setPriceTable(snapshot.val());
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, []);
 
     const handleLoadMore = (e) => {
         if (amount === data.length) {

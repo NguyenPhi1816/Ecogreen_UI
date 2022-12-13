@@ -14,8 +14,7 @@ import {
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { LanguageContext } from '../../App';
-import { child, get } from 'firebase/database';
-import { dbRef } from '../../firebase';
+import { agent } from '../../config';
 
 function Form({ type, className, showAgent = true }) {
     const { language } = useContext(LanguageContext);
@@ -31,7 +30,6 @@ function Form({ type, className, showAgent = true }) {
     });
     const [showSpinner, setShowSpinner] = useState(false);
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-    const [agent, setAgent] = useState({});
 
     const cx =
         type === 'vertical'
@@ -59,20 +57,6 @@ function Form({ type, className, showAgent = true }) {
         }
         return () => clearTimeout(timerId);
     }, [showSuccessMessage]);
-
-    useEffect(() => {
-        get(child(dbRef, 'agent'))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    setAgent(snapshot.val());
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, []);
 
     return (
         <div className={cx('wrapper', className)}>

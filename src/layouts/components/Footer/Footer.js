@@ -37,32 +37,27 @@ function Footer({ footerForm = true }) {
                         </div>
                         <div className={cx('logos')}>
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/xuan-mai-corp-logo.png?alt=media&token=99953b65-fac8-40e9-97fe-1251cd31a810"
+                                src="https://nguyenmanhninh.com/wp-content/uploads/2015/04/logo-xuan-mai.png"
                                 alt="logo"
                                 className={cx('partner-logo', 'mg-r-15')}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/cbre1.jpg?alt=media&token=92f3b14b-0147-48ac-93a8-0d29f21026aa"
+                                src="https://giathuecanho.com/wp-content/uploads/2021/08/cbre1.jpg"
                                 alt="logo"
                                 className={cx('partner-logo', 'mg-r-15')}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/skk.png?alt=media&token=88806379-2d33-4f17-9a91-cd44ac083e57"
+                                src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/bblubuqzbhg8rebnqxna"
                                 alt="logo"
                                 className={cx('partner-logo', 'mg-r-15')}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/otis.png?alt=media&token=cc5fe3c3-8d08-4bfd-bb66-9033d5f7b649"
+                                src="https://cdn.cdnlogo.com/logos/o/78/otis.png"
                                 alt="logo"
                                 className={cx('partner-logo', 'mg-r-15')}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/solar-control.png?alt=media&token=d0c2382e-ee2b-4f11-8b46-dc21fe152e80"
-                                alt="logo"
-                                className={cx('partner-logo', 'mg-r-15')}
-                            />
-                            <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/Duravit.png?alt=media&token=5524bcf5-4648-42e8-90b4-23522dd26621"
+                                src="https://upload.wikimedia.org/wikipedia/de/thumb/f/fc/Logo_Duravit.svg/2560px-Logo_Duravit.svg.png"
                                 alt="logo"
                                 className={cx(
                                     'partner-logo',
@@ -71,7 +66,7 @@ function Footer({ footerForm = true }) {
                                 )}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/hansgrohe.png?alt=media&token=57275bf5-456d-48e9-825e-010825ea6f89"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Hansgrohe-Logo.svg/2560px-Hansgrohe-Logo.svg.png"
                                 alt="logo"
                                 className={cx(
                                     'partner-logo',
@@ -80,12 +75,12 @@ function Footer({ footerForm = true }) {
                                 )}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/schneider.png?alt=media&token=1d62379c-3ddc-4e0d-9a0b-9e8af0ea3647"
+                                src="https://hoangphatlighting.vn/upload/images/2022/02/1645498087-schneiderlogo.jpg"
                                 alt="logo"
                                 className={cx('partner-logo', 'mg-r-15')}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/FGwilson.png?alt=media&token=ab50a132-d207-4651-8637-e77e1923e752"
+                                src="https://seeklogo.com/images/F/fg-wilson-logo-5A05AC22A5-seeklogo.com.png"
                                 alt="logo"
                                 className={cx(
                                     'partner-logo',
@@ -94,12 +89,12 @@ function Footer({ footerForm = true }) {
                                 )}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/teka.png?alt=media&token=a1a5be43-8ef1-4025-b627-5aa939c81c55"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_Teka_svg.svg/1024px-Logo_Teka_svg.svg.png"
                                 alt="logo"
                                 className={cx('partner-logo', 'mg-r-15')}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/daikin.png?alt=media&token=79ec665e-ec72-4cc7-a7db-bca96cec7c6c"
+                                src="https://mltc.com.vn/wp-content/uploads/2018/01/logo-daikin-1.png"
                                 alt="logo"
                                 className={cx(
                                     'partner-logo',
@@ -108,7 +103,7 @@ function Footer({ footerForm = true }) {
                                 )}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/samsung.png?alt=media&token=7473f409-3eb2-4780-88bd-8f5361afac5b"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Samsung_wordmark.svg/7051px-Samsung_wordmark.svg.png"
                                 alt="logo"
                                 className={cx(
                                     'partner-logo',
@@ -117,7 +112,7 @@ function Footer({ footerForm = true }) {
                                 )}
                             />
                             <img
-                                src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/tuongviet.png?alt=media&token=9a63b42b-3965-4b47-b625-71cf230a820a"
+                                src="https://cdn.nhanlucnganhluat.vn/uploads/images/8B5AB457/logo/2019-11/image.jpg"
                                 alt="logo"
                                 className={cx('partner-logo')}
                             />

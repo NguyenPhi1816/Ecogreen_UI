@@ -1,33 +1,15 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Utilities.module.scss';
 import { LanguageContext } from '../../../App';
-import { child, get } from 'firebase/database';
-import { dbRef } from '../../../firebase';
 import ImagesModal from '../../../components/ImagesModal';
+import { utilities } from '../../../config';
 
 const cx = classNames.bind(styles);
 
 const Utilities = ({ offsetWidth, id }) => {
     const { language } = useContext(LanguageContext);
     const [showModal, setShowModal] = useState(false);
-    const [thumbs, setThumbs] = useState([]);
-    const [images, setImages] = useState([]);
-
-    useEffect(() => {
-        get(child(dbRef, 'utilities'))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    setThumbs(snapshot.val().thumbs);
-                    setImages(snapshot.val().all);
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, []);
 
     const handleShowModal = () => {
         setShowModal(!showModal);
@@ -44,7 +26,7 @@ const Utilities = ({ offsetWidth, id }) => {
                 <div className={cx('underline')}></div>
             </div>
             <div className={cx('image-container')}>
-                {thumbs
+                {utilities.thumbs
                     .slice(0, offsetWidth >= 1025 ? 5 : 3)
                     .map((item, index) => (
                         <img
@@ -66,11 +48,11 @@ const Utilities = ({ offsetWidth, id }) => {
                 />
             </div>
 
-            {showModal && images && (
+            {showModal && (
                 <ImagesModal
                     offsetWidth={offsetWidth}
                     handleClose={handleShowModal}
-                    data={{ images: images }}
+                    data={{ images: utilities.all }}
                 />
             )}
         </section>

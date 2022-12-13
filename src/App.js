@@ -58,6 +58,15 @@ function App() {
                                 />
                             }
                         />
+                        <Route
+                            path="/*"
+                            element={
+                                <DefaultLayout
+                                    offsetY={offsetY}
+                                    offsetWidth={offsetWidth}
+                                />
+                            }
+                        />
                     </Routes>
                 </div>
             </LanguageContext.Provider>

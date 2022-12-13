@@ -1,9 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
-import { dbRef } from '../../../firebase';
-import { get, child } from 'firebase/database';
 import classNames from 'classnames/bind';
 import styles from './Gallery.module.scss';
 import { LanguageContext } from '../../../App';
+import { gallery, gallery_vi } from '../../../config';
 
 const cx = classNames.bind(styles);
 
@@ -12,18 +11,7 @@ function Gallery({ id }) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        get(child(dbRef, language === 'en' ? 'gallery' : 'gallery_vi'))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    let images = Object.values(snapshot.val());
-                    setData(images);
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+        setData(() => (language === 'en' ? gallery : gallery_vi));
     }, [language]);
 
     return (
@@ -43,38 +31,33 @@ function Gallery({ id }) {
                         </p>
                     </div>
                     <div className={cx('gallery-grid')}>
-                        {data &&
-                            data.map((item, index) => (
-                                <div
-                                    className={cx(
-                                        'gallery-grid-item',
-                                        `item-${index + 1}`,
-                                    )}
-                                    key={index}
-                                >
-                                    <img src={item.url} alt="Grid item" />
-                                    <div
+                        {data.map((item, index) => (
+                            <div
+                                className={cx(
+                                    'gallery-grid-item',
+                                    `item-${index + 1}`,
+                                )}
+                                key={index}
+                            >
+                                <img src={item.url} alt="Grid item" />
+                                <div className={cx('gallery-grid-item-title')}>
+                                    <span
                                         className={cx(
-                                            'gallery-grid-item-title',
+                                            'gallery-grid-item-title-sub',
                                         )}
                                     >
-                                        <span
-                                            className={cx(
-                                                'gallery-grid-item-title-sub',
-                                            )}
-                                        >
-                                            {item.desc}
-                                        </span>
-                                        <h3
-                                            className={cx(
-                                                'gallery-grid-item-title-main',
-                                            )}
-                                        >
-                                            {item.title}
-                                        </h3>
-                                    </div>
+                                        {item.desc}
+                                    </span>
+                                    <h3
+                                        className={cx(
+                                            'gallery-grid-item-title-main',
+                                        )}
+                                    >
+                                        {item.title}
+                                    </h3>
                                 </div>
-                            ))}
+                            </div>
+                        ))}
                     </div>
                 </div>
             }

@@ -1,33 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import classnames from 'classnames/bind';
 import styles from './LargeSlider.module.scss';
-import { get, child } from 'firebase/database';
-import { dbRef } from '../../../firebase';
 import { useContext } from 'react';
 import { LanguageContext } from '../../../App';
+import { outsideImages } from '../../../config';
 
 const cx = classnames.bind(styles);
 
 function LargeSlider({ id }) {
     const { language } = useContext(LanguageContext);
-    const [data, setData] = useState([]);
     const imagesRef = useRef(null);
-
-    useEffect(() => {
-        get(child(dbRef, `outsideImages`))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    setData(snapshot.val());
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, []);
 
     return (
         <section className={cx('large-slider')} id={id}>
@@ -40,7 +24,7 @@ function LargeSlider({ id }) {
                 draggable={false}
                 ref={imagesRef}
             >
-                {data.map((image, index) => (
+                {outsideImages.map((image, index) => (
                     <SwiperSlide key={index}>
                         <img
                             src={image}

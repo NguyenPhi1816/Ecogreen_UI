@@ -1,35 +1,18 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper';
-import { useState, useEffect } from 'react';
-import { get, child } from 'firebase/database';
-import { dbRef } from '../../../firebase';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Videos.module.scss';
 
 import { useContext } from 'react';
 import { LanguageContext } from '../../../App';
+import { videos } from '../../../config';
 
 const cx = classNames.bind(styles);
 
 function Videos({ width, id }) {
     const { language } = useContext(LanguageContext);
-    const [currentVideo, setCurrentVideo] = useState('');
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        get(child(dbRef, `videos`))
-            .then((snapshot) => {
-                if (snapshot.exists()) {
-                    setData(snapshot.val());
-                    setCurrentVideo(snapshot.val()[0].video_url);
-                } else {
-                    console.log('No data available');
-                }
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    }, []);
+    const [currentVideo, setCurrentVideo] = useState(videos[0].video_url);
 
     return (
         <section className={cx('videos')} id={id}>
@@ -63,7 +46,7 @@ function Videos({ width, id }) {
                         navigation
                         loop
                     >
-                        {data.map((video, index) => (
+                        {videos.map((video, index) => (
                             <SwiperSlide key={index}>
                                 <div
                                     className={cx('video-slide')}

@@ -147,9 +147,7 @@ function Footer({ footerForm = true }) {
                                 </div>
                                 <div className={cx('contact-item')}>
                                     <FontAwesomeIcon icon={faGlobe} />
-                                    <p>
-                                        Website: http://www.ecogreenq7.com.vn/
-                                    </p>
+                                    <p>Website: http://www.ecogreenq7.vn/</p>
                                 </div>
                             </div>
                             <div className={cx('form')}>

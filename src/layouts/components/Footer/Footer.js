@@ -181,7 +181,7 @@ function Footer({ footerForm = true }) {
                 </div>
                 <div className={cx('leaf')}>
                     <img
-                        src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/leaf.jpg?alt=media&token=05b98e5d-cdc9-4018-b663-0961d4768a8f"
+                        src="https://ecogreenq7.vn/rentalservicesg/images/footer-leaf.jpg"
                         alt="leaf"
                     ></img>
                 </div>

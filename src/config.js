@@ -783,7 +783,7 @@ export const priceTable = [
 ];
 
 export const outsideImages = [
-    `${link}outsideImages/park.jpg`,
+    `http://ecogreen-saigon.vn/uploads/tien-do/tien-do-shophouse-eco-green-sai-gon.jpeg`,
     `${link}outsideImages/quality.jpg`,
     `${link}outsideImages/view.jpg`,
 ];

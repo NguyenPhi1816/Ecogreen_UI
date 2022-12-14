@@ -43,7 +43,7 @@ const Utilities = ({ offsetWidth, id }) => {
             </button>
             <div className={cx('leaf')}>
                 <img
-                    src="https://firebasestorage.googleapis.com/v0/b/ecogreen-db.appspot.com/o/Lovepik_com-400205005-cartoon-leaves.png?alt=media&token=127f9914-789b-4471-8002-e400b7d17d6a"
+                    src="https://ecogreenq7.vn/rentalservicesg/images/utilities-leaf.png"
                     alt="leaf"
                 />
             </div>

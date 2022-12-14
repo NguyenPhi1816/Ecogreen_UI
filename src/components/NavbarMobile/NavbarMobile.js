@@ -9,6 +9,8 @@ import { logo_url } from '../../config';
 import LanguageButton from '../LanguageButton/LanguageButton';
 import { useContext } from 'react';
 import { LanguageContext } from '../../App';
+import { Link } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -58,9 +60,9 @@ function NavbarMobile({ styles }) {
                 <div></div>
                 <div></div>
             </div>
-            <a href="/" className={cx('logo')}>
+            <RouterLink to="/" className={cx('logo')}>
                 <img src={logo_url} alt="Logo" />
-            </a>
+            </RouterLink>
             <aside
                 className={`${cx('sidebar')} ${
                     showMenu ? 'showMenu' : 'hideMenu'
@@ -73,138 +75,149 @@ function NavbarMobile({ styles }) {
                     </li>
                     {productId ? (
                         <>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/">
+                            <li className={cx('menu-item')}>
+                                <RouterLink to="/" onClick={handleShowMenu}>
                                     {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
-                                </a>
+                                </RouterLink>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a
-                                    href={`/productId=${productId}/#apartment-infor`}
-                                >
-                                    {language === 'en' ? 'APARTMENT' : 'CĂN HỘ'}
-                                </a>
-                            </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a
-                                    href={`/productId=${productId}/#about-apartment`}
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to={`about-apartment`}
+                                    onClick={handleShowMenu}
                                 >
                                     {language === 'en'
                                         ? 'ABOUT APARTMENT'
                                         : 'THÔNG TIN CĂN HỘ'}
-                                </a>
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a
-                                    href={`/productId=${productId}/#apartment-video`}
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to={`apartment-video`}
+                                    onClick={handleShowMenu}
                                 >
                                     VIDEO
-                                </a>
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a
-                                    href={`/productId=${productId}/#apartment-form`}
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to={`apartment-form`}
+                                    onClick={handleShowMenu}
                                 >
                                     {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
-                                </a>
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a
-                                    href={`/productId=${productId}/#another-apartments`}
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to={`another-apartments`}
+                                    onClick={handleShowMenu}
                                 >
                                     {language === 'en'
                                         ? 'ANOTHER APARTMENTS'
                                         : 'CĂN HỘ KHÁC'}
-                                </a>
+                                </Link>
                             </li>
                         </>
                     ) : (
                         <>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/#home">
+                            <li className={cx('menu-item')}>
+                                <RouterLink to="/" onClick={handleShowMenu}>
                                     {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
-                                </a>
+                                </RouterLink>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/#product">
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to="product"
+                                    onClick={handleShowMenu}
+                                >
                                     {language === 'en'
                                         ? 'APARTMENTS'
                                         : 'CĂN HỘ'}
-                                </a>
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/#about">
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to="about"
+                                    onClick={handleShowMenu}
+                                >
                                     {language === 'en'
                                         ? 'ABOUT PROJECT'
                                         : 'THÔNG TIN DỰ ÁN'}
-                                </a>
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/#gallery">
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to="gallery"
+                                    onClick={handleShowMenu}
+                                >
                                     {language === 'en' ? 'GALLERY' : 'HÌNH ẢNH'}
-                                </a>
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/#utilities">
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to="utilities"
+                                    onClick={handleShowMenu}
+                                >
                                     {language === 'en'
                                         ? 'UTILITIES'
                                         : 'TIỆN ÍCH'}
-                                </a>
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/#videos">VIDEOS</a>
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to="videos"
+                                    onClick={handleShowMenu}
+                                >
+                                    VIDEOS
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/#services">
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to="services"
+                                    onClick={handleShowMenu}
+                                >
                                     {language === 'en' ? 'SERVICES' : 'DỊCH VỤ'}
-                                </a>
+                                </Link>
                             </li>
-                            <li
-                                className={cx('menu-item')}
-                                onClick={handleShowMenu}
-                            >
-                                <a href="/#contact">
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
+                                    to="contact"
+                                    onClick={handleShowMenu}
+                                >
                                     {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
-                                </a>
+                                </Link>
                             </li>
                         </>
                     )}

@@ -105,7 +105,11 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
     return (
         <section className={cx('property-info')} ref={topRef}>
             <div className={cx('blank')}></div>
-            <div className={cx('property-info-container')} id="about-apartment">
+            <div
+                className={cx('property-info-container')}
+                id="about-apartment"
+                name="about-apartment"
+            >
                 <div className={cx('left-section')}>
                     <Property offsetWidth={offsetWidth} data={currentItem} />
 
@@ -347,7 +351,11 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             </div>
                         </div>
                     </div>
-                    <div className={cx('video')} id="apartment-video">
+                    <div
+                        className={cx('video')}
+                        id="apartment-video"
+                        name="apartment-video"
+                    >
                         <div className={cx('title')}>
                             <h3>Video</h3>
                         </div>
@@ -371,7 +379,11 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             ></iframe>
                         </div>
                     </div>
-                    <div className={cx('full-form')} id="apartment-form">
+                    <div
+                        className={cx('full-form')}
+                        id="apartment-form"
+                        name="apartment-form"
+                    >
                         <div className={cx('title')}>
                             <h3>
                                 {language === 'en'
@@ -393,6 +405,7 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                     <div
                         className={cx('another-property')}
                         id="another-apartments"
+                        name="another-apartments"
                     >
                         <div className={cx('title')}>
                             <h3>

@@ -23,13 +23,17 @@ function DefaultLayout({ offsetY, offsetWidth }) {
 
     return (
         <>
-            <Home width={offsetWidth} id="home" />
-            <Product offsetWidth={offsetWidth} id="product" />
-            <LargeSlider id="about" />
-            <Gallery id="gallery" />
-            <Utilities offsetWidth={offsetWidth} id="utilities" />
-            <Videos width={offsetWidth} id="videos" />
-            <Services id="services" />
+            <Home width={offsetWidth} id="home" name="home" />
+            <Product offsetWidth={offsetWidth} id="product" name="product" />
+            <LargeSlider id="about" name="about" />
+            <Gallery id="gallery" name="gallery" />
+            <Utilities
+                offsetWidth={offsetWidth}
+                id="utilities"
+                name="utilities"
+            />
+            <Videos width={offsetWidth} id="videos" name="videos" />
+            <Services id="services" name="services" />
             <Footer />
             {offsetY >= 300 && (
                 <BackToTop

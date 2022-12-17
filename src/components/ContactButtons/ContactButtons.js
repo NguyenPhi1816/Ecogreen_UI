@@ -43,10 +43,10 @@ function ContactButtons({ width, onlyIcon = false }) {
                 style={onlyIcon ? onlyIconStyles : {}}
             >
                 <a href="https://zalo.me/0941256257">
-                    <FontAwesomeIcon
-                        icon={faPaperPlane}
+                    <img
+                        src="https://ecogreenq7.vn/rentalservicesg/images/zalo.png"
+                        alt="zalo"
                         className={cx('icon')}
-                        style={onlyIcon ? { marginRight: '0' } : {}}
                     />
                     {!onlyIcon && <span>Zalo</span>}
                 </a>

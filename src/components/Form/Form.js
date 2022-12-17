@@ -69,22 +69,20 @@ function Form({ type, className, showAgent = true }) {
                         <FontAwesomeIcon icon={faUser} />
                         <p>{agent.name}</p>
                     </div>
-                    <div className={cx('agent-phone')}>
-                        <a
-                            href={`tel:${agent.phone}`}
-                            className={cx('phone-number')}
-                        >
-                            <FontAwesomeIcon icon={faPhone} />
-                            <p>{agent.phone}</p>
-                        </a>
-                        <a
-                            href={`mailto:${agent.gmail}`}
-                            className={cx('mobile-number')}
-                        >
-                            <FontAwesomeIcon icon={faEnvelope} />
-                            <p>{agent.gmail}</p>
-                        </a>
-                    </div>
+                    <a
+                        href={`tel:${agent.phone}`}
+                        className={cx('phone-number')}
+                    >
+                        <FontAwesomeIcon icon={faPhone} />
+                        <p>{agent.phone}</p>
+                    </a>
+                    <a
+                        href={`mailto:${agent.gmail}`}
+                        className={cx('mobile-number')}
+                    >
+                        <FontAwesomeIcon icon={faEnvelope} />
+                        <p>{agent.gmail}</p>
+                    </a>
                 </div>
             </div>
             <form

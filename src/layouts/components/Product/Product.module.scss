@@ -16,7 +16,7 @@
 
 .product-title {
     padding: 10px;
-    height: 276px;
+    height: 175px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,7 +109,6 @@
 
     & > thead, & > tbody {
         & > tr {
-            height: 58px;
             text-align: center;
 
             & > th, & > td {
@@ -174,7 +173,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 9994;
+    z-index: 9999;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -188,14 +187,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    background-color: #fff;
+    background-image: linear-gradient(to bottom left, #398266, #0a3743);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 4px;
-    z-index: 9995;
-}
-
-.form-custom {
-    width: 100%;
+    z-index: 9999;
+    color: #fff;
 }
 
 .close-form {
@@ -204,6 +200,80 @@
     font-size: 2.4rem;
     font-weight: 700;
     color: #000;
-    background-color: #fff;
+    background-color: transparent;
     cursor: pointer;
+}
+
+.form-title {
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-container {
+    padding: 15px 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .form-name, .form-phone-number, .form-control{
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        border: 2px solid #2fa178;
+    }
+
+    .form-control {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        color: #000;
+
+        & > label {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+
+            & > input {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .submit {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-image: linear-gradient(#ffe059, #ffab51);
+        border-radius: 4px;
+        color: #1d5551;
+        font-weight: 600;
+        font-size: 2rem;
+    }
+}
+
+.invalid-message {
+    margin-bottom: 12px;
+    color: red;
+}
+
+.success-message {
+    color: #77c720;
+}
+
+.spinner {
+    margin-right: 10px;
+    color: #fff;
+    animation: rotate infinite 1s linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

@@ -10,17 +10,6 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100vw;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background-color: #000000;
-        opacity: 0.35;
-    }
 }
 
 .title {
@@ -28,16 +17,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--text-white);
     z-index: 2;
 }
 
 .main-title {
     margin-bottom: 20px;
-    font-family: var(--font-family-playfair);
-    font-weight: 400;
-    font-size: 5rem;
+    // font-family: var(--font-family-playfair);
+    font-weight: 600;
+    font-size: 6rem;
     text-align: center;
+    color: #193d27;
+    -webkit-text-stroke: 1px #fff;
 
     @media (max-width: 767px) {
         font-size: 3.6rem;
@@ -48,7 +38,7 @@
     padding: 0 10%;
     font-size: 20px;
     text-align: center;
-
+    color: #fff;
     @media (max-width: 767px) {
         font-size: 1.6rem;
     }

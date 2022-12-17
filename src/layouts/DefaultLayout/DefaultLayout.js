@@ -35,7 +35,7 @@ function DefaultLayout({ offsetY, offsetWidth }) {
             <Videos width={offsetWidth} id="videos" name="videos" />
             <Services id="services" name="services" />
             <Footer />
-            {offsetY >= 300 && (
+            {offsetY >= 300 && offsetWidth > 767 && (
                 <BackToTop
                     styles={
                         offsetWidth < 768

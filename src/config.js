@@ -11,8 +11,8 @@ export const logo_url =
 const link = 'https://ecogreenq7.vn/rentalservicesg/';
 
 export const languageIcon = {
-    vi: `${link}vietnam.png`,
-    en: `${link}united-states.png`,
+    vi: `${link}images/vietnam.png`,
+    en: `${link}images/united-states.png`,
 };
 
 export const products = [
@@ -47,8 +47,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '16.5 m (VND)/month, full furniture',
     },
@@ -77,8 +77,8 @@ export const products = [
         ],
         type: 'Apartment',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '13 m (VND)/month',
     },
@@ -105,8 +105,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '13 m (VND)/month',
     },
@@ -136,8 +136,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '17 m (VND)/month, full furniture',
     },
@@ -166,8 +166,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '16.5 m (VND)/month, full furniture',
     },
@@ -198,8 +198,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '15.5 m (VND)/month, full furniture',
     },
@@ -233,8 +233,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '16 m (VND)/month, full furniture',
     },
@@ -262,8 +262,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '13 m (VND)/month',
     },
@@ -290,8 +290,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '17 m (VND)/month, full furniture',
     },
@@ -312,7 +312,7 @@ export const products = [
             `${link}HR3.xx.20/z3925861198661_82a96334b52968cf8e1fe2ab6c732336.jpg`,
         ],
         name: 'Apartment - HR3.xx.20',
-        price: '18 m (VND)/month',
+        price: '17 m (VND)/month',
         thumbs: [
             `${link}HR3.xx.20/z3925861198661_82a96334b52968cf8e1fe2ab6c732336.jpg`,
             `${link}HR3.xx.20/z3925860713481_e814099fd6b2c302d9c4a8388ae5a9ea.jpg`,
@@ -320,10 +320,10 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
-        whoIsInterested: '18 m (VND)/month, full furniture',
+        whoIsInterested: '17 m (VND)/month, full furniture',
     },
     {
         address:
@@ -348,8 +348,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '16.5 m (VND)/month, full furniture',
     },
@@ -376,8 +376,8 @@ export const products = [
         ],
         type: 'Apartment for rent',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '17 m (VND)/month, full furniture',
     },
@@ -415,8 +415,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '16.5 triệu/tháng, đầy đủ nội thất',
     },
@@ -445,8 +445,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '13 triệu/tháng',
     },
@@ -473,8 +473,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '13 triệu/tháng',
     },
@@ -504,8 +504,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '17 triệu/tháng, đầy đủ nội thất',
     },
@@ -534,8 +534,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '16.5 triệu/tháng, đầy đủ nội thất',
     },
@@ -566,8 +566,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '15.5 triệu/tháng, đầy đủ nội thất',
     },
@@ -601,8 +601,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '16 triệu/tháng, đầy đủ nội thất',
     },
@@ -630,8 +630,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '13 triệu/tháng',
     },
@@ -658,8 +658,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '17 triệu/tháng, đầy đủ nội thất',
     },
@@ -680,7 +680,7 @@ export const products_vi = [
             `${link}HR3.xx.20/z3925861198661_82a96334b52968cf8e1fe2ab6c732336.jpg`,
         ],
         name: 'Căn hộ HR3.xx.20',
-        price: '18 triệu/tháng',
+        price: '17 triệu/tháng',
         thumbs: [
             `${link}HR3.xx.20/z3925861198661_82a96334b52968cf8e1fe2ab6c732336.jpg`,
             `${link}HR3.xx.20/z3925860713481_e814099fd6b2c302d9c4a8388ae5a9ea.jpg`,
@@ -688,10 +688,10 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
-        whoIsInterested: '18 triệu/tháng, đầy đủ nội thất',
+        whoIsInterested: '17 triệu/tháng, đầy đủ nội thất',
     },
     {
         address:
@@ -716,8 +716,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '16.5 triệu/tháng, đầy đủ nội thất',
     },
@@ -744,8 +744,8 @@ export const products_vi = [
         ],
         type: 'Căn hộ cho thuê',
         video: {
-            'video-thumb': 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-            'video-url': 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+            'video-thumb': 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+            'video-url': 'https://www.youtube.com/embed/xsF9ocHNJIg',
         },
         whoIsInterested: '17 triệu/tháng, đầy đủ nội thất',
     },
@@ -889,8 +889,8 @@ export const utilities = {
 
 export const videos = [
     {
-        video_thumb: 'https://img.youtube.com/vi/qSH9n6xkBlQ/0.jpg',
-        video_url: 'https://www.youtube.com/embed/qSH9n6xkBlQ',
+        video_thumb: 'https://img.youtube.com/vi/xsF9ocHNJIg/0.jpg',
+        video_url: 'https://www.youtube.com/embed/xsF9ocHNJIg',
     },
     {
         video_thumb: 'https://img.youtube.com/vi/fCYUXLR8FO8/0.jpg',
@@ -899,10 +899,10 @@ export const videos = [
 ];
 
 export const agent = {
-    avatar: `${link}agent/dc6fdd5250e689b8d0f7.jpg`,
+    avatar: `${link}agent/agent.png`,
     gmail: 'rentalservicesg@gmail.com',
-    name: 'Nguyen Dai Duong',
-    phone: '0975770502',
+    name: 'Mr. Robert',
+    phone: '0941256257',
 };
 
 export const SERVICES = [

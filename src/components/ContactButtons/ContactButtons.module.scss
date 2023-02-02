@@ -9,7 +9,8 @@
     align-items: center;
     background-image: linear-gradient(#ff6901, #ee0977);
     border-radius: 50%;
-    z-index: 9999;
+    z-index: 8888;
+    animation: dance 0.5s ease-in-out infinite;
 
     @media (max-width: 767px) {
         bottom: 20px;
@@ -23,7 +24,7 @@
         height: 120%;
         background-image: linear-gradient(#ff6901, #ee0977);
         border-radius: 50%;
-        z-index: 9997;
+        z-index: 8886;
         animation: zoom 1s ease-in-out infinite forwards;
     }
 }
@@ -42,13 +43,27 @@
     }
 }
 
+@keyframes dance {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .wrapper {
     width: 70%;
     height: 70%;
     background-color: #fff;
     border-radius: 50%;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 8888;
 }
 
 .slider {

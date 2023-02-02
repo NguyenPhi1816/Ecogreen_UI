@@ -4,6 +4,7 @@ import styles from './Home.module.scss';
 import { Context } from '../../../App';
 import NavbarMobile from '../../../components/NavbarMobile';
 import Navbar from '../../../components/Navbar';
+import { languages } from '../../../languages';
 
 const cx = classNames.bind(styles);
 
@@ -14,14 +15,10 @@ function Home({ id }) {
             {offsetWidth < 1000 ? <NavbarMobile /> : <Navbar />}
             <div className={cx('title')}>
                 <h1 className={cx('main-title')}>
-                    {language === 'en'
-                        ? 'Discover Your Place To Live'
-                        : 'Khám Phá Nơi Sống Của Bạn'}
+                    {languages.homePage.welcome.title[language]}
                 </h1>
                 <span className={cx('sub-title')}>
-                    {language === 'en'
-                        ? 'ENJOY YOUR GREEN LIFE WITH OUR ECOSYSTEM'
-                        : 'TẬN HƯỞNG HỆ SINH THÁI XANH CỦA ECO GREEN'}
+                    {languages.homePage.welcome.subTitle[language]}
                 </span>
             </div>
         </section>

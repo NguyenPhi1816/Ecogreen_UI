@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import { Context } from '../../App';
 import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
+import { languages } from '../../languages';
 
 let cx = classNames.bind(styles);
 
@@ -26,7 +27,11 @@ function Navbar({ styles = {} }) {
                         <>
                             <li className={cx('menu-item')}>
                                 <RouterLink to="/">
-                                    {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
+                                    {
+                                        languages.navbar.productPage.home[
+                                            language
+                                        ]
+                                    }
                                 </RouterLink>
                             </li>
                             <li className={cx('menu-item')}>
@@ -36,9 +41,10 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to={`about-apartment`}
                                 >
-                                    {language === 'en'
-                                        ? 'ABOUT APARTMENT'
-                                        : 'THÔNG TIN CĂN HỘ'}
+                                    {
+                                        languages.navbar.productPage
+                                            .aboutApartment[language]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -48,7 +54,11 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to={`apartment-video`}
                                 >
-                                    VIDEO
+                                    {
+                                        languages.navbar.productPage.video[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -58,7 +68,11 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to={`apartment-form`}
                                 >
-                                    {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
+                                    {
+                                        languages.navbar.productPage.contact[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -68,9 +82,10 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to={`another-apartments`}
                                 >
-                                    {language === 'en'
-                                        ? 'ANOTHER APARTMENTS'
-                                        : 'CĂN HỘ KHÁC'}
+                                    {
+                                        languages.navbar.productPage
+                                            .anotherApartments[language]
+                                    }
                                 </Link>
                             </li>
                         </>
@@ -78,7 +93,7 @@ function Navbar({ styles = {} }) {
                         <>
                             <li className={cx('menu-item')}>
                                 <RouterLink to="/">
-                                    {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
+                                    {languages.navbar.homePage.home[language]}
                                 </RouterLink>
                             </li>
                             <li className={cx('menu-item')}>
@@ -88,9 +103,11 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to="product"
                                 >
-                                    {language === 'en'
-                                        ? 'APARTMENTS'
-                                        : 'CĂN HỘ'}
+                                    {
+                                        languages.navbar.homePage.apartments[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -100,9 +117,11 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to="about"
                                 >
-                                    {language === 'en'
-                                        ? 'ABOUT PROJECT'
-                                        : 'THÔNG TIN DỰ ÁN'}
+                                    {
+                                        languages.navbar.homePage.aboutProject[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -112,7 +131,11 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to="gallery"
                                 >
-                                    {language === 'en' ? 'GALLERY' : 'HÌNH ẢNH'}
+                                    {
+                                        languages.navbar.homePage.gallery[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -122,9 +145,11 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to="utilities"
                                 >
-                                    {language === 'en'
-                                        ? 'UTILITIES'
-                                        : 'TIỆN ÍCH'}
+                                    {
+                                        languages.navbar.homePage.utilities[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -134,7 +159,7 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to="videos"
                                 >
-                                    VIDEOS
+                                    {languages.navbar.homePage.videos[language]}
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -144,7 +169,11 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to="services"
                                 >
-                                    {language === 'en' ? 'SERVICES' : 'DỊCH VỤ'}
+                                    {
+                                        languages.navbar.homePage.services[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -154,7 +183,11 @@ function Navbar({ styles = {} }) {
                                     duration={500}
                                     to="contact"
                                 >
-                                    {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
+                                    {
+                                        languages.navbar.homePage.contact[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                         </>

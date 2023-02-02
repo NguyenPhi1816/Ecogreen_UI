@@ -11,6 +11,7 @@ import { Context } from '../../App';
 import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 import LanguageButtonMobile from '../LanguageButtonMobile';
+import { languages } from '../../languages';
 
 const cx = classNames.bind(styles);
 
@@ -77,7 +78,11 @@ function NavbarMobile({ styles }) {
                         <>
                             <li className={cx('menu-item')}>
                                 <RouterLink to="/" onClick={handleShowMenu}>
-                                    {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
+                                    {
+                                        languages.navbar.productPage.home[
+                                            language
+                                        ]
+                                    }
                                 </RouterLink>
                             </li>
                             <li className={cx('menu-item')}>
@@ -88,9 +93,10 @@ function NavbarMobile({ styles }) {
                                     to={`about-apartment`}
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en'
-                                        ? 'ABOUT APARTMENT'
-                                        : 'THÔNG TIN CĂN HỘ'}
+                                    {
+                                        languages.navbar.productPage
+                                            .aboutApartment[language]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -101,7 +107,11 @@ function NavbarMobile({ styles }) {
                                     to={`apartment-video`}
                                     onClick={handleShowMenu}
                                 >
-                                    VIDEO
+                                    {
+                                        languages.navbar.productPage.video[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -112,7 +122,11 @@ function NavbarMobile({ styles }) {
                                     to={`apartment-form`}
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
+                                    {
+                                        languages.navbar.productPage.contact[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -123,9 +137,10 @@ function NavbarMobile({ styles }) {
                                     to={`another-apartments`}
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en'
-                                        ? 'ANOTHER APARTMENTS'
-                                        : 'CĂN HỘ KHÁC'}
+                                    {
+                                        languages.navbar.productPage
+                                            .anotherApartments[language]
+                                    }
                                 </Link>
                             </li>
                         </>
@@ -133,7 +148,7 @@ function NavbarMobile({ styles }) {
                         <>
                             <li className={cx('menu-item')}>
                                 <RouterLink to="/" onClick={handleShowMenu}>
-                                    {language === 'en' ? 'HOME' : 'TRANG CHỦ'}
+                                    {languages.navbar.homePage.home[language]}
                                 </RouterLink>
                             </li>
                             <li className={cx('menu-item')}>
@@ -144,9 +159,11 @@ function NavbarMobile({ styles }) {
                                     to="product"
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en'
-                                        ? 'APARTMENTS'
-                                        : 'CĂN HỘ'}
+                                    {
+                                        languages.navbar.homePage.apartments[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -157,9 +174,11 @@ function NavbarMobile({ styles }) {
                                     to="about"
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en'
-                                        ? 'ABOUT PROJECT'
-                                        : 'THÔNG TIN DỰ ÁN'}
+                                    {
+                                        languages.navbar.homePage.aboutProject[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -170,7 +189,11 @@ function NavbarMobile({ styles }) {
                                     to="gallery"
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en' ? 'GALLERY' : 'HÌNH ẢNH'}
+                                    {
+                                        languages.navbar.homePage.gallery[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -181,9 +204,11 @@ function NavbarMobile({ styles }) {
                                     to="utilities"
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en'
-                                        ? 'UTILITIES'
-                                        : 'TIỆN ÍCH'}
+                                    {
+                                        languages.navbar.homePage.utilities[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -194,7 +219,7 @@ function NavbarMobile({ styles }) {
                                     to="videos"
                                     onClick={handleShowMenu}
                                 >
-                                    VIDEOS
+                                    {languages.navbar.homePage.videos[language]}
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -205,7 +230,11 @@ function NavbarMobile({ styles }) {
                                     to="services"
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en' ? 'SERVICES' : 'DỊCH VỤ'}
+                                    {
+                                        languages.navbar.homePage.services[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                             <li className={cx('menu-item')}>
@@ -216,7 +245,11 @@ function NavbarMobile({ styles }) {
                                     to="contact"
                                     onClick={handleShowMenu}
                                 >
-                                    {language === 'en' ? 'CONTACT' : 'LIÊN LẠC'}
+                                    {
+                                        languages.navbar.homePage.contact[
+                                            language
+                                        ]
+                                    }
                                 </Link>
                             </li>
                         </>

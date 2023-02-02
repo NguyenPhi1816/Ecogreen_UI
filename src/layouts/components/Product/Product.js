@@ -12,6 +12,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { languages } from '../../../languages';
 
 const cx = classNames.bind(styles);
 
@@ -86,39 +87,41 @@ function Product({ id }) {
             <div className={cx('product-container')}>
                 <div className={cx('price-table')} id="contact">
                     <h2 className={cx('product-title-main')}>
-                        {language === 'en'
-                            ? 'Price list for sale and rent'
-                            : 'Bảng giá bán và cho thuê'}
+                        {languages.homePage.product.priceTable.title[language]}
                     </h2>
                     <table className={cx('table')}>
                         <thead>
                             <tr className={cx('header')}>
                                 <th>
-                                    {language === 'en' ? 'Area ' : 'Diện tích '}
+                                    {
+                                        languages.homePage.product.priceTable
+                                            .headers.area[language]
+                                    }
                                     (m<sup>2</sup>)
                                 </th>
                                 <th>
-                                    {language === 'en'
-                                        ? 'Bedrooms'
-                                        : 'Phòng ngủ'}
+                                    {
+                                        languages.homePage.product.priceTable
+                                            .headers.bedrooms[language]
+                                    }
                                 </th>
                                 <th>
-                                    {language === 'en'
-                                        ? 'Selling Price '
-                                        : 'Giá bán '}
+                                    {
+                                        languages.homePage.product.priceTable
+                                            .headers.sellPrice[language]
+                                    }
                                     {offsetWidth > 767 &&
-                                        (language === 'en'
-                                            ? '(b VND)'
-                                            : '(tỉ VND)')}
+                                        languages.homePage.product.priceTable
+                                            .headers.sellPriceUnit[language]}
                                 </th>
                                 <th>
-                                    {language === 'en'
-                                        ? 'Rental Price '
-                                        : 'Giá thuê '}
+                                    {
+                                        languages.homePage.product.priceTable
+                                            .headers.rentalPrice[language]
+                                    }
                                     {offsetWidth > 767 &&
-                                        (language === 'en'
-                                            ? '(m VND/month)'
-                                            : '(triệu VND/tháng)')}
+                                        languages.homePage.product.priceTable
+                                            .headers.rentalPriceUnit[language]}
                                 </th>
                             </tr>
                         </thead>
@@ -143,18 +146,18 @@ function Product({ id }) {
                 </div>
                 <div className={cx('note')}>
                     <p>
-                        {language === 'en'
-                            ? 'Price may not include furniture'
-                            : 'Giá có thể không bao gồm nội thất'}
+                        {languages.homePage.product.priceTable.note[language]}
                     </p>
                 </div>
                 <button
                     className={cx('show-form-btn')}
                     onClick={handleShowForm}
                 >
-                    {language === 'en'
-                        ? 'Contact us for more'
-                        : 'Liên hệ với chúng tôi'}
+                    {
+                        languages.homePage.product.priceTable.showFormBtn[
+                            language
+                        ]
+                    }
                 </button>
                 <div className={cx('product-title')}>
                     <h2 className={cx('product-title-main')}>

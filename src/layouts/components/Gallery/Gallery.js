@@ -1,13 +1,13 @@
 import { useState, useEffect, useContext } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Gallery.module.scss';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 import { gallery, gallery_vi } from '../../../config';
 
 const cx = classNames.bind(styles);
 
 function Gallery({ id }) {
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
     const [data, setData] = useState([]);
 
     useEffect(() => {

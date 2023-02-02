@@ -3,12 +3,12 @@ import styles from './Services.module.scss';
 
 import { SERVICES, SERVICES_VI } from '../../../config';
 import { useContext } from 'react';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 
 const cx = classNames.bind(styles);
 
 function Services({ id }) {
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
 
     return (
         <section className={cx('services')} id={id}>

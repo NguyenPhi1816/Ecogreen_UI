@@ -15,12 +15,12 @@ import {
     faUpRightAndDownLeftFromCenter,
 } from '@fortawesome/free-solid-svg-icons';
 import { useContext } from 'react';
-import { LanguageContext } from '../../App';
+import { Context } from '../../App';
 
 let cx = classNames.bind(styles);
 
 function ProductItem({ data, handleExpandClick, className }) {
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
 
     return (
         <div className={cx('wrapper', className)}>

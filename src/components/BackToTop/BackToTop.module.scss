@@ -1,7 +1,7 @@
 .back-to-top-btn {
     position: fixed;
-    bottom: 30px;
-    right: 95px;
+    bottom: 90px;
+    right: 33px;
     height: 42px;
     width: 42px;
     display: flex;
@@ -19,7 +19,7 @@
     }
 
     @media (max-width: 767px) {
-        bottom: 20px;
-        right: 15px;
+        bottom: 90px;
+        right: 10px;
     }
 }

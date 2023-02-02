@@ -6,36 +6,60 @@
 }
 
 .language-btn {
-    background-color: #fff;
-    width: 40px;
-    height: 20px;
-    border-radius: 2rem;
+    padding: 4px;
     display: flex;
     align-items: center;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid #fff;
+}
 
-    &>span {
-        width: 20px;
-        height: 20px;
-        border-radius: 2rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
 
-        & > img {
-            width: 20px;
-            height: 20px;
-            object-fit: cover;
-            transition: all 0.2s ease-in-out;
-        }
+.language{
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+}
+
+.languages-tooltip {
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.languages-title{
+    padding: 10px;
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.languages-container{
+    padding: 0 0 10px;
+}
+
+.item {
+    width: 150px;
+    height: 40px;
+    padding: 0 10px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+        background-color: #dadada;
     }
 
-    .en {
-        transform: translateX(0) !important;
-    }
-
-    .vi {
-        transform: translateX(100%) !important;
+    & > .language {
+        color: #000;
     }
 }

@@ -1,3 +1,7 @@
+import { useState, useContext } from 'react';
+import classNames from 'classnames/bind';
+import styles from './DefaultLayout.module.scss';
+
 import Home from '../components/Home';
 import Product from '../components/Product';
 import LargeSlider from '../components/LargeSlider';
@@ -8,53 +12,30 @@ import Footer from '../components/Footer';
 import BackToTop from '../../components/BackToTop';
 import ContactButtons from '../../components/ContactButtons';
 import Utilities from '../components/Utilities';
-import NavbarBottom from '../../components/NavbarBottom';
-import { useState } from 'react';
-import classNames from 'classnames/bind';
-import styles from './DefaultLayout.module.scss';
+import Form from '../../components/Form';
+import { Context } from '../../App';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import Form from '../../components/Form';
 
 const cx = classNames.bind(styles);
 
-function DefaultLayout({ offsetY, offsetWidth }) {
+function DefaultLayout() {
     const [showForm, setShowForm] = useState(false);
+    const { offsetY } = useContext(Context);
 
     return (
         <>
-            <Home width={offsetWidth} id="home" name="home" />
-            <Product offsetWidth={offsetWidth} id="product" name="product" />
-            <LargeSlider id="about" name="about" />
-            <Gallery id="gallery" name="gallery" />
-            <Utilities
-                offsetWidth={offsetWidth}
-                id="utilities"
-                name="utilities"
-            />
-            <Videos width={offsetWidth} id="videos" name="videos" />
-            <Services id="services" name="services" />
+            <Home id="home" />
+            <Product id="product" />
+            <LargeSlider id="about" />
+            <Gallery id="gallery" />
+            <Utilities id="utilities" />
+            <Videos id="videos" />
+            <Services id="services" />
             <Footer />
-            {offsetY >= 300 && offsetWidth > 767 && (
-                <BackToTop
-                    styles={
-                        offsetWidth < 768
-                            ? {
-                                  bottom: '85px',
-                                  right: '10px',
-                              }
-                            : {}
-                    }
-                />
-            )}
-            {offsetWidth > 768 && <ContactButtons width={offsetWidth} />}
-            {offsetWidth <= 768 && offsetY >= 100 && (
-                <NavbarBottom
-                    offsetWidth={offsetWidth}
-                    setShowForm={setShowForm}
-                />
-            )}
-
+            {offsetY >= 300 && <BackToTop />}
+            <ContactButtons />
             {showForm && (
                 <div className={cx('modal-form')}>
                     <div className={cx('modal')}>

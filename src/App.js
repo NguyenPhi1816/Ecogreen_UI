@@ -7,7 +7,7 @@ import ProductsLayout from './layouts/ProductsLayout';
 import ScrollToTop from './components/ScrollToTop';
 import './App.scss';
 
-const LanguageContext = React.createContext();
+const Context = React.createContext();
 
 function App() {
     SwiperCore.use([Autoplay]);
@@ -36,19 +36,13 @@ function App() {
 
     return (
         <Router>
-            <LanguageContext.Provider value={{ language, setLanguage }}>
+            <Context.Provider
+                value={{ language, setLanguage, offsetY, offsetWidth }}
+            >
                 <div className="App">
                     <ScrollToTop />
                     <Routes>
-                        <Route
-                            path="/"
-                            element={
-                                <DefaultLayout
-                                    offsetY={offsetY}
-                                    offsetWidth={offsetWidth}
-                                />
-                            }
-                        />
+                        <Route path="/" element={<DefaultLayout />} />
                         <Route
                             path="/productId=:id"
                             element={
@@ -69,10 +63,10 @@ function App() {
                         />
                     </Routes>
                 </div>
-            </LanguageContext.Provider>
+            </Context.Provider>
         </Router>
     );
 }
 
-export { LanguageContext };
+export { Context };
 export default App;

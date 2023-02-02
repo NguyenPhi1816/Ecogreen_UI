@@ -4,13 +4,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import classnames from 'classnames/bind';
 import styles from './LargeSlider.module.scss';
 import { useContext } from 'react';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 import { outsideImages } from '../../../config';
 
 const cx = classnames.bind(styles);
 
 function LargeSlider({ id }) {
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
     const imagesRef = useRef(null);
 
     return (

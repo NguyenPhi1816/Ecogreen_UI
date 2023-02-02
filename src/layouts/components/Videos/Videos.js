@@ -5,13 +5,13 @@ import classNames from 'classnames/bind';
 import styles from './Videos.module.scss';
 
 import { useContext } from 'react';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 import { videos } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-function Videos({ width, id }) {
-    const { language } = useContext(LanguageContext);
+function Videos({ id }) {
+    const { language, offsetWidth } = useContext(Context);
     const [currentVideo, setCurrentVideo] = useState(videos[0].video_url);
 
     return (
@@ -42,7 +42,7 @@ function Videos({ width, id }) {
                     <Swiper
                         modules={[Navigation, A11y]}
                         spaceBetween={15}
-                        slidesPerView={width < 768 ? 3 : 4}
+                        slidesPerView={offsetWidth < 768 ? 3 : 4}
                         navigation
                         loop
                     >

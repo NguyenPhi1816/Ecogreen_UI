@@ -1,17 +1,17 @@
 import { useContext } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 import NavbarMobile from '../../../components/NavbarMobile';
 import Navbar from '../../../components/Navbar';
 
 const cx = classNames.bind(styles);
 
-function Home({ width, id }) {
-    const { language } = useContext(LanguageContext);
+function Home({ id }) {
+    const { language, offsetWidth } = useContext(Context);
     return (
         <section className={cx('home')} id={id}>
-            {width < 1000 ? <NavbarMobile /> : <Navbar />}
+            {offsetWidth < 1000 ? <NavbarMobile /> : <Navbar />}
             <div className={cx('title')}>
                 <h1 className={cx('main-title')}>
                     {language === 'en'

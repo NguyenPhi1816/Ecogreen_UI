@@ -1,14 +1,14 @@
 import { useContext, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Utilities.module.scss';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 import ImagesModal from '../../../components/ImagesModal';
 import { utilities } from '../../../config';
 
 const cx = classNames.bind(styles);
 
-const Utilities = ({ offsetWidth, id }) => {
-    const { language } = useContext(LanguageContext);
+const Utilities = ({ id }) => {
+    const { language, offsetWidth } = useContext(Context);
     const [showModal, setShowModal] = useState(false);
 
     const handleShowModal = () => {

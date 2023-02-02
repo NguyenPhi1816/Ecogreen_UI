@@ -17,12 +17,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Form from '../../../components/Form';
 import { useContext } from 'react';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 
 const cx = classNames.bind(styles);
 
 function Footer({ footerForm = true }) {
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
     return (
         <section className={cx('footer')}>
             <div className={cx('footer-container')}>

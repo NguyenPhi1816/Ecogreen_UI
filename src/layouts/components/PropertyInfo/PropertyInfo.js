@@ -8,9 +8,8 @@ import Form from '../../../components/Form';
 import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
 import { useContext } from 'react';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 import Property from '../Property/Property';
-import NavbarBottom from '../../../components/NavbarBottom';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
@@ -18,7 +17,7 @@ const cx = classNames.bind(styles);
 function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
     const DESKTOP_AMOUNT = 6;
     const MOBILE_AMOUNT = 4;
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
     const rightSectionRef = useRef();
     const [anotherItem, setAnotherItem] = useState({});
     const [amount, setAmount] = useState(() =>
@@ -465,13 +464,6 @@ function PropertyInfo({ offsetWidth, offsetY, currentItem, data }) {
                             <Form type="vertical" />
                         </div>
                     </div>
-                )}
-
-                {offsetWidth < 768 && (
-                    <NavbarBottom
-                        offsetWidth={offsetWidth}
-                        setShowForm={setShowForm}
-                    />
                 )}
 
                 {showForm && (

@@ -6,16 +6,16 @@ import classNames from 'classnames/bind';
 import styles from './NavbarMobile.module.scss';
 
 import { logo_url } from '../../config';
-import LanguageButton from '../LanguageButton/LanguageButton';
 import { useContext } from 'react';
-import { LanguageContext } from '../../App';
+import { Context } from '../../App';
 import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
+import LanguageButtonMobile from '../LanguageButtonMobile';
 
 const cx = classNames.bind(styles);
 
 function NavbarMobile({ styles }) {
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
     const productId = useParams().id;
     const menuRef = useRef();
     const hamburgerRef = useRef();
@@ -221,8 +221,8 @@ function NavbarMobile({ styles }) {
                             </li>
                         </>
                     )}
-                    <li onClick={handleShowMenu}>
-                        <LanguageButton customClass={cx('lang-btn')} />
+                    <li>
+                        <LanguageButtonMobile />
                     </li>
                 </ul>
             </aside>

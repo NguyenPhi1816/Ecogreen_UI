@@ -13,6 +13,7 @@ const link = 'https://ecogreenq7.vn/rentalservicesg/';
 export const languageIcon = {
     vi: `${link}images/vietnam.png`,
     en: `${link}images/united-states.png`,
+    cn: `${link}images/china.png`,
 };
 
 export const products = [

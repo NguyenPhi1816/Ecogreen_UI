@@ -5,14 +5,14 @@ import { logo_url } from '../../config';
 import { useParams } from 'react-router-dom';
 import LanguageButton from '../LanguageButton/LanguageButton';
 import { useContext } from 'react';
-import { LanguageContext } from '../../App';
+import { Context } from '../../App';
 import { Link } from 'react-scroll';
 import { Link as RouterLink } from 'react-router-dom';
 
 let cx = classNames.bind(styles);
 
-function Navbar({ styles = {}, logoColor = 'default' }) {
-    const { language } = useContext(LanguageContext);
+function Navbar({ styles = {} }) {
+    const { language } = useContext(Context);
     const productId = useParams().id;
     return (
         <nav className={cx('wrapper')}>

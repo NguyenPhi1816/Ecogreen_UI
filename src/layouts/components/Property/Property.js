@@ -11,7 +11,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import ImagesModal from '../../../components/ImagesModal';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 import { A11y, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -19,7 +19,7 @@ const cx = classNames.bind(styles);
 
 function Property({ offsetWidth, data = {} }) {
     const swiperRef = useRef(null);
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
     const [showImagesSlider, setShowImagesSlider] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
 

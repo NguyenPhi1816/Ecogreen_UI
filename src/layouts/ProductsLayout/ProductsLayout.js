@@ -4,14 +4,14 @@ import PropertyInfo from '../components/PropertyInfo';
 import Footer from '../components/Footer';
 import BackToTop from '../../components/BackToTop';
 import ContactButtons from '../../components/ContactButtons';
-import { LanguageContext } from '../../App';
+import { Context } from '../../App';
 import NavbarMobile from '../../components/NavbarMobile';
 import Navbar from '../../components/Navbar';
 import { products, products_vi } from '../../config';
 
 function ProductsLayout({ offsetY, offsetWidth }) {
     const productId = useParams().id;
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
     const [data, setData] = useState(null);
     const [currentItem, setCurrentItem] = useState(null);
 
@@ -49,9 +49,7 @@ function ProductsLayout({ offsetY, offsetWidth }) {
                             }
                         />
                     )}
-                    {offsetWidth > 768 && (
-                        <ContactButtons width={offsetWidth} />
-                    )}
+                    <ContactButtons />
                 </>
             )}
         </>

@@ -5,7 +5,7 @@ import styles from './Product.module.scss';
 import ProductItem from '../../../components/ProductItem';
 import ImagesModal from '../../../components/ImagesModal';
 import { useContext } from 'react';
-import { LanguageContext } from '../../../App';
+import { Context } from '../../../App';
 import { Link } from 'react-router-dom';
 import { products, products_vi, priceTable } from '../../../config';
 import { useForm } from 'react-hook-form';
@@ -15,10 +15,10 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function Product({ offsetWidth, id }) {
+function Product({ id }) {
     const DESKTOP_AMOUNT = 6;
     const MOBILE_AMOUNT = 4;
-    const { language } = useContext(LanguageContext);
+    const { language, offsetWidth } = useContext(Context);
     const [showImagesSlider, setShowImagesSlider] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [data, setData] = useState([]);

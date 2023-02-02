@@ -13,11 +13,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { useParams } from 'react-router-dom';
 import { useContext } from 'react';
-import { LanguageContext } from '../../App';
+import { Context } from '../../App';
 import { agent } from '../../config';
 
 function Form({ type, className, showAgent = true }) {
-    const { language } = useContext(LanguageContext);
+    const { language } = useContext(Context);
     const productId = useParams().id;
     const {
         register,

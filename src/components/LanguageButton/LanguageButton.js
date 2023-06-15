@@ -25,10 +25,17 @@ const LanguageButton = ({ customClass, handleClick }) => {
                 setIcon(languageIcon.en);
                 setRegion('EN');
                 break;
+<<<<<<< HEAD
             case 'cn':
                 setIcon(languageIcon.cn);
                 setRegion('CN');
                 break;
+=======
+            // case 'cn':
+            //     setIcon(languageIcon.cn);
+            //     setRegion('CN');
+            //     break;
+>>>>>>> 0641185 (Update)
             default:
                 setIcon(languageIcon.vi);
                 setRegion('VI');
@@ -77,7 +84,11 @@ const LanguageButton = ({ customClass, handleClick }) => {
                                 />
                                 <p className={cx('language')}>English</p>
                             </li>
+<<<<<<< HEAD
                             <li
+=======
+                            {/* <li
+>>>>>>> 0641185 (Update)
                                 className={cx('item')}
                                 onClick={() => {
                                     setLanguage('vi');
@@ -90,7 +101,11 @@ const LanguageButton = ({ customClass, handleClick }) => {
                                     className={cx('icon')}
                                 />
                                 <p className={cx('language')}>Chinese</p>
+<<<<<<< HEAD
                             </li>
+=======
+                            </li> */}
+>>>>>>> 0641185 (Update)
                         </ul>
                     </div>
                 )}

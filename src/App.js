@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SwiperCore, { Autoplay } from 'swiper';
 import DefaultLayout from './layouts/DefaultLayout';
 import ProductsLayout from './layouts/ProductsLayout';
+import NewsLayout from './layouts/NewsLayout';
 import ScrollToTop from './components/ScrollToTop';
 import './App.scss';
 
@@ -43,6 +44,7 @@ function App() {
                     <ScrollToTop />
                     <Routes>
                         <Route path="/" element={<DefaultLayout />} />
+                        <Route path="/news/id=:id" element={<NewsLayout />} />
                         <Route
                             path="/productId=:id"
                             element={

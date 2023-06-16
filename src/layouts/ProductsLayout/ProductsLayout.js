@@ -16,13 +16,16 @@ function ProductsLayout({ offsetY, offsetWidth }) {
     const [currentItem, setCurrentItem] = useState(null);
 
     useEffect(() => {
-        setData(() => (language === 'en' ? products : products_vi));
-        setCurrentItem(
-            () =>
-                (language === 'en' ? products : products_vi).filter(
-                    (item) => item.id === productId,
-                )[0],
-        );
+        let myCurrentItem = (language === 'en' ? products : products_vi).filter(
+            (item) => item.id === productId,
+        )[0];
+
+        console.log(myCurrentItem);
+
+        if (myCurrentItem) {
+            setData(() => (language === 'en' ? products : products_vi));
+            setCurrentItem(myCurrentItem);
+        } else window.location.replace('/');
     }, [productId, language]);
 
     return (

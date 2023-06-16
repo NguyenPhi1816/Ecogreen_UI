@@ -44,7 +44,10 @@ function App() {
                     <ScrollToTop />
                     <Routes>
                         <Route path="/" element={<DefaultLayout />} />
-                        <Route path="/news/id=:id" element={<NewsLayout />} />
+                        <Route
+                            path="/news/id=:id"
+                            element={<NewsLayout offsetWidth={offsetWidth} />}
+                        />
                         <Route
                             path="/productId=:id"
                             element={

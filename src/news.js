@@ -99,8 +99,8 @@ export const NEWS = [
                     hội tuyệt vời cho những ai muốn sở hữu một căn hộ tại khu
                     vực trung tâm của thành phố hoặc đang tìm kiếm một cơ hội
                     đầu tư tiềm năng trong lĩnh vực bất động sản.
-                    <a>Liên hệ ngay</a> để được tư vấn và tham quan căn hộ mẫu
-                    của dự án.
+                    <a href="#footer">Liên hệ ngay</a> để được tư vấn và tham
+                    quan căn hộ mẫu của dự án.
                 </p>
             </>
         ),

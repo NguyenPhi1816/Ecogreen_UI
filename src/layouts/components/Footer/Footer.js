@@ -24,7 +24,7 @@ const cx = classNames.bind(styles);
 function Footer({ footerForm = true }) {
     const { language } = useContext(Context);
     return (
-        <section className={cx('footer')}>
+        <section className={cx('footer')} id="footer">
             <div className={cx('footer-container')}>
                 <div className={cx('footer-wrapper')}>
                     <div className={cx('footer-infor')}>

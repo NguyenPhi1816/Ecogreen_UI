@@ -44,7 +44,7 @@ const NewsLayout = ({ offsetWidth }) => {
                 <div className={cx('container')}>
                     <div className={cx('content')}>
                         <div className={cx('header')}>
-                            <a>Tin tức Ecogreen</a>
+                            <a href="/news">Tin tức Ecogreen</a>
                             <h1>{data && data.title}</h1>
                         </div>
                         <div className={cx('body')}>{data && data.body}</div>
@@ -110,7 +110,7 @@ const NewsLayout = ({ offsetWidth }) => {
                                                 NEWS[
                                                     dataIndex + 1 >
                                                     NEWS.length - 1
-                                                        ? NEWS.length - 1
+                                                        ? 0
                                                         : dataIndex + 1
                                                 ].title}
                                         </p>
@@ -127,17 +127,18 @@ const NewsLayout = ({ offsetWidth }) => {
                     <div className={cx('another-content')}>
                         <h2>Tin mới</h2>
                         <ul>
-                            {NEWS.slice(-5).map((item) => {
-                                if (item.id !== id)
-                                    return (
+                            {NEWS.slice(-5).map(
+                                (item) =>
+                                    item.id !== id && (
                                         <li>
                                             <a href={`/news/id=${item.id}`}>
                                                 {item.title}
                                             </a>
                                         </li>
-                                    );
-                            })}
+                                    ),
+                            )}
                         </ul>
+                        <a href="/news">Xem thêm {'>>>'}</a>
                     </div>
                 </div>
             </section>

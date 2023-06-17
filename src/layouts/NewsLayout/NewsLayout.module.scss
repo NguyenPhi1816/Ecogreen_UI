@@ -104,7 +104,7 @@
     }
 
     & > ul {
-        margin-top: 10px;
+        margin: 10px 0;
         
         & > li {
             padding: 10px 0;
@@ -115,5 +115,10 @@
                 color: var(--primary-color);
             }
         }
+    }
+
+    & > a {
+        font-weight: 700;
+        color: var(--primary-color);
     }
 }

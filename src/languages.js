@@ -29,6 +29,10 @@ export const languages = {
                 vi: 'DỊCH VỤ',
                 en: 'SERVICES',
             },
+            news: {
+                vi: 'TIN TỨC',
+                en: 'NEWS',
+            },
             contact: {
                 en: 'CONTACT',
                 vi: 'LIÊN LẠC',

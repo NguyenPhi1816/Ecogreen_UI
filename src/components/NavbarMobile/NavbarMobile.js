@@ -242,6 +242,17 @@ function NavbarMobile({ styles }) {
                                     spy={true}
                                     smooth={true}
                                     duration={500}
+                                    to="news"
+                                    onClick={handleShowMenu}
+                                >
+                                    {languages.navbar.homePage.news[language]}
+                                </Link>
+                            </li>
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
                                     to="contact"
                                     onClick={handleShowMenu}
                                 >

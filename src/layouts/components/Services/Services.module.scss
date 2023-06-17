@@ -1,6 +1,6 @@
 .services {
     width: 100vw;
-    padding: 50px 0;
+    padding: 20px 0 0;
 }
 
 .services-container {
@@ -15,6 +15,10 @@
     font-size: 4rem;
     font-weight: 400;
     margin-bottom: 60px;
+
+    @media (max-width: 767px) {
+        font-size: 3rem;
+    }
 }
 
 .services-grid {
@@ -52,6 +56,10 @@
         font-size: 20px;
         font-weight: 600;
         line-height: 28px;
+
+        @media (max-width: 767px) {
+            font-size: 1.6rem;
+        }
     }
 
     &-sub {
@@ -59,5 +67,9 @@
         padding: 10px 0 20px;
         line-height: 1.5em;
         font-size: 18px;
+
+        @media (max-width: 767px) {
+            font-size: 1.4rem;
+        }
     }
 }

@@ -181,6 +181,16 @@ function Navbar({ styles = {} }) {
                                     spy={true}
                                     smooth={true}
                                     duration={500}
+                                    to="news"
+                                >
+                                    {languages.navbar.homePage.news[language]}
+                                </Link>
+                            </li>
+                            <li className={cx('menu-item')}>
+                                <Link
+                                    spy={true}
+                                    smooth={true}
+                                    duration={500}
                                     to="contact"
                                 >
                                     {

@@ -13,6 +13,7 @@ import BackToTop from '../../components/BackToTop';
 import ContactButtons from '../../components/ContactButtons';
 import Utilities from '../components/Utilities';
 import Form from '../../components/Form';
+import News from '../components/News/News';
 import { Context } from '../../App';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -33,6 +34,7 @@ function DefaultLayout() {
             <Utilities id="utilities" />
             <Videos id="videos" />
             <Services id="services" />
+            <News id="news" />
             <Footer />
             {offsetY >= 300 && <BackToTop />}
             <ContactButtons />

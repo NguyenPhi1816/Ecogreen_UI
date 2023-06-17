@@ -4,6 +4,9 @@ export const NEWS = [
     {
         id: 'eco-green-sai-gon-noi-an-cu-ly-tuong-tai-trung-tam-quan-7',
         title: 'Eco Green Sài Gòn - Nơi an cư lý tưởng tại trung tâm Quận 7',
+        thumb: 'https://ecogreenq7.vn/rentalservicesg/news/eco-green-sai-gon-noi-an-cu-ly-tuong-tai-trung-tam-quan-7/eco-green-sai-gon-voi-kien-truc-hien-dai-va-tien-ich-cao-cap.png',
+        openingParagraph:
+            'Eco Green Sài Gòn là dự án chung cư cao cấp tọa lạc tại Quận 7,...',
         body: (
             <>
                 <p>

@@ -5,6 +5,7 @@ import SwiperCore, { Autoplay } from 'swiper';
 import DefaultLayout from './layouts/DefaultLayout';
 import ProductsLayout from './layouts/ProductsLayout';
 import NewsLayout from './layouts/NewsLayout';
+import NewsList from './layouts/NewsList';
 import ScrollToTop from './components/ScrollToTop';
 import './App.scss';
 
@@ -44,6 +45,10 @@ function App() {
                     <ScrollToTop />
                     <Routes>
                         <Route path="/" element={<DefaultLayout />} />
+                        <Route
+                            path="/news"
+                            element={<NewsList offsetWidth={offsetWidth} />}
+                        />
                         <Route
                             path="/news/id=:id"
                             element={<NewsLayout offsetWidth={offsetWidth} />}

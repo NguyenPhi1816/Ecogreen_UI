@@ -24,10 +24,6 @@ const LanguageButtonMobile = () => {
                 setIcon(languageIcon.en);
                 setRegion('EN');
                 break;
-            case 'cn':
-                setIcon(languageIcon.cn);
-                setRegion('CN');
-                break;
             default:
                 setIcon(languageIcon.vi);
                 setRegion('VI');
@@ -80,20 +76,6 @@ const LanguageButtonMobile = () => {
                         className={cx('icon')}
                     />
                     <p className={cx('language')}>English</p>
-                </li>
-                <li
-                    className={cx('item')}
-                    onClick={() => {
-                        setLanguage('vi');
-                        setShow(false);
-                    }}
-                >
-                    <img
-                        src={languageIcon.cn}
-                        alt="Language icon"
-                        className={cx('icon')}
-                    />
-                    <p className={cx('language')}>Chinese</p>
                 </li>
             </ul>
         </div>

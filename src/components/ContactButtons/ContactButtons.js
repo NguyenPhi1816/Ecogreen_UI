@@ -7,59 +7,13 @@ import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Tippy from '@tippyjs/react/headless';
 import { useState } from 'react';
+import { agent } from '../../config';
 
 const cx = classNames.bind(styles);
 
 function ContactButtons() {
     const [show, setShow] = useState(false);
     return (
-        // <div
-        //     className={cx('wrapper')}
-        //     style={
-        //         onlyIcon ? { flexDirection: 'row-reverse', bottom: '0' } : {}
-        //     }
-        // >
-        //     <div
-        //         className={cx('item1', 'gmail')}
-        //         style={onlyIcon ? onlyIconStyles : {}}
-        //     >
-        //         <a href="mailto:rentalservicesg@gmail.com">
-        //             <FontAwesomeIcon
-        //                 icon={faEnvelope}
-        //                 className={cx('icon')}
-        //                 style={onlyIcon ? { marginRight: '0' } : {}}
-        //             />
-        //             {!onlyIcon && <span>Gmail</span>}
-        //         </a>
-        //     </div>
-        //     <div
-        //         className={cx('item1', 'zalo')}
-        //         style={onlyIcon ? onlyIconStyles : {}}
-        //     >
-        //         <a href="https://zalo.me/0941256257">
-        //             <img
-        //                 src="https://ecogreenq7.vn/rentalservicesg/images/zalo.png"
-        //                 alt="zalo"
-        //                 className={cx('icon')}
-        //             />
-        //             {!onlyIcon && <span>Zalo</span>}
-        //         </a>
-        //     </div>
-        //     <div
-        //         className={cx('item1', 'phone')}
-        //         style={onlyIcon ? onlyIconStyles : {}}
-        //     >
-        //         <a href="tel:0941256257">
-        //             <FontAwesomeIcon
-        //                 icon={faPhone}
-        //                 className={cx('icon')}
-        //                 style={onlyIcon ? { marginRight: '0' } : {}}
-        //             />
-        //             {!onlyIcon && <span>0941256257</span>}
-        //         </a>
-        //     </div>
-        // </div>
-
         <Tippy
             visible={show}
             interactive
@@ -77,7 +31,7 @@ function ContactButtons() {
                             </a>
                         </li>
                         <li className={cx('tooltip-item')}>
-                            <a href="https://zalo.me/0941256257">
+                            <a href={`https://zalo.me/${agent.phone}`}>
                                 <img
                                     src="https://ecogreenq7.vn/rentalservicesg/images/zalo.png"
                                     alt="zalo"
@@ -87,12 +41,12 @@ function ContactButtons() {
                             </a>
                         </li>
                         <li className={cx('tooltip-item')}>
-                            <a href="tel:0941256257">
+                            <a href={`tel:${agent.phone}`}>
                                 <FontAwesomeIcon
                                     icon={faPhone}
                                     className={cx('icon')}
                                 />
-                                <span>0941256257</span>
+                                <span>{agent.phone}</span>
                             </a>
                         </li>
                     </ul>

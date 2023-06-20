@@ -903,7 +903,7 @@ export const agent = {
     avatar: `${link}agent/agent.png`,
     gmail: 'rentalservicesg@gmail.com',
     name: 'Mr. Robert',
-    phone: '0941256257',
+    phone: '0975770502',
 };
 
 export const SERVICES = [

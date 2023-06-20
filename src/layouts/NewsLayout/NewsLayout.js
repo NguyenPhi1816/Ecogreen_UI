@@ -6,19 +6,12 @@ import NavbarMobile from '../../components/NavbarMobile/NavbarMobile';
 import Footer from '../components/Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faFacebook,
-    faTwitter,
-    faInstagram,
-    faTiktok,
-    faGoogle,
-    faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
-import {
     faChevronLeft,
     faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { NEWS } from '../../news';
 import { useEffect, useState } from 'react';
+import ContactButtons from '../../components/ContactButtons/ContactButtons';
 
 const cx = classNames.bind(styles);
 
@@ -49,26 +42,6 @@ const NewsLayout = ({ offsetWidth }) => {
                         </div>
                         <div className={cx('body')}>{data && data.body}</div>
                         <div className={cx('footer')}>
-                            <div className={cx('footer-social-network-links')}>
-                                <a href="/">
-                                    <FontAwesomeIcon icon={faFacebook} />
-                                </a>
-                                <a href="/">
-                                    <FontAwesomeIcon icon={faTwitter} />
-                                </a>
-                                <a href="/">
-                                    <FontAwesomeIcon icon={faInstagram} />
-                                </a>
-                                <a href="/">
-                                    <FontAwesomeIcon icon={faTiktok} />
-                                </a>
-                                <a href="/">
-                                    <FontAwesomeIcon icon={faGoogle} />
-                                </a>
-                                <a href="/">
-                                    <FontAwesomeIcon icon={faYoutube} />
-                                </a>
-                            </div>
                             <div className={cx('navigator')}>
                                 <a
                                     href={`/news/id=${
@@ -141,6 +114,7 @@ const NewsLayout = ({ offsetWidth }) => {
                         <a href="/news">Xem thêm {'>>>'}</a>
                     </div>
                 </div>
+                <ContactButtons />
             </section>
             <Footer />
         </>

@@ -64,12 +64,12 @@ export const languages = {
     homePage: {
         welcome: {
             title: {
-                vi: 'Khám Phá Nơi Sống Của Bạn',
-                en: 'Discover Your Place To Live',
+                vi: 'Eco Green Sài Gòn',
+                en: 'Eco Green SaiGon',
             },
             subTitle: {
-                vi: 'TẬN HƯỞNG HỆ SINH THÁI XANH CỦA ECO GREEN',
-                en: 'ENJOY YOUR GREEN LIFE WITH OUR ECOSYSTEM',
+                vi: 'KHÔNG GIAN SỐNG LÝ TƯỞNG NHẤT PHÍA NAM THÀNH PHỐ',
+                en: 'THE IDEAL LIVING ENVIRONMENT IN THE SOUTH OF HCM CITY',
             },
         },
         product: {

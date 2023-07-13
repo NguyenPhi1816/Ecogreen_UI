@@ -13,7 +13,7 @@ const Context = React.createContext();
 
 function App() {
     SwiperCore.use([Autoplay]);
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState('vi');
     const [offsetY, setOffsetY] = useState(0);
     const [offsetWidth, setOffsetWidth] = useState(window.innerWidth);
     function handleScroll() {
